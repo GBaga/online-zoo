@@ -1,0 +1,12 @@
+/* ===========================
+   Eagle Page — Overrides
+   =========================== */
+
+/* Eagle info image — use full photo */
+.zoo-info-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 5px;
+}

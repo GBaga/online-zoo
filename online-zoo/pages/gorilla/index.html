@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Panda Cams | Online Zoo</title>
+    <title>Live Gorilla Cams | Online Zoo</title>
     <meta name="description"
-        content="Watch Lucas the Giant Panda live on webcam 24/7. Donate to support panda conservation at Online Zoo.">
+        content="Watch Glen the Western Lowland Gorilla live on webcam 24/7. Donate to support gorilla conservation at Online Zoo.">
     <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.svg">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../landing/style.css">
+    <link rel="stylesheet" href="../zoos/style.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,8 +28,10 @@
                 <nav class="nav-menu">
                     <a href="../landing/index.html" class="nav-link">About</a>
                     <a href="../map/index.html" class="nav-link">Map</a>
-                    <a href="index.html" class="nav-link active">Zoos</a>
+                    <a href="../zoos/index.html" class="nav-link active">Zoos</a>
                     <a href="../contact/index.html" class="nav-link">Contact us</a>
+                    <a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project" class="nav-link"
+                        target="_blank" rel="noopener">Design</a>
                 </nav>
                 <div class="social-links">
                     <a href="#" class="social-link">
@@ -46,7 +49,6 @@
     </header>
 
     <main>
-
 
         <!-- SIDEBAR + CAM WRAPPER -->
         <div class="zoo-cam-wrapper">
@@ -75,11 +77,11 @@
                 <!-- Top divider -->
                 <div class="sidebar-divider" style="top:80px"></div>
 
-                <!-- Panda — active (white) -->
+                <!-- Panda -->
                 <div class="sidebar-animal-slot" style="top:105px">
-                    <div class="sidebar-circle sidebar-circle--active">
+                    <a href="../zoos/index.html" class="sidebar-circle sidebar-circle--orange">
                         <img src="../../assets/icons/Panda.png" alt="Panda" class="sidebar-icon">
-                    </div>
+                    </a>
                 </div>
 
                 <div class="sidebar-divider" style="top:251px"></div>
@@ -93,11 +95,11 @@
 
                 <div class="sidebar-divider" style="top:423px"></div>
 
-                <!-- Gorilla -->
+                <!-- Gorilla — ACTIVE -->
                 <div class="sidebar-animal-slot" style="top:452px">
-                    <a href="../gorilla/index.html" class="sidebar-circle sidebar-circle--orange">
+                    <div class="sidebar-circle sidebar-circle--active">
                         <img src="../../assets/icons/Gorilla.png" alt="Gorilla" class="sidebar-icon">
-                    </a>
+                    </div>
                 </div>
 
                 <div class="sidebar-divider" style="top:594px"></div>
@@ -125,7 +127,7 @@
 
                 <!-- HERO -->
                 <div class="zoo-hero">
-                    <h1 class="zoo-title">Live Panda Cams</h1>
+                    <h1 class="zoo-title">Gorillas Cams</h1>
                     <a href="#donate" class="zoo-donate-btn">
                         Donate now
                         <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
@@ -134,10 +136,10 @@
 
                 <!-- Main Video Player -->
                 <div class="zoo-main-video">
-                    <div class="zoo-cam-label">Lucas, the Giant Panda cam 1</div>
-                    <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank" rel="noopener noreferrer"
+                    <div class="zoo-cam-label">Glen, Western lowland gorilla cam 1</div>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer"
                         class="zoo-video-link">
-                        <img src="../../assets/images/panda-youtube-player.png" alt="Lucas the Giant Panda Live Cam"
+                        <img src="../../assets/images/gorilla-youtube.png" alt="Glen Western Lowland Gorilla Live Cam"
                             class="zoo-video-img">
                         <div class="zoo-play-btn">
                             <svg width="40" height="46" viewBox="0 0 40 46" fill="none"
@@ -167,10 +169,10 @@
                         <button class="zoo-cam-arrow zoo-cam-prev" aria-label="Previous">
                             <img src="../../assets/icons/left-arrow-dark.svg" alt="Previous">
                         </button>
-                        <div class="zoo-cam-track" style="overflow: scroll;">
-                            <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank" rel="noopener"
-                                class="zoo-cam-thumb active">
-                                <img src="../../assets/images/panda-cam1.png" alt="Cam 1" class="zoo-cam-thumb-img">
+                        <div class="zoo-cam-track">
+                            <a href="#" class="zoo-cam-thumb active">
+                                <img src="../../assets/images/gorilla-cam1.png" alt="Gorilla Cam 1"
+                                    class="zoo-cam-thumb-img">
                                 <span class="zoo-cam-label-small">
                                     LIVE
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -181,9 +183,9 @@
                                     </svg>
                                 </span>
                             </a>
-                            <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank" rel="noopener"
-                                class="zoo-cam-thumb">
-                                <img src="../../assets/images/panda-cam2.png" alt="Cam 2" class="zoo-cam-thumb-img">
+                            <a href="#" class="zoo-cam-thumb">
+                                <img src="../../assets/images/gorilla-cam2.png" alt="Gorilla Cam 2"
+                                    class="zoo-cam-thumb-img">
                                 <span class="zoo-cam-label-small">
                                     LIVE
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -194,9 +196,9 @@
                                     </svg>
                                 </span>
                             </a>
-                            <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank" rel="noopener"
-                                class="zoo-cam-thumb">
-                                <img src="../../assets/images/panda-cam3.png" alt="Cam 3" class="zoo-cam-thumb-img">
+                            <a href="#" class="zoo-cam-thumb">
+                                <img src="../../assets/images/gorilla-cam3.png" alt="Gorilla Cam 3"
+                                    class="zoo-cam-thumb-img">
                                 <span class="zoo-cam-label-small">
                                     LIVE
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -222,10 +224,10 @@
             <div class="container">
                 <div class="donation-content">
                     <div class="donation-info">
-                        <h2 class="donation-title">Make the bamboo donation!</h2>
-                        <p class="donation-text">Our purpose for bamboo donations is that pandas eat bamboo exclusively,
-                            so it is important that our team stay efficient at supplying growing their diet and making
-                            life for pandas as comfortable as possible — that is why your continuous help is needed.</p>
+                        <h2 class="donation-title">Make a difference for the gorillas!</h2>
+                        <p class="donation-text">It is our goal to ensure the conservation and restoration of the
+                            gorilla population and their habitat in Central Africa. To do this, we need your help! Bring
+                            your food charity straight to Glen and his family.</p>
                     </div>
                     <div class="quick-donate">
                         <h3 class="quick-donate-title">Quick Donate</h3>
@@ -246,9 +248,9 @@
             <div class="container">
                 <div class="zoo-fact-card">
                     <h2 class="zoo-fact-title">Did you know?</h2>
-                    <p class="zoo-fact-text">Pandas are often seen eating in a relaxed sitting posture, with their hind
-                        legs stretched out before them. They may appear sedentary, but they are skilled tree climbers
-                        and efficient swimmers.</p>
+                    <p class="zoo-fact-text">In addition to having distinctive fingerprints like humans do, gorillas
+                        also have unique nose prints.<br><br>Gorillas are the largest of the great apes, but the western
+                        lowland gorilla is the smallest of the subspecies.</p>
                 </div>
             </div>
         </section>
@@ -261,19 +263,19 @@
                         <dl class="zoo-info-list">
                             <div class="zoo-info-row">
                                 <dt class="zoo-info-label">Common name:</dt>
-                                <dd class="zoo-info-value">Giant Panda</dd>
+                                <dd class="zoo-info-value">Western lowland gorillas</dd>
                             </div>
                             <div class="zoo-info-row">
                                 <dt class="zoo-info-label">Scientific name:</dt>
-                                <dd class="zoo-info-value zoo-info-italic">Ailuropoda melanoleuca</dd>
+                                <dd class="zoo-info-value zoo-info-italic">Gorilla gorilla gorilla</dd>
                             </div>
                             <div class="zoo-info-row">
                                 <dt class="zoo-info-label">Type:</dt>
-                                <dd class="zoo-info-value">Mammal</dd>
+                                <dd class="zoo-info-value">Mammals</dd>
                             </div>
                             <div class="zoo-info-row">
                                 <dt class="zoo-info-label">Size:</dt>
-                                <dd class="zoo-info-value">4 to 6 feet</dd>
+                                <dd class="zoo-info-value">Standing height, four to six feet</dd>
                             </div>
                             <div class="zoo-info-row">
                                 <dt class="zoo-info-label">Diet:</dt>
@@ -281,12 +283,12 @@
                             </div>
                             <div class="zoo-info-row">
                                 <dt class="zoo-info-label">Habitat:</dt>
-                                <dd class="zoo-info-value">Forest</dd>
+                                <dd class="zoo-info-value">Rainforests</dd>
                             </div>
                             <div class="zoo-info-row">
                                 <dt class="zoo-info-label">Range:</dt>
                                 <dd class="zoo-info-value">
-                                    East/Central China
+                                    Western Africa
                                     <a href="../map/index.html" class="zoo-map-link">
                                         VIEW MAP
                                         <img src="../../assets/icons/right-arrow-dark.svg" alt="" class="zoo-map-arrow">
@@ -294,16 +296,21 @@
                                 </dd>
                             </div>
                         </dl>
-                        <p class="zoo-info-description">Giant pandas are very unusual animals that eat almost
-                            exclusively bamboo, which is very low in nutrients. Because of this they have a very
-                            specialized diet and far too energy-heavy. Giant pandas spend much of their time eating.
-                            They have a specially adapted set of characteristics that make bamboo eating possible —
-                            their paws are built for gripping bamboo stalks. Estimated fewer than 2,000 giant pandas
-                            remain in the wild, though conservation programs have helped their numbers slowly recover.
-                        </p>
+                        <p class="zoo-info-description">Western lowland gorillas are the smallest of the four
+                            subspecies. They live in thick tropical rainforests, where they find plenty of food for
+                            their vegetarian diet. They eat roots, shoots, fruit, wild celery, and tree bark and pulp.
+                            Gorillas can climb trees, but they're usually found on the ground in communities—known as
+                            troops. Troops are led by one dominant, older adult male, often called a silverback because
+                            of the swath of silver hair that adorns his otherwise dark fur. Troops also include several
+                            other young males, some females, and their offspring. The leader organizes troop activities,
+                            such as eating, nesting in leaves, and moving about the group's home range. Gorillas prefer
+                            traveling on all fours, pushing themselves forward with their knuckles and soles of their
+                            feet. Female gorillas give birth to one infant after a pregnancy of nearly nine months.
+                            These infants ride on their mothers' backs from the age of four months through the first two
+                            or three years of their lives.</p>
                     </div>
                     <div class="zoo-info-image-wrap">
-                        <img src="../../assets/images/panda-eats-bamboo.png" alt="Giant Panda eating bamboo"
+                        <img src="../../assets/images/gorilla-looking-sad.png" alt="Western Lowland Gorilla"
                             class="zoo-info-image">
                     </div>
                 </div>
@@ -330,7 +337,7 @@
                     <nav class="footer-nav">
                         <a href="../landing/index.html" class="footer-nav-link">About</a>
                         <a href="../map/index.html" class="footer-nav-link">Map</a>
-                        <a href="index.html" class="footer-nav-link">Zoos</a>
+                        <a href="../zoos/index.html" class="footer-nav-link">Zoos</a>
                         <a href="../contact/index.html" class="footer-nav-link">Contact us</a>
                     </nav>
                     <a href="#donate" class="footer-donate-btn">
