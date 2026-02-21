@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Zoo - Live Cams</title>
+    <meta name="description"
+        content="Watch live animal webcams at Online Zoo. Observe pandas, gorillas, eagles and more in real-time.">
+    <link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../landing/index.html" class="logo-link">
+                    <img src="../../assets/icons/logo.svg" alt="Online Zoo" class="logo" width="96" height="50">
+                </a>
+                <nav class="nav-menu">
+                    <a href="../landing/index.html" class="nav-link">About</a>
+                    <a href="../map/index.html" class="nav-link">Map</a>
+                    <a href="#" class="nav-link active">Zoos</a>
+                    <a href="../contact/index.html" class="nav-link">Contact us</a>
+                </nav>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <img src="../../assets/icons/youtube.svg" alt="YouTube" width="40" height="40">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="../../assets/icons/instagram.svg" alt="Instagram" width="40" height="40">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="../../assets/icons/facebook.svg" alt="Facebook" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Live Cams Section -->
+        <section class="live-cams-section">
+            <div class="live-cams-layout">
+                <!-- Side Panel -->
+                <aside class="side-panel" id="sidePanel">
+                    <button class="side-panel-toggle" type="button" id="panelToggle" aria-label="Toggle animal panel">
+                        <span class="toggle-icon">&#9654;</span>
+                    </button>
+                    <nav class="animal-nav" id="animalNav">
+                        <button class="animal-nav-item active" data-animal="panda" type="button">
+                            <span class="animal-nav-emoji">🐼</span>
+                            <span class="animal-nav-text">Lucas – Giant Panda</span>
+                        </button>
+                        <button class="animal-nav-item" data-animal="lemur" type="button">
+                            <span class="animal-nav-emoji">🐒</span>
+                            <span class="animal-nav-text">Andy – Lemur</span>
+                        </button>
+                        <button class="animal-nav-item" data-animal="gorilla" type="button">
+                            <span class="animal-nav-emoji">🦍</span>
+                            <span class="animal-nav-text">Glen – Gorilla</span>
+                        </button>
+                        <button class="animal-nav-item" data-animal="eagle" type="button">
+                            <span class="animal-nav-emoji">🦅</span>
+                            <span class="animal-nav-text">Sam & Lora – Eagles</span>
+                        </button>
+                        <button class="animal-nav-item" data-animal="koala" type="button">
+                            <span class="animal-nav-emoji">🐨</span>
+                            <span class="animal-nav-text">Liz – Koala</span>
+                        </button>
+                        <button class="animal-nav-item" data-animal="lion" type="button">
+                            <span class="animal-nav-emoji">🦁</span>
+                            <span class="animal-nav-text">Shake – Lion</span>
+                        </button>
+                    </nav>
+                </aside>
+
+                <!-- Main Content Area -->
+                <div class="live-cams-content">
+                    <div class="container">
+                        <h1 class="live-cams-title" id="animalTitle">Online Zoo</h1>
+                        <h2 class="live-cams-animal-name" id="animalName">Giant Panda — Lucas</h2>
+
+                        <!-- Main Video Preview -->
+                        <div class="video-main">
+                            <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank"
+                                rel="noopener noreferrer" class="video-main-link" id="mainVideoLink">
+                                <img src="../../assets/images/placeholder.svg" alt="Live cam preview"
+                                    class="video-main-image" id="mainVideoImage">
+                                <div class="video-play-btn">▶</div>
+                            </a>
+                        </div>
+
+                        <!-- Donate Button -->
+                        <div class="live-donate-wrap">
+                            <a href="#" class="btn-primary" data-popup="donate-popup">
+                                Donate now
+                                <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24"
+                                    height="22">
+                            </a>
+                        </div>
+
+                        <!-- More Live Views Carousel -->
+                        <div class="more-views">
+                            <h3 class="more-views-title">More live views</h3>
+                            <div class="more-views-carousel">
+                                <button class="more-views-btn more-views-prev" type="button" aria-label="Previous view">
+                                    <img src="../../assets/icons/btn-prev.svg" alt="" width="40" height="40">
+                                </button>
+                                <div class="more-views-track-wrapper">
+                                    <div class="more-views-track" id="moreViewsTrack">
+                                        <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank"
+                                            class="more-view-item active" rel="noopener noreferrer">
+                                            <img src="../../assets/images/placeholder.svg" alt="Cam 1"
+                                                class="more-view-image">
+                                        </a>
+                                        <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank"
+                                            class="more-view-item" rel="noopener noreferrer">
+                                            <img src="../../assets/images/placeholder.svg" alt="Cam 2"
+                                                class="more-view-image">
+                                        </a>
+                                        <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank"
+                                            class="more-view-item" rel="noopener noreferrer">
+                                            <img src="../../assets/images/placeholder.svg" alt="Cam 3"
+                                                class="more-view-image">
+                                        </a>
+                                        <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank"
+                                            class="more-view-item" rel="noopener noreferrer">
+                                            <img src="../../assets/images/placeholder.svg" alt="Cam 4"
+                                                class="more-view-image">
+                                        </a>
+                                    </div>
+                                </div>
+                                <button class="more-views-btn more-views-next" type="button" aria-label="Next view">
+                                    <img src="../../assets/icons/btn-next.svg" alt="" width="40" height="40">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pay and Feed Section -->
+        <section class="pay-feed-section">
+            <div class="container">
+                <div class="pay-feed-content">
+                    <div class="pay-feed-info">
+                        <h2 class="pay-feed-title">Your donation makes a difference!</h2>
+                        <p class="pay-feed-text">The Online Zoo's animal webcams are some of the most famous on the
+                            internet. Tune in to watch your favourite animals — live, 24/7!</p>
+                    </div>
+                    <div class="quick-donate">
+                        <h3 class="quick-donate-title">Quick Donate</h3>
+                        <div class="donate-form">
+                            <input type="text" placeholder="$ Donation Amount" class="donate-input"
+                                aria-label="Donation amount">
+                            <button class="donate-btn" type="button" aria-label="Donate">
+                                <img src="../../assets/icons/arrow-right.svg" alt="" width="24" height="22">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Did You Know Section -->
+        <section class="did-you-know-section">
+            <div class="container">
+                <div class="did-you-know-card">
+                    <h2 class="did-you-know-title">Did you know?</h2>
+                    <div class="did-you-know-content">
+                        <img src="../../assets/images/placeholder.svg" alt="Did you know about pandas"
+                            class="did-you-know-image" id="didYouKnowImage">
+                        <div class="did-you-know-text-wrap">
+                            <h3 class="did-you-know-animal" id="didYouKnowAnimal">Giant Panda</h3>
+                            <p class="did-you-know-text" id="didYouKnowText">Giant pandas have an insatiable appetite
+                                for bamboo. A typical animal eats half the day — a full 12 out of every 24 hours — and
+                                relieves itself dozens of times a day. It takes 28 pounds of bamboo to satisfy a giant
+                                panda's daily dietary needs.</p>
+                            <a href="../map/index.html" class="btn-outline">
+                                View map
+                                <img src="../../assets/icons/btn-next.svg" alt="" width="24" height="24">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-top">
+                    <div class="footer-logos">
+                        <img src="../../assets/icons/logo-white.svg" alt="Online Zoo" class="footer-logo" width="96"
+                            height="50">
+                        <div class="footer-partner-logos">
+                            <img src="../../assets/icons/yem-digital.svg" alt="Yem Digital" class="partner-logo"
+                                width="50" height="50">
+                            <img src="../../assets/icons/rsschool.svg" alt="RS School" class="rs-logo" width="138"
+                                height="51">
+                        </div>
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="../landing/index.html" class="footer-nav-link">About</a>
+                        <a href="../map/index.html" class="footer-nav-link">Map</a>
+                        <a href="#" class="footer-nav-link">Zoos</a>
+                        <a href="../contact/index.html" class="footer-nav-link">Contact us</a>
+                    </nav>
+                    <a href="#" class="footer-donate-btn">
+                        Donate for volunteers
+                        <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
+                    </a>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <span class="copyright-text">&copy; 2021 DinaK</span>
+                        <span class="copyright-text">&copy; Yem Digital</span>
+                        <span class="copyright-text">&copy; RSSchool</span>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link" aria-label="YouTube">
+                            <img src="../../assets/icons/youtube.svg" alt="YouTube" width="40" height="40">
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram">
+                            <img src="../../assets/icons/instagram.svg" alt="Instagram" width="40" height="40">
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Facebook">
+                            <img src="../../assets/icons/facebook.svg" alt="Facebook" width="40" height="40">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup: Make Your Donation -->
+    <div class="popup-overlay" id="donate-popup">
+        <div class="popup popup--donate">
+            <button class="popup-close" type="button" aria-label="Close popup">&times;</button>
+            <div class="popup-step popup-step--active" data-step="1">
+                <div class="popup-step-indicator">
+                    <span class="step-dot step-dot--active">1</span>
+                    <span class="step-dot">2</span>
+                    <span class="step-dot">3</span>
+                </div>
+                <h2 class="popup-title">Make your donation</h2>
+                <div class="popup-field">
+                    <label class="popup-label">Amount *</label>
+                    <div class="popup-amounts">
+                        <button class="popup-amount-btn popup-amount-btn--active" type="button">$10</button>
+                        <button class="popup-amount-btn" type="button">$25</button>
+                        <button class="popup-amount-btn" type="button">$50</button>
+                        <button class="popup-amount-btn" type="button">$100</button>
+                    </div>
+                </div>
+                <div class="popup-field">
+                    <label class="popup-label">For special pet</label>
+                    <div class="popup-dropdown" id="pet-dropdown">
+                        <button class="popup-dropdown-toggle" type="button">Choose a pet</button>
+                        <ul class="popup-dropdown-menu">
+                            <li class="popup-dropdown-item">Lucas – Giant Panda</li>
+                            <li class="popup-dropdown-item">Andy – Lemur</li>
+                            <li class="popup-dropdown-item">Glen – Gorilla</li>
+                            <li class="popup-dropdown-item">Sam & Lora – Eagles</li>
+                            <li class="popup-dropdown-item">Liz – Koala</li>
+                            <li class="popup-dropdown-item">Shake – Lion</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="popup-next-btn btn-primary" type="button">
+                    Next
+                    <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
+                </button>
+            </div>
+            <div class="popup-step" data-step="2">
+                <div class="popup-step-indicator">
+                    <span class="step-dot">1</span>
+                    <span class="step-dot step-dot--active">2</span>
+                    <span class="step-dot">3</span>
+                </div>
+                <h2 class="popup-title">Personal information</h2>
+                <div class="popup-field">
+                    <label class="popup-label">First Name *</label>
+                    <input type="text" class="popup-input" placeholder="Enter your first name">
+                </div>
+                <div class="popup-field">
+                    <label class="popup-label">Last Name *</label>
+                    <input type="text" class="popup-input" placeholder="Enter your last name">
+                </div>
+                <div class="popup-field">
+                    <label class="popup-label">Email *</label>
+                    <input type="email" class="popup-input" placeholder="Enter your email">
+                </div>
+                <button class="popup-next-btn btn-primary" type="button">
+                    Next
+                    <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
+                </button>
+            </div>
+            <div class="popup-step" data-step="3">
+                <div class="popup-step-indicator">
+                    <span class="step-dot">1</span>
+                    <span class="step-dot">2</span>
+                    <span class="step-dot step-dot--active">3</span>
+                </div>
+                <h2 class="popup-title">Payment details</h2>
+                <div class="popup-field">
+                    <label class="popup-label">Card Number *</label>
+                    <input type="text" class="popup-input" placeholder="XXXX XXXX XXXX XXXX">
+                </div>
+                <div class="popup-field-row">
+                    <div class="popup-field">
+                        <label class="popup-label">Expiry Date *</label>
+                        <input type="text" class="popup-input" placeholder="MM/YY">
+                    </div>
+                    <div class="popup-field">
+                        <label class="popup-label">CVV *</label>
+                        <input type="text" class="popup-input" placeholder="XXX">
+                    </div>
+                </div>
+                <button class="popup-next-btn btn-primary" type="button">
+                    Donate
+                    <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

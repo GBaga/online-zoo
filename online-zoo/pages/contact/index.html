@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Zoo - Contact Us</title>
+    <meta name="description" content="Get in touch with Online Zoo. Send us your feedback, questions or suggestions.">
+    <link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../landing/index.html" class="logo-link">
+                    <img src="../../assets/icons/logo.svg" alt="Online Zoo" class="logo" width="96" height="50">
+                </a>
+                <nav class="nav-menu">
+                    <a href="../landing/index.html" class="nav-link">About</a>
+                    <a href="../map/index.html" class="nav-link">Map</a>
+                    <a href="../zoos/index.html" class="nav-link">Zoos</a>
+                    <a href="#" class="nav-link active">Contact us</a>
+                </nav>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <img src="../../assets/icons/youtube.svg" alt="YouTube" width="40" height="40">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="../../assets/icons/instagram.svg" alt="Instagram" width="40" height="40">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="../../assets/icons/facebook.svg" alt="Facebook" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Get In Touch Section -->
+        <section class="contact-section">
+            <div class="container">
+                <h1 class="contact-main-title">Online Zoo</h1>
+                <h2 class="contact-title">Get in touch</h2>
+                <p class="contact-text">We'd love to hear from you! Whether you have a question about our animals,
+                    webcams, donations, or anything else, our team is ready to answer all your questions.</p>
+
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input"
+                            placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject *</label>
+                        <input type="text" id="subject" name="subject" class="form-input"
+                            placeholder="Enter message subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea id="message" name="message" class="form-input form-textarea"
+                            placeholder="Write your message here..." rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-submit">
+                        Send message
+                        <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-top">
+                    <div class="footer-logos">
+                        <img src="../../assets/icons/logo-white.svg" alt="Online Zoo" class="footer-logo" width="96"
+                            height="50">
+                        <div class="footer-partner-logos">
+                            <img src="../../assets/icons/yem-digital.svg" alt="Yem Digital" class="partner-logo"
+                                width="50" height="50">
+                            <img src="../../assets/icons/rsschool.svg" alt="RS School" class="rs-logo" width="138"
+                                height="51">
+                        </div>
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="../landing/index.html" class="footer-nav-link">About</a>
+                        <a href="../map/index.html" class="footer-nav-link">Map</a>
+                        <a href="../zoos/index.html" class="footer-nav-link">Zoos</a>
+                        <a href="#" class="footer-nav-link">Contact us</a>
+                    </nav>
+                    <a href="#" class="footer-donate-btn">
+                        Donate for volunteers
+                        <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
+                    </a>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <span class="copyright-text">&copy; 2021 DinaK</span>
+                        <span class="copyright-text">&copy; Yem Digital</span>
+                        <span class="copyright-text">&copy; RSSchool</span>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link" aria-label="YouTube">
+                            <img src="../../assets/icons/youtube.svg" alt="YouTube" width="40" height="40">
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram">
+                            <img src="../../assets/icons/instagram.svg" alt="Instagram" width="40" height="40">
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Facebook">
+                            <img src="../../assets/icons/facebook.svg" alt="Facebook" width="40" height="40">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

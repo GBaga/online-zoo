@@ -1,0 +1,407 @@
+/* =============================================
+   Online Zoo — Map Page Styles
+   ============================================= */
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  line-height: 1.6;
+  color: #000;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
+.header {
+  background-color: #f58021;
+  padding: 30px 0;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-link {
+  display: inline-block;
+}
+
+.logo {
+  width: 96px;
+  height: 50px;
+}
+
+.nav-menu {
+  display: none;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #00a092;
+}
+
+.nav-link.active {
+  color: #00a092;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link {
+  display: inline-flex;
+  transition: opacity 0.3s ease;
+}
+
+.social-link:hover {
+  opacity: 0.7;
+}
+
+/* =============================================
+   MAP SECTION
+   ============================================= */
+.map-section {
+  padding: 80px 0 100px;
+  text-align: center;
+}
+
+.map-title {
+  font-size: 41px;
+  font-weight: 800;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: #00a092;
+  margin-bottom: 16px;
+}
+
+.map-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #000;
+  margin-bottom: 60px;
+}
+
+.map-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 1120px;
+}
+
+.map-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Map pins */
+.map-pin {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+.map-pin:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.map-pin-icon {
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  background-color: #f58021;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.map-pin-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #20113d;
+  margin-top: 4px;
+  white-space: nowrap;
+  background-color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer {
+  background-color: #20113d;
+  padding: 70px 0 48px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-logo {
+  width: 96px;
+  height: 50px;
+}
+
+.footer-partner-logos {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.partner-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.rs-logo {
+  width: 138px;
+  height: 51px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-nav-link:hover {
+  color: #f58021;
+}
+
+.footer-donate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  text-transform: uppercase;
+  padding: 20px 34px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-donate-btn:hover {
+  background-color: #fff;
+  color: #20113d;
+}
+
+.btn-icon {
+  width: 24px;
+  height: 22px;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.copyright-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  transition: opacity 0.3s ease;
+}
+
+.footer-social-link:hover {
+  opacity: 0.7;
+}
+
+/* =============================================
+   RESPONSIVE — 640px
+   ============================================= */
+@media (min-width: 640px) {
+  .map-pin-icon {
+    font-size: 28px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .map-pin-label {
+    font-size: 12px;
+  }
+
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-logos {
+    flex-direction: row;
+  }
+
+  .footer-nav {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-copyright {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+/* =============================================
+   RESPONSIVE — 1200px
+   ============================================= */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    padding: 0 40px;
+  }
+
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav-menu {
+    display: flex;
+  }
+
+  .map-title {
+    font-size: 82px;
+    line-height: 99px;
+  }
+
+  .map-subtitle {
+    font-size: 26px;
+  }
+
+  .map-pin-icon {
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .map-pin-label {
+    font-size: 14px;
+  }
+}
+
+/* =============================================
+   RESPONSIVE — 1920px
+   ============================================= */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+    padding: 0 120px;
+  }
+}
