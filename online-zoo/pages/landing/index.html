@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Zoo</title>
-  <meta name="description" content="Online Zoo - Watch your favorite animals live through webcams. Support wildlife conservation through donations.">
-  <link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Montserrat+Alternates:wght@800&display=swap" rel="stylesheet">
+  <title>Online Zoo - Watch Live Animal Webcams | Wildlife Conservation</title>
+  <meta name="description"
+    content="Explore wildlife through live webcams at Online Zoo. Watch pandas, lions, eagles and more animals in real-time. Support conservation efforts through donations.">
+  <meta name="keywords"
+    content="online zoo, live animal webcams, wildlife conservation, animal donation, panda cam, zoo animals, wildlife education">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Online Zoo - Watch Live Animal Webcams | Wildlife Conservation">
+  <meta property="og:description"
+    content="Explore wildlife through live webcams at Online Zoo. Watch pandas, lions, eagles and more animals in real-time. Support conservation efforts through donations.">
+
+  <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Header -->
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="#" class="logo-link">
-          <img src="../../assets/icons/logo.svg" alt="Online Zoo" class="logo" width="96" height="50">
+        <a href="../landing/index.html" class="logo">
+          <img src="../../assets/icons/logo.svg" alt="Online Zoo Logo" class="logo">
         </a>
         <nav class="nav-menu">
-          <a href="#" class="nav-link active">About</a>
+          <a href="#about" class="nav-link active">About</a>
           <a href="../map/index.html" class="nav-link">Map</a>
           <a href="../zoos/index.html" class="nav-link">Zoos</a>
           <a href="../contact/index.html" class="nav-link">Contact us</a>
+          <a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project" class="nav-link"
+            target="_blank" rel="noopener">Design</a>
         </nav>
         <div class="social-links">
-          <a href="#" class="social-link" aria-label="YouTube">
-            <img src="../../assets/icons/youtube.svg" alt="YouTube" width="40" height="40">
+          <a href="#" class="social-link">
+            <img src="../../assets/icons/youtube-logo.svg" alt="YouTube" class="social-link">
           </a>
-          <a href="#" class="social-link" aria-label="Instagram">
-            <img src="../../assets/icons/instagram.svg" alt="Instagram" width="40" height="40">
+          <a href="#" class="social-link">
+            <img src="../../assets/icons/Instagram-logo.svg" alt="Instagram" class="social-link">
           </a>
-          <a href="#" class="social-link" aria-label="Facebook">
-            <img src="../../assets/icons/facebook.svg" alt="Facebook" width="40" height="40">
+          <a href="#" class="social-link">
+            <img src="../../assets/icons/facebook-logo.svg" alt="Facebook" class="social-link">
           </a>
         </div>
       </div>
@@ -39,58 +51,57 @@
   </header>
 
   <main>
-    <!-- Hero Section: WATCH YOUR FAVORITE ANIMAL ONLINE -->
     <section class="hero">
       <div class="container">
         <div class="hero-content">
-          <h1 class="hero-title">Watch your favorite animal online</h1>
-          <p class="hero-description">Explore the exciting and mysterious world of wild animals in a natural setting without leaving your home.</p>
-          <a href="../zoos/index.html" class="btn-primary">
-            View live cam
-            <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
+          <h1 class="hero-title">Watch your favorite animal <span class="text-primary">online</span></h1>
+          <div class="hero-text-container">
+            <p class="hero-description">Explore the exciting and mysterious world of wild animals in a natural setting
+              without leaving your home.</p>
+          </div>
+          <a href="#live-cam" class="btn-primary">
+            VIEW LIVE CAM
+            <img src="../../assets/icons/right-arrow.svg" alt="" class="btn-icon">
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Welcome Section: WELCOME TO THE ONLINE ZOO! / HOW WE WORK -->
-    <section class="welcome-section">
+    <section class="welcome-section section">
       <div class="container">
-        <div class="welcome-block">
-          <div class="welcome-image-wrap">
-            <img src="../../assets/images/placeholder.svg" alt="Welcome to Online Zoo" class="welcome-image">
-          </div>
-          <div class="welcome-text-wrap">
-            <h2 class="section-title">Welcome to the Online Zoo!</h2>
-            <p class="section-text">On our website, using live webcams, fans of all ages can observe various animals. Among them, are Giant pandas, eagles, alligators, forest gorillas, African lions, and others. It is the whole natural world in real-time in front of our cameras. We hope you will enjoy watching closely and explore animals' behavior and habitats! Note: animals are not always on view on cameras, so please check back if you don't see anything.</p>
-          </div>
-        </div>
-        <div class="work-block">
-          <div class="work-image-wrap">
-            <img src="../../assets/images/placeholder.svg" alt="How we work" class="work-image">
-          </div>
-          <div class="work-text-wrap">
-            <h2 class="section-title">How we work</h2>
-            <p class="section-text">Online Zoo is a nonprofit committed to inspiring awareness and preservation of nature and wild animals in our zoo and worldwide. Every day, our experts work to safeguard the health and wellness of the animals. To continue these efforts, we need your help. We're so grateful to our numerous supporters. All donations, large and small, go a long way to the conservation efforts of our pets.</p>
-          </div>
+        <div class="welcome-content">
+          <img src="../../assets/images/welcome-zoo.png" alt="Welcome to Online Zoo" class="welcome-image">
+          <h2 class="welcome-title">Welcome to the Online Zoo!</h2>
+          <p class="welcome-text">On our website, using live webcams, fans of all ages can observe various animals.
+            Among them, are Giant pandas, eagles, alligators, forest gorillas, African lions, and others. It is the
+            whole natural world in real-time in front of our cameras. We hope you will enjoy watching closely and
+            explore animals' behavior and habitats! Note: animals are not always on view on cameras, so please check
+            back if you don't see anything.</p>
+
+          <img src="../../assets/images/panda-bg.png" alt="How we work" class="work-image">
+          <h2 class="work-title">How we work</h2>
+          <p class="work-text">Online Zoo is a nonprofit committed to inspiring awareness and preservation of nature and
+            wild animals in our zoo and worldwide. Every day, our experts work to safeguard the health and wellness of
+            the animals. To continue these efforts, we need your help. We're so grateful to our numerous supporters. All
+            donations, large and small, go a long way to the conservation efforts of our pets.</p>
         </div>
       </div>
     </section>
 
-    <!-- Donation Section: YOUR DONATION MAKES A DIFFERENCE! -->
     <section class="donation-section">
       <div class="container">
         <div class="donation-content">
-          <div class="donation-info">
+          <div>
             <h2 class="donation-title">Your donation makes a difference!</h2>
-            <p class="donation-text">The Online Zoo's animal webcams are some of the most famous on the internet. Tune in to watch your favourite animals — live, 24/7!</p>
+            <p class="donation-text">The Online Zoo's animal webcams are some of the most famous on the internet. Tune
+              in to watch your favourite animals — live, 24/7!</p>
           </div>
           <div class="quick-donate">
             <h3 class="quick-donate-title">Quick Donate</h3>
             <div class="donate-form">
-              <input type="text" placeholder="$ Donation Amount" class="donate-input" aria-label="Donation amount">
-              <button class="donate-btn" type="button" aria-label="Donate">
-                <img src="../../assets/icons/arrow-right.svg" alt="" width="24" height="22">
+              <input type="text" placeholder="$ Donation Amount" class="donate-input">
+              <button class="donate-btn">
+                <img src="../../assets/icons/right-arrow.svg" alt="Donate">
               </button>
             </div>
           </div>
@@ -98,186 +109,183 @@
       </div>
     </section>
 
-    <!-- Pets Section: MEET SOME OF OUR PETS -->
-    <section class="pets-section">
+    <section class="pets-section section">
       <div class="container">
-        <h2 class="section-title section-title--center">Meet some our Pets</h2>
-        <p class="pets-subtitle">Do you have a special place in your heart for animals? Who are your favorites? Perhaps you'd like to donate to special ones or all our pets? We think it's important for you to choose how your donation is used.</p>
+        <h2 class="pets-title">Meet some our Pets</h2>
+        <p class="pets-subtitle">Do you have a special place in your heart for animals? Who are your favorites? Perhaps
+          you'd like to donate to special ones or all our pets? We think it's important for you to choose how your
+          donation is used.</p>
 
         <div class="pets-nav">
-          <button class="nav-btn nav-btn--prev" type="button" aria-label="Previous">
-            <img src="../../assets/icons/btn-prev.svg" alt="" width="60" height="60">
+          <button class="nav-btn">
+            <img src="../../assets/icons/btn-prev.svg" alt="Previous">
           </button>
-          <button class="nav-btn nav-btn--next" type="button" aria-label="Next">
-            <img src="../../assets/icons/btn-next.svg" alt="" width="60" height="60">
+          <button class="nav-btn">
+            <img src="../../assets/icons/btn-next.svg" alt="Next">
           </button>
         </div>
 
-        <div class="pets-slider">
-          <div class="pets-track">
-            <!-- Card 1: Giant Panda Lucas -->
-            <a href="../zoos/index.html" class="pet-card">
-              <div class="pet-image-container">
-                <img src="../../assets/images/placeholder.svg" alt="Giant Panda Lucas" class="pet-image">
-                <span class="pet-name-tag">Lucas</span>
-              </div>
-              <div class="pet-info">
-                <h3 class="pet-species">Giant Panda</h3>
-                <p class="pet-description">Native to central China, giant pandas have come to symbolize vulnerable species.</p>
-                <span class="view-cam-btn">
-                  View live cam
-                  <img src="../../assets/icons/arrow-right-orange.svg" alt="" class="cam-icon" width="24" height="22">
-                </span>
-              </div>
-            </a>
+        <div class="pets-grid grid">
+          <div class="pet-card">
+            <div class="pet-image-container">
+              <img src="../../assets/images/panda-eats-bamboo.png" alt="Giant Panda Lucas" class="pet-image">
+              <div class="pet-name-tag">Lucas</div>
+            </div>
+            <div class="pet-info">
+              <h3 class="pet-species">Giant Panda</h3>
+              <p class="pet-description">Native to central China, giant pandas have come to symbolize vulnerable
+                species.</p>
+              <a href="#" class="view-cam-btn">
+                VIEW LIVE CAM
+                <img src="../../assets/icons/right-arrow-blue.svg" alt="" class="cam-icon">
+              </a>
+            </div>
+          </div>
 
-            <!-- Card 2: Madagascarian Lemur Andy -->
-            <a href="../zoos/index.html" class="pet-card">
-              <div class="pet-image-container">
-                <img src="../../assets/images/placeholder.svg" alt="Madagascarian Lemur Andy" class="pet-image">
-                <span class="pet-name-tag">Andy</span>
-              </div>
-              <div class="pet-info">
-                <h3 class="pet-species">Madagascarian Lemur</h3>
-                <p class="pet-description">Lemurs are considered the world's most endangered group of mammals.</p>
-                <span class="view-cam-btn">
-                  View live cam
-                  <img src="../../assets/icons/arrow-right-orange.svg" alt="" class="cam-icon" width="24" height="22">
-                </span>
-              </div>
-            </a>
+          <div class="pet-card">
+            <div class="pet-image-container">
+              <img src="../../assets/images/lemur.png" alt="Madagascarian Lemur Andy" class="pet-image">
+              <div class="pet-name-tag">Andy</div>
+            </div>
+            <div class="pet-info">
+              <h3 class="pet-species">Madagascarian Lemur</h3>
+              <p class="pet-description">Lemurs are considered the world's most endangered group of mammals.</p>
+              <a href="#" class="view-cam-btn">
+                VIEW LIVE CAM
+                <img src="../../assets/icons/right-arrow-blue.svg" alt="" class="cam-icon">
+              </a>
+            </div>
+          </div>
 
-            <!-- Card 3: Gorilla in Congo Glen -->
-            <a href="../zoos/index.html" class="pet-card">
-              <div class="pet-image-container">
-                <img src="../../assets/images/placeholder.svg" alt="Gorilla Glen" class="pet-image">
-                <span class="pet-name-tag">Glen</span>
-              </div>
-              <div class="pet-info">
-                <h3 class="pet-species">Gorilla in Congo</h3>
-                <p class="pet-description">Variety of snacks very important for the healthy life of gorillas and his plenty of babies.</p>
-                <span class="view-cam-btn">
-                  View live cam
-                  <img src="../../assets/icons/arrow-right-orange.svg" alt="" class="cam-icon" width="24" height="22">
-                </span>
-              </div>
-            </a>
+          <div class="pet-card">
+            <div class="pet-image-container">
+              <img src="../../assets/images/monkeys-baby-on-back.png" alt="Gorilla in Congo Glen" class="pet-image">
+              <div class="pet-name-tag">Glen</div>
+            </div>
+            <div class="pet-info">
+              <h3 class="pet-species">Gorilla in Congo</h3>
+              <p class="pet-description">Variety of snacks very important for the healthy life of gorillas and his
+                plenty of babies.</p>
+              <a href="#" class="view-cam-btn">
+                VIEW LIVE CAM
+                <img src="../../assets/icons/right-arrow-blue.svg" alt="" class="cam-icon">
+              </a>
+            </div>
+          </div>
 
-            <!-- Card 4: West End Bald Eagles Sam & Lora -->
-            <a href="../zoos/index.html" class="pet-card">
-              <div class="pet-image-container">
-                <img src="../../assets/images/placeholder.svg" alt="Eagles Sam and Lora" class="pet-image">
-                <span class="pet-name-tag">Sam & Lora</span>
-              </div>
-              <div class="pet-info">
-                <h3 class="pet-species">West End Bald Eagles</h3>
-                <p class="pet-description">Pair of eagle parents lay and protect eggs, feed their chicks and teach them to hunt and fly.</p>
-                <span class="view-cam-btn">
-                  View live cam
-                  <img src="../../assets/icons/arrow-right-orange.svg" alt="" class="cam-icon" width="24" height="22">
-                </span>
-              </div>
-            </a>
+          <div class="pet-card">
+            <div class="pet-image-container">
+              <img src="../../assets/images/eagles-couple.png" alt="West End Bald Eagles Sam & Lora" class="pet-image">
+              <div class="pet-name-tag">Sam & Lora</div>
+            </div>
+            <div class="pet-info">
+              <h3 class="pet-species">West End Bald Eagles</h3>
+              <p class="pet-description">Pair of eagle parents lay and protect eggs, feed their chicks and teach them to
+                hunt and fly.</p>
+              <a href="#" class="view-cam-btn">
+                VIEW LIVE CAM
+                <img src="../../assets/icons/right-arrow-blue.svg" alt="" class="cam-icon">
+              </a>
+            </div>
+          </div>
 
-            <!-- Card 5: Australian Koala Liz -->
-            <a href="../zoos/index.html" class="pet-card">
-              <div class="pet-image-container">
-                <img src="../../assets/images/placeholder.svg" alt="Koala Liz" class="pet-image">
-                <span class="pet-name-tag">Liz</span>
-              </div>
-              <div class="pet-info">
-                <h3 class="pet-species">Australian Koala</h3>
-                <p class="pet-description">The elevated walkways bring you to eye level with the koalas as they perch in their forest.</p>
-                <span class="view-cam-btn">
-                  View live cam
-                  <img src="../../assets/icons/arrow-right-orange.svg" alt="" class="cam-icon" width="24" height="22">
-                </span>
-              </div>
-            </a>
+          <div class="pet-card">
+            <div class="pet-image-container">
+              <img src="../../assets/images/koala.png" alt="Australian Koala Liz" class="pet-image">
+              <div class="pet-name-tag">Liz</div>
+            </div>
+            <div class="pet-info">
+              <h3 class="pet-species">Australian Koala</h3>
+              <p class="pet-description">The elevated walkways bring you to eye level with the koalas as they perch in
+                their forest.</p>
+              <a href="#" class="view-cam-btn">
+                VIEW LIVE CAM
+                <img src="../../assets/icons/right-arrow-blue.svg" alt="" class="cam-icon">
+              </a>
+            </div>
+          </div>
 
-            <!-- Card 6: African Lion Shake -->
-            <a href="../zoos/index.html" class="pet-card">
-              <div class="pet-image-container">
-                <img src="../../assets/images/placeholder.svg" alt="African Lion Shake" class="pet-image">
-                <span class="pet-name-tag">Shake</span>
-              </div>
-              <div class="pet-info">
-                <h3 class="pet-species">African Lion</h3>
-                <p class="pet-description">Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the pride.</p>
-                <span class="view-cam-btn">
-                  View live cam
-                  <img src="../../assets/icons/arrow-right-orange.svg" alt="" class="cam-icon" width="24" height="22">
-                </span>
-              </div>
-            </a>
+          <div class="pet-card">
+            <div class="pet-image-container">
+              <img src="../../assets/images/lion.png" alt="African Lion Shake" class="pet-image">
+              <div class="pet-name-tag">Shake</div>
+            </div>
+            <div class="pet-info">
+              <h3 class="pet-species">African Lion</h3>
+              <p class="pet-description">Lions roam the savannas and grasslands of Africa, hunting and raising cubs in
+                the pride.</p>
+              <a href="#" class="view-cam-btn">
+                VIEW LIVE CAM
+                <img src="../../assets/icons/right-arrow-blue.svg" alt="" class="cam-icon">
+              </a>
+            </div>
           </div>
         </div>
 
-        <a href="../zoos/index.html" class="choose-btn">
-          Choose your favourite
-          <img src="../../assets/icons/btn-next.svg" alt="" width="24" height="24">
+        <a href="#" class="choose-btn">
+          choose your favourite
+          <img src="../../assets/icons/btn-next.svg" alt="">
         </a>
       </div>
     </section>
 
-    <!-- Pay and Feed Section -->
     <section class="pay-feed-section">
       <div class="container">
-        <h2 class="pay-feed-title">Pay and feed</h2>
+        <h2 class="pay-feed-title">PAY AND FEED</h2>
 
-        <!-- Step 01 -->
         <div class="step-item">
           <div class="step-header">
             <span class="step-number">01</span>
             <div class="step-line"></div>
           </div>
           <div class="step-content">
-            <div class="step-image-wrap">
-              <img src="../../assets/images/placeholder.svg" alt="Your donation has an impact" class="step-image">
-            </div>
+            <img src="../../assets/images/panda-behind-bamboo.png" alt="Your donation has an impact" class="step-image">
             <div class="step-info">
-              <img src="../../assets/icons/icon-impact.svg" alt="" class="step-icon" width="80" height="80">
+              <img src="../../assets/icons/icon-impact.svg" alt="Impact icon" class="step-icon">
               <h3 class="step-title">Your donation has an impact</h3>
-              <p class="step-description">Providing our animals with high-quality nutritious diets is just one element of animal care at our Zoo. We do all the best so that our animals can eat food similar to what they might find in their natural habitats while making sure they get the right mix of nutrients, proteins, and vitamins to be happy and healthy. Please help us provide nutritious food for our animals by donating. The generosity of people like you can help us make sure that our animals enjoy good food that keeps them in great condition.</p>
+              <p class="step-description">Providing our animals with high-quality nutritious diets is just one element
+                of animal care at our Zoo. We do all the best so that our animals can eat food similar to what they
+                might find in their natural habitats while making sure they get the right mix of nutrients, proteins,
+                and vitamins to be happy and healthy. Please help us provide nutritious food for our animals by
+                donating. The generosity of people like you can help us make sure that our animals enjoy good food that
+                keeps them in great condition.</p>
             </div>
           </div>
         </div>
 
-        <!-- Step 02 -->
         <div class="step-item">
           <div class="step-header">
             <span class="step-number">02</span>
             <div class="step-line"></div>
           </div>
           <div class="step-content">
-            <div class="step-image-wrap">
-              <img src="../../assets/images/placeholder.svg" alt="Make a donation" class="step-image">
-            </div>
+            <img src="../../assets/images/tiger.png" alt="Make a donation" class="step-image">
             <div class="step-info">
-              <img src="../../assets/icons/icon-donate.svg" alt="" class="step-icon" width="80" height="80">
+              <img src="../../assets/icons/icon-donate.svg" alt="Donation icon" class="step-icon">
               <h3 class="step-title">Make a donation</h3>
-              <p class="step-description">You can donate through your credit card without any fees. It is easy and safe. We do not keep donors' personal information on an online network. Choose an amount to give and the pet's name if needed. One of the most effective ways you can give is by making regular donations.</p>
+              <p class="step-description">You can donate through your credit card without any fees. It is easy and safe.
+                We do not keep donors' personal information on an online network. Choose an amount to give and the pet's
+                name if needed. One of the most effective ways you can give is by making regular donations.</p>
             </div>
           </div>
         </div>
 
-        <!-- Step 03 -->
         <div class="step-item">
           <div class="step-header">
             <span class="step-number">03</span>
             <div class="step-line"></div>
           </div>
           <div class="step-content">
-            <div class="step-image-wrap">
-              <img src="../../assets/images/placeholder.svg" alt="Bring your food charity" class="step-image">
-            </div>
+            <img src="../../assets/images/koala-with-iron.png" alt="Bring your food charity" class="step-image">
             <div class="step-info">
-              <img src="../../assets/icons/icon-charity.svg" alt="" class="step-icon" width="80" height="80">
+              <img src="../../assets/icons/icon-charity.svg" alt="Charity icon" class="step-icon">
               <h3 class="step-title">Bring your food charity — straight to your favorites pets.</h3>
-              <p class="step-description">After your donation, the animal receives its favorite foods. You can support your favorite animals or any animal you care about and make a real personal impact. Never doubt that your donation can make a difference even if it is small.</p>
-              <a href="#" class="btn-primary btn-primary--donate" data-popup="donate-popup">
-                Donate now
-                <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
+              <p class="step-description">After your donation, the animal receives its favorite foods. You can support
+                your favorite animals or any animal you care about and make a real personal impact. Never doubt that
+                your donation can make a difference even if it is small.</p>
+              <a href="#" class="btn-primary">
+                donate now
+                <img src="../../assets/icons/right-arrow.svg" alt="" class="btn-icon">
               </a>
             </div>
           </div>
@@ -285,151 +293,161 @@
       </div>
     </section>
 
-    <!-- Testimonials Section: WHAT OUR USERS THINK -->
     <section class="testimonials-section">
       <div class="container">
         <div class="testimonials-header">
-          <h2 class="section-title section-title--white">What our users think</h2>
-          <p class="testimonials-subtitle">We are continuously striving to improve the experiences of our future guests. Below you can leave your own feedback, or simply view feedback from past clients.</p>
+          <h2 class="testimonials-title">what our users think</h2>
+          <p class="testimonials-subtitle">We are continuously striving to improve the experiences of our future guests.
+            Below you can leave your own feedback, or simply view feedback from past clients.</p>
         </div>
 
-        <div class="testimonials-slider">
-          <div class="testimonials-track">
-            <div class="testimonial-card">
-              <div class="testimonial-quote">&ldquo;</div>
-              <h3 class="testimonial-location">New Jersey, June 2020</h3>
-              <p class="testimonial-text">I am writing to thank you for your mission is to bring people closer to nature! Like myself, children were very impressed by the opportunity to explore the life of incredible animals in real-time.</p>
-              <p class="testimonial-author">Karen Maithlan</p>
-            </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <h3 class="testimonial-location">New Jersey, June 2020</h3>
+            <p class="testimonial-text">I am writing to thank you for your mission is to bring people closer to nature!
+              Like myself, children were very impressed by the opportunity to explore the life of incredible animals in
+              real-time.</p>
+            <p class="testimonial-author">Karen Maithlan</p>
+          </div>
 
-            <div class="testimonial-card">
-              <div class="testimonial-quote">&ldquo;</div>
-              <h3 class="testimonial-location">Toronto, November 2020</h3>
-              <p class="testimonial-text">We so enjoy the ever-evolving selection of animals from around the globe. THANK YOU for sharing these fascinating animal friends with us so that we may learn and increase our understanding of the animal kingdom.</p>
-              <p class="testimonial-author">Carol Larsen</p>
-            </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <h3 class="testimonial-location">Toronto, November 2020</h3>
+            <p class="testimonial-text">We so enjoy the ever-evolving selection of animals from around the globe. THANK
+              YOU for sharing these fascinating animal friends with us so that we may learn and increase our
+              understanding of the animal kingdom.</p>
+            <p class="testimonial-author">Carol Larsen</p>
+          </div>
 
-            <div class="testimonial-card">
-              <div class="testimonial-quote">&ldquo;</div>
-              <h3 class="testimonial-location">London, February 2020</h3>
-              <p class="testimonial-text">A fantastic experience for kids and adults alike! If anyone is looking for an attraction that educates people on wild animals – it's for you! I highly recommend seeing for yourself the variety of animals on your screen.</p>
-              <p class="testimonial-author">C. Stockman</p>
-            </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <h3 class="testimonial-location">London, February 2020</h3>
+            <p class="testimonial-text">A fantastic experience for kids and adults alike! If anyone is looking for an
+              attraction that educates people on wild animals – it's for you! I highly recommend seeing for yourself the
+              variety of animals on your screen.</p>
+            <p class="testimonial-author">C. Stockman</p>
+          </div>
 
-            <div class="testimonial-card">
-              <div class="testimonial-quote">&ldquo;</div>
-              <h3 class="testimonial-location">Amsterdam, June 2020</h3>
-              <p class="testimonial-text">I want to thank you for the amazing sites you find to put your cameras to let each of us see things that we would probably never see on our own. There are so many positives on Zoo Online and I'm grateful for it. Thank you so much!</p>
-              <p class="testimonial-author">Tomas Ray</p>
-            </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <h3 class="testimonial-location">Amsterdam, June 2020</h3>
+            <p class="testimonial-text">I want to thank you for the amazing sites you find to put your cameras to let
+              each of us see things that we would probably never see on our own. There are so many positives on Zoo
+              Online and I'm grateful for it. Thank you so much!</p>
+            <p class="testimonial-author">Tomas Ray</p>
           </div>
         </div>
 
         <div class="testimonials-nav">
-          <button class="nav-btn nav-btn--white nav-btn--testimonial-prev" type="button" aria-label="Previous testimonial">
-            <img src="../../assets/icons/btn-prev-white.svg" alt="" width="60" height="60">
+          <button class="testimonial-nav-btn">
+            <img src="../../assets/icons/left-arrow-white-couple.svg" alt="Previous">
           </button>
-          <button class="nav-btn nav-btn--white nav-btn--testimonial-next" type="button" aria-label="Next testimonial">
-            <img src="../../assets/icons/btn-next-white.svg" alt="" width="60" height="60">
+          <button class="testimonial-nav-btn">
+            <img src="../../assets/icons/right-arrow-white-couple.svg" alt="Next">
           </button>
         </div>
 
-        <a href="../contact/index.html" class="feedback-btn">
-          Leave feedback
-          <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
+        <a href="#" class="feedback-btn">
+          leave feedback
+          <img src="../../assets/icons/right-arrow.svg" alt="" class="btn-icon">
         </a>
       </div>
     </section>
 
-    <!-- Care Section: CARE FOR THE ANIMALS YOU LOVE -->
-    <section class="care-section">
+    <section class="care-section section">
       <div class="container">
         <div class="care-header">
-          <h2 class="section-title section-title--center">Care for the animals you love</h2>
+          <h2 class="care-title">care for the animals you love</h2>
           <p class="care-subtitle">You can help to look after the animals you love with your gift today</p>
-          <img src="../../assets/images/placeholder.svg" alt="Koala care program" class="care-hero-image">
+          <img src="../../assets/images/koala.png" alt="Koala care program" class="care-hero-image">
         </div>
 
-        <div class="care-grid">
-          <a href="../zoos/index.html" class="care-card">
-            <img src="../../assets/images/placeholder.svg" alt="Feed Lucas the Giant Panda" class="care-card-image">
+        <div class="care-grid grid">
+          <div class="care-card">
+            <img src="../../assets/images/panda-eats-fruits.png" alt="Feed Lucas the Giant Panda"
+              class="care-card-image">
             <div class="care-card-content">
-              <p class="care-card-text">Your $30 could give Lucas a slice of panda cake, made with our secret recipe.</p>
-              <span class="feed-btn">
-                Feed
-                <img src="../../assets/icons/arrow-right-orange.svg" alt="" class="feed-icon" width="24" height="22">
-              </span>
+              <p class="care-card-text">Your $30 could give Lucas a slice of panda cake, made with our secret recipe.
+              </p>
+              <a href="#" class="feed-btn">
+                feed
+                <img src="../../assets/icons/right-arrow.svg" alt="" class="feed-icon">
+              </a>
             </div>
-          </a>
+          </div>
 
-          <a href="../zoos/index.html" class="care-card">
-            <img src="../../assets/images/placeholder.svg" alt="Feed Andy the Lemur" class="care-card-image">
+          <div class="care-card">
+            <img src="../../assets/images/lemur-eats-fruit.png" alt="Feed Andy the Lemur" class="care-card-image">
             <div class="care-card-content">
-              <p class="care-card-text">With your support, we can give Andy his favorite fruits. Especially when it's not fruit season in its natural habitat.</p>
-              <span class="feed-btn">
-                Feed
-                <img src="../../assets/icons/arrow-right-orange.svg" alt="" class="feed-icon" width="24" height="22">
-              </span>
+              <p class="care-card-text">With your support, we can give Andy his favorite fruits. Especially when it's
+                not fruit season in its natural habitat.</p>
+              <a href="#" class="feed-btn">
+                feed
+                <img src="../../assets/icons/right-arrow.svg" alt="" class="feed-icon">
+              </a>
             </div>
-          </a>
+          </div>
 
-          <a href="../zoos/index.html" class="care-card">
-            <img src="../../assets/images/placeholder.svg" alt="Feed Senja the Tiger" class="care-card-image">
+          <div class="care-card">
+            <img src="../../assets/images/tiger-senja.png" alt="Feed Senja the Tiger" class="care-card-image">
             <div class="care-card-content">
               <p class="care-card-text">Your $150 will help to care for Senja, a Sumatran tiger, for three weeks.</p>
-              <span class="feed-btn">
-                Feed
-                <img src="../../assets/icons/arrow-right-orange.svg" alt="" class="feed-icon" width="24" height="22">
-              </span>
+              <a href="#" class="feed-btn">
+                feed
+                <img src="../../assets/icons/right-arrow.svg" alt="" class="feed-icon">
+              </a>
             </div>
-          </a>
+          </div>
 
-          <a href="../zoos/index.html" class="care-card">
-            <img src="../../assets/images/placeholder.svg" alt="Feed Sam and Lora Eagles" class="care-card-image">
+          <div class="care-card">
+            <img src="../../assets/images/eagls-in-the-nest.png" alt="Feed Sam & Lora Eagles" class="care-card-image">
             <div class="care-card-content">
-              <p class="care-card-text">Sam & Lora have hatched and raised numerous young and will be happy with your help.</p>
-              <span class="feed-btn">
-                Feed
-                <img src="../../assets/icons/arrow-right-orange.svg" alt="" class="feed-icon" width="24" height="22">
-              </span>
+              <p class="care-card-text">Sam & Lora have hatched and raised numerous young and will be happy with your
+                help.</p>
+              <a href="#" class="feed-btn">
+                feed
+                <img src="../../assets/icons/right-arrow.svg" alt="" class="feed-icon">
+              </a>
             </div>
-          </a>
+          </div>
         </div>
 
-        <a href="../zoos/index.html" class="choose-btn">
-          Choose your favourite
-          <img src="../../assets/icons/btn-next.svg" alt="" width="24" height="24">
+        <a href="#" class="choose-btn">
+          choose your favourite
+          <img src="../../assets/icons/btn-next.svg" alt="">
         </a>
       </div>
     </section>
 
-    <!-- Touch the Animal Section -->
     <section class="touch-section">
-      <img src="../../assets/images/placeholder.svg" alt="Touch the animal interactive experience" class="touch-image">
+      <img src="../../assets/images/touch-the-animal-screen.png" alt="Touch the animal interactive experience"
+        class="touch-image">
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-top">
           <div class="footer-logos">
-            <img src="../../assets/icons/logo-white.svg" alt="Online Zoo" class="footer-logo" width="96" height="50">
+            <a href="../landing/index.html" class="logo">
+              <img src="../../assets/icons/white-logo-for-footer.svg" alt="Online Zoo Logo" class="footer-logo">
+            </a>
             <div class="footer-partner-logos">
-              <img src="../../assets/icons/yem-digital.svg" alt="Yem Digital" class="partner-logo" width="50" height="50">
-              <img src="../../assets/icons/rsschool.svg" alt="RS School" class="rs-logo" width="138" height="51">
+              <img src="../../assets/icons/yem-logo.svg" alt="Yem Digital" class="partner-logo">
+              <img src="../../assets/icons/rs-school-logo.svg" alt="RS School" class="rs-logo">
             </div>
           </div>
           <nav class="footer-nav">
-            <a href="#" class="footer-nav-link">About</a>
+            <a href="#about" class="footer-nav-link">About</a>
             <a href="../map/index.html" class="footer-nav-link">Map</a>
             <a href="../zoos/index.html" class="footer-nav-link">Zoos</a>
             <a href="../contact/index.html" class="footer-nav-link">Contact us</a>
           </nav>
-          <a href="#" class="footer-donate-btn" data-popup="care-popup">
-            Donate for volunteers
-            <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
+          <a href="#" class="footer-donate-btn">
+            donate for volunteers
+            <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
           </a>
         </div>
 
@@ -437,140 +455,25 @@
 
         <div class="footer-bottom">
           <div class="footer-copyright">
-            <span class="copyright-text">&copy; 2021 DinaK</span>
-            <span class="copyright-text">&copy; Yem Digital</span>
-            <span class="copyright-text">&copy; RSSchool</span>
+            <span class="copyright-text">© 2021 DinaK</span>
+            <span class="copyright-text">© Yem Digital</span>
+            <span class="copyright-text">© RSSchool</span>
           </div>
           <div class="footer-social">
-            <a href="#" class="footer-social-link" aria-label="YouTube">
-              <img src="../../assets/icons/youtube.svg" alt="YouTube" width="40" height="40">
+            <a href="#" class="footer-social-link">
+              <img src="../../assets/icons/youtube-logo.svg" alt="YouTube">
             </a>
-            <a href="#" class="footer-social-link" aria-label="Instagram">
-              <img src="../../assets/icons/instagram.svg" alt="Instagram" width="40" height="40">
+            <a href="#" class="footer-social-link">
+              <img src="../../assets/icons/Instagram-logo.svg" alt="Instagram">
             </a>
-            <a href="#" class="footer-social-link" aria-label="Facebook">
-              <img src="../../assets/icons/facebook.svg" alt="Facebook" width="40" height="40">
+            <a href="#" class="footer-social-link">
+              <img src="../../assets/icons/facebook-logo.svg" alt="Facebook">
             </a>
           </div>
         </div>
       </div>
     </div>
   </footer>
-
-  <!-- Popup: Together we care, save and protect! -->
-  <div class="popup-overlay" id="care-popup">
-    <div class="popup">
-      <button class="popup-close" type="button" aria-label="Close popup">&times;</button>
-      <img src="../../assets/images/placeholder.svg" alt="Together we care" class="popup-image">
-      <h2 class="popup-title">Together we care, save and protect!</h2>
-      <p class="popup-text">Thank you for your love and support. We are grateful to you for keeping animals safe.</p>
-      <div class="popup-amounts">
-        <button class="popup-amount-btn" type="button">$10</button>
-        <button class="popup-amount-btn" type="button">$25</button>
-        <button class="popup-amount-btn" type="button">$50</button>
-        <button class="popup-amount-btn" type="button">$100</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Popup: Make your donation (3 steps) -->
-  <div class="popup-overlay" id="donate-popup">
-    <div class="popup popup--donate">
-      <button class="popup-close" type="button" aria-label="Close popup">&times;</button>
-
-      <!-- Step 1 -->
-      <div class="popup-step popup-step--active" data-step="1">
-        <div class="popup-step-indicator">
-          <span class="step-dot step-dot--active">1</span>
-          <span class="step-dot">2</span>
-          <span class="step-dot">3</span>
-        </div>
-        <h2 class="popup-title">Make your donation</h2>
-        <div class="popup-field">
-          <label class="popup-label">Amount *</label>
-          <div class="popup-amounts popup-amounts--inline">
-            <button class="popup-amount-btn popup-amount-btn--active" type="button">$10</button>
-            <button class="popup-amount-btn" type="button">$25</button>
-            <button class="popup-amount-btn" type="button">$50</button>
-            <button class="popup-amount-btn" type="button">$100</button>
-          </div>
-        </div>
-        <div class="popup-field">
-          <label class="popup-label">For special pet</label>
-          <div class="popup-dropdown" id="pet-dropdown">
-            <button class="popup-dropdown-toggle" type="button">Choose a pet</button>
-            <ul class="popup-dropdown-menu">
-              <li class="popup-dropdown-item">Lucas – Giant Panda</li>
-              <li class="popup-dropdown-item">Andy – Lemur</li>
-              <li class="popup-dropdown-item">Glen – Gorilla</li>
-              <li class="popup-dropdown-item">Sam & Lora – Eagles</li>
-              <li class="popup-dropdown-item">Liz – Koala</li>
-              <li class="popup-dropdown-item">Shake – Lion</li>
-            </ul>
-          </div>
-        </div>
-        <button class="popup-next-btn btn-primary" type="button">
-          Next
-          <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
-        </button>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="popup-step" data-step="2">
-        <div class="popup-step-indicator">
-          <span class="step-dot">1</span>
-          <span class="step-dot step-dot--active">2</span>
-          <span class="step-dot">3</span>
-        </div>
-        <h2 class="popup-title">Personal information</h2>
-        <div class="popup-field">
-          <label class="popup-label">First Name *</label>
-          <input type="text" class="popup-input" placeholder="Enter your first name">
-        </div>
-        <div class="popup-field">
-          <label class="popup-label">Last Name *</label>
-          <input type="text" class="popup-input" placeholder="Enter your last name">
-        </div>
-        <div class="popup-field">
-          <label class="popup-label">Email *</label>
-          <input type="email" class="popup-input" placeholder="Enter your email">
-        </div>
-        <button class="popup-next-btn btn-primary" type="button">
-          Next
-          <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
-        </button>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="popup-step" data-step="3">
-        <div class="popup-step-indicator">
-          <span class="step-dot">1</span>
-          <span class="step-dot">2</span>
-          <span class="step-dot step-dot--active">3</span>
-        </div>
-        <h2 class="popup-title">Payment details</h2>
-        <div class="popup-field">
-          <label class="popup-label">Card Number *</label>
-          <input type="text" class="popup-input" placeholder="XXXX XXXX XXXX XXXX">
-        </div>
-        <div class="popup-field-row">
-          <div class="popup-field">
-            <label class="popup-label">Expiry Date *</label>
-            <input type="text" class="popup-input" placeholder="MM/YY">
-          </div>
-          <div class="popup-field">
-            <label class="popup-label">CVV *</label>
-            <input type="text" class="popup-input" placeholder="XXX">
-          </div>
-        </div>
-        <button class="popup-next-btn btn-primary" type="button">
-          Donate
-          <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
+
 </html>

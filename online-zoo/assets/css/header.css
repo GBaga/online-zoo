@@ -1,0 +1,59 @@
+/* Header Styles */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 100;
+  padding: 15px 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-box {
+  width: 82px;
+  height: 52px;
+  border: 1px solid var(--text-light);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-text {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--text-light);
+  line-height: 1.2;
+}
+
+.nav-list {
+  display: flex;
+  gap: 58px;
+}
+
+.nav-link {
+  color: var(--text-light);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-orange);
+}
+
+.design-author a {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.design-author a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,72 @@
+:root {
+  /* Colors */
+  --bg-color: #F8F8F8;
+  --bg-dark: #121212;
+  --bg-orange: #FE9013;
+  --bg-orange-hover: #E47209;
+  --bg-white: #FFFFFF;
+  --text-dark: #333B41;
+  --text-light: #FFFFFF;
+  --text-orange: #FE9013;
+  --text-orange-hover: #E47209;
+  --text-grey: #4F555A;
+  
+  /* Fonts */
+  --font-main: 'Roboto', sans-serif;
+  --font-sizes-h2: 48px;
+  --font-sizes-h3: 36px;
+  --font-sizes-h4: 24px;
+}
+
+/* Reset basics (no reset.css allowed, but normalize is fine) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  font-size: 16px;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Container */
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Base interactive states based on design */
+.btn-primary {
+  background-color: var(--bg-orange);
+  color: var(--text-light);
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:active, .btn-primary:hover {
+  background-color: var(--bg-orange-hover);
+}
