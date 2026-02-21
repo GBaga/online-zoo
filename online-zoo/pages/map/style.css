@@ -60,32 +60,67 @@ body {
 /* --- Map Pins --- */
 .map-pin {
   position: absolute;
-  width: 24px;
-  height: 24px;
-  background-color: #f58021; /* Orange base */
-  border-radius: 50%;
-  transform: translate(-50%, -50%); /* Centered exactly on the coordinate */
+  width: 65px;
+  height: 65px;
+  background-color: #f58021;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
-  box-shadow: 0 0 15px rgba(245, 128, 33, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 30px rgba(245, 128, 33, 0.7);
+  box-sizing: border-box;
+}
+
+.map-pin .pin-icon {
+  transform: rotate(45deg);
+  width: 38px;
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
 }
 
 .map-pin.active,
 .map-pin:hover {
-  transform: translate(-50%, -50%) scale(1.3);
-  background-color: #ffffff;
-  box-shadow:
-    0 0 20px rgba(255, 255, 255, 0.9),
-    0 0 40px rgba(245, 128, 33, 0.8);
+  background-color: transparent;
+  border: 3px solid #ffffff;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* --- Pin Positions Based on the provided CSS snippet --- */
+.map-pin.active::after,
+.map-pin:hover::after {
+  content: "";
+  position: absolute;
+  top: 4.5px;
+  left: 4.5px;
+  right: 4.5px;
+  bottom: 4.5px;
+  background-color: #ffffff;
+  border-radius: 50% 50% 50% 0;
+  z-index: -1;
+}
+
+/* --- Pin Positions --- */
 
 /* Eagle */
 .pin-eagle {
   left: 21.77%;
   top: 42.88%;
+}
+
+/* Alligator */
+.pin-alligator {
+  left: 28.28%;
+  top: 43.63%;
+}
+
+/* Gorilla */
+.pin-gorilla {
+  left: 43.12%;
+  top: 46.33%;
 }
 
 /* Lion */
@@ -94,19 +129,19 @@ body {
   top: 47.65%;
 }
 
-/* Gorilla */
-.pin-gorilla {
-  left: 52.94%;
-  top: 32.87%;
-}
-
 /* Lemur */
 .pin-lemur {
-  left: 56.43%;
-  top: 40.03%;
+  left: 54.53%;
+  top: 54.54%;
 }
 
-/* Tiger (Approximate based on map logic, since multiple tags are in the CSS without specific names) */
+/* Panda */
+.pin-panda {
+  left: 62.71%;
+  top: 40.36%;
+}
+
+/* Tiger */
 .pin-tiger {
   left: 65.99%;
   top: 49.43%;
@@ -116,12 +151,6 @@ body {
 .pin-koala {
   left: 72.81%;
   top: 55.97%;
-}
-
-/* Panda */
-.pin-panda {
-  left: 62.71%;
-  top: 40.36%;
 }
 
 /* =========================================

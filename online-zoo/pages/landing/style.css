@@ -205,10 +205,11 @@ button {
 .welcome-image,
 .work-image {
   width: 100%;
-  max-width: 800px;
+  max-width: 540px;
   height: auto;
   border-radius: 5px;
   margin: 0;
+  flex-shrink: 0;
 }
 
 .welcome-title,
@@ -341,6 +342,17 @@ button {
   margin-bottom: 24px;
 }
 
+/* Pets carousel wrapper */
+.pets-carousel {
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.pets-prev,
+.pets-next {
+  flex-shrink: 0;
+}
+
 .nav-btn {
   border: none;
   border-radius: 5px;
@@ -349,6 +361,16 @@ button {
   width: 60px;
   height: 60px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  flex: 1;
 }
 
 .pet-card {
@@ -492,29 +514,45 @@ button {
 }
 
 .step-info {
-  text-align: center;
+  text-align: left;
+  display: grid;
+  grid-template-areas:
+    "icon title"
+    ". desc"
+    ". btn";
+  grid-template-columns: 60px 1fr;
+  row-gap: 24px;
+  column-gap: 24px;
 }
 
 .step-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 30px;
+  grid-area: icon;
+  width: 60px;
+  height: 60px;
+  margin: 0;
 }
 
 .step-title {
+  grid-area: title;
   font-size: 20px;
   font-weight: 500;
   line-height: 32px;
   color: #ffffff;
-  margin-bottom: 32px;
+  margin: 0;
+  align-self: center;
 }
 
 .step-description {
+  grid-area: desc;
   font-size: 14px;
   font-weight: 400;
   line-height: 27px;
   color: #ffffff;
-  margin-bottom: 32px;
+  margin: 0;
+}
+
+.step-info .btn-primary {
+  grid-area: btn;
 }
 
 /* Testimonials Section */
@@ -607,17 +645,10 @@ button {
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.5);
 }
 
-.testimonial-quote {
-  font-size: 120px;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 800;
-  line-height: 146px;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: #00a092;
-  margin-bottom: 0;
-  height: 96px;
-  overflow: hidden;
+.testimonial-quote-icon {
+  width: 72px;
+  height: 52px;
+  margin-bottom: 20px;
 }
 
 .testimonial-location {
@@ -974,6 +1005,10 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .pets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .hero-title {
     font-size: 55px;
     line-height: 66px;
@@ -1141,9 +1176,9 @@ button {
     font-size: 26px;
   }
 
-  .testimonial-quote {
-    font-size: 120px;
-    line-height: 147px;
+  .testimonial-quote-icon {
+    width: 60px;
+    height: 48px;
   }
 
   .testimonial-location {
@@ -1235,12 +1270,6 @@ button {
 }
 
 @media (min-width: 1280px) {
-  .pets-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-
   .care-grid {
     grid-template-columns: repeat(4, 1fr);
   }

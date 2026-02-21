@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
   line-height: 1.6;
   color: #000;
   background-color: #fff;
@@ -58,7 +58,9 @@ button {
   text-transform: uppercase;
   padding: 20px 29px;
   border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .btn-primary:hover {
@@ -72,102 +74,52 @@ button {
 }
 
 /* =============================================
-   HEADER
-   ============================================= */
-.header {
-  background-color: #f58021;
-  padding: 30px 0;
-}
-
-.header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.logo-link {
-  display: inline-block;
-}
-
-.logo {
-  width: 96px;
-  height: 50px;
-}
-
-.nav-menu {
-  display: none;
-  gap: 32px;
-}
-
-.nav-link {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 22px;
-  text-transform: uppercase;
-  color: #000;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #00a092;
-}
-
-.nav-link.active {
-  color: #00a092;
-}
-
-.social-links {
-  display: flex;
-  gap: 10px;
-}
-
-.social-link {
-  display: inline-flex;
-  transition: opacity 0.3s ease;
-}
-
-.social-link:hover {
-  opacity: 0.7;
-}
-
-/* =============================================
    CONTACT SECTION
    ============================================= */
-.contact-section {
+.contact-hero {
+  padding-top: 50px;
+}
+
+.contact-hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+}
+
+.contact-content-section {
   padding: 80px 0 120px;
 }
 
-.contact-main-title {
-  font-size: 41px;
-  font-weight: 800;
-  line-height: 50px;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+
+.contact-text-col {
+  padding-right: 0;
+}
+
+.contact-heading {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
   text-transform: uppercase;
   color: #00a092;
-  margin-bottom: 16px;
+  margin-bottom: 30px;
 }
 
-.contact-title {
-  font-size: 27px;
-  font-weight: 600;
-  line-height: 33px;
-  text-transform: uppercase;
-  color: #20113d;
-  margin-bottom: 24px;
-}
-
-.contact-text {
-  font-size: 14px;
+.contact-paragraph {
+  font-size: 16px;
   font-weight: 400;
-  line-height: 27px;
-  color: #000;
-  margin-bottom: 60px;
-  max-width: 700px;
+  line-height: 1.6;
+  color: #333333;
 }
 
-/* --- Contact Form --- */
-.contact-form {
-  max-width: 700px;
+.contact-form-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group {
@@ -177,21 +129,23 @@ button {
 .form-label {
   display: block;
   font-size: 14px;
-  font-weight: 600;
-  line-height: 22px;
-  color: #20113d;
-  margin-bottom: 8px;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 12px;
+}
+
+.required-star {
+  color: #00a092;
 }
 
 .form-input {
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #333333;
+  border-radius: 3px;
   padding: 16px;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 400;
-  line-height: 22px;
   color: #000;
   outline: none;
   transition: border-color 0.3s ease;
@@ -202,148 +156,33 @@ button {
 }
 
 .form-input:focus {
-  border-color: #f58021;
+  border-color: #00a092;
 }
 
 .form-textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 180px;
 }
 
-.btn-submit {
-  margin-top: 16px;
-}
-
-/* =============================================
-   FOOTER
-   ============================================= */
-.footer {
-  background-color: #20113d;
-  padding: 70px 0 48px;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.footer-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-
-.footer-logos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.footer-logo {
-  width: 96px;
-  height: 50px;
-}
-
-.footer-partner-logos {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-.partner-logo {
-  width: 50px;
-  height: 50px;
-}
-
-.rs-logo {
-  width: 138px;
-  height: 51px;
-}
-
-.footer-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.footer-nav-link {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 22px;
-  text-transform: uppercase;
-  color: #fff;
-  transition: color 0.3s ease;
-}
-
-.footer-nav-link:hover {
-  color: #f58021;
-}
-
-.footer-donate-btn {
+.btn-primary.btn-submit {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: transparent;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 22px;
-  text-transform: uppercase;
-  padding: 20px 34px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.footer-donate-btn:hover {
-  background-color: #fff;
-  color: #20113d;
-}
-
-.footer-divider {
-  width: 100%;
-  height: 1px;
-  background-color: #fff;
-}
-
-.footer-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-
-.footer-copyright {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.copyright-text {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 22px;
-  color: #fff;
-}
-
-.footer-social {
-  display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
+  background-color: #00a092;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 18px 32px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  margin-top: 10px;
 }
 
-.footer-social-link {
-  display: inline-flex;
-  transition: opacity 0.3s ease;
-}
-
-.footer-social-link:hover {
-  opacity: 0.7;
+.btn-primary.btn-submit:hover {
+  background-color: #00877a;
 }
 
 /* =============================================
@@ -356,31 +195,17 @@ button {
   }
 
   .contact-text {
-    font-size: 16px;
-  }
+}
 
-  .footer-top {
-    flex-direction: row;
-    justify-content: space-between;
+/* =============================================
+   RESPONSIVE — 900px
+   ============================================= */
+@media (min-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
   }
-
-  .footer-logos {
-    flex-direction: row;
-  }
-
-  .footer-nav {
-    flex-direction: row;
-    gap: 24px;
-  }
-
-  .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .footer-copyright {
-    flex-direction: row;
-    gap: 16px;
+  .contact-text-col {
+    padding-right: 20px;
   }
 }
 
@@ -391,15 +216,6 @@ button {
   .container {
     max-width: 1200px;
     padding: 0 40px;
-  }
-
-  .header-content {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .nav-menu {
-    display: flex;
   }
 
   .contact-main-title {

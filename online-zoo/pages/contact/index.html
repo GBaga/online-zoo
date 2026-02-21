@@ -9,6 +9,9 @@
     <link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.png">
+
+    <link rel="stylesheet" href="../landing/style.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,24 +20,26 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="../landing/index.html" class="logo-link">
-                    <img src="../../assets/icons/logo.svg" alt="Online Zoo" class="logo" width="96" height="50">
+                <a href="../landing/index.html" class="logo">
+                    <img src="../../assets/icons/logo.svg" alt="Online Zoo Logo" class="logo">
                 </a>
                 <nav class="nav-menu">
-                    <a href="../landing/index.html" class="nav-link">About</a>
+                    <a href="../landing/index.html#about" class="nav-link">About</a>
                     <a href="../map/index.html" class="nav-link">Map</a>
                     <a href="../zoos/index.html" class="nav-link">Zoos</a>
                     <a href="#" class="nav-link active">Contact us</a>
+                    <a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project" class="nav-link"
+                        target="_blank" rel="noopener">Design</a>
                 </nav>
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="YouTube">
-                        <img src="../../assets/icons/youtube.svg" alt="YouTube" width="40" height="40">
+                    <a href="#" class="social-link">
+                        <img src="../../assets/icons/youtube-logo.svg" alt="YouTube" class="social-link">
                     </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <img src="../../assets/icons/instagram.svg" alt="Instagram" width="40" height="40">
+                    <a href="#" class="social-link">
+                        <img src="../../assets/icons/Instagram-logo.svg" alt="Instagram" class="social-link">
                     </a>
-                    <a href="#" class="social-link" aria-label="Facebook">
-                        <img src="../../assets/icons/facebook.svg" alt="Facebook" width="40" height="40">
+                    <a href="#" class="social-link">
+                        <img src="../../assets/icons/facebook-logo.svg" alt="Facebook" class="social-link">
                     </a>
                 </div>
             </div>
@@ -42,44 +47,61 @@
     </header>
 
     <main>
-        <!-- Get In Touch Section -->
-        <section class="contact-section">
+        <!-- Contact Hero Image -->
+        <section class="contact-hero">
             <div class="container">
-                <h1 class="contact-main-title">Online Zoo</h1>
-                <h2 class="contact-title">Get in touch</h2>
-                <p class="contact-text">We'd love to hear from you! Whether you have a question about our animals,
-                    webcams, donations, or anything else, our team is ready to answer all your questions.</p>
+                <img src="../../assets/images/contact-page-touch-animal-cheetah.png"
+                    alt="Touch the animal interactive experience" class="contact-hero-image">
+            </div>
+        </section>
 
-                <form class="contact-form" id="contactForm" novalidate>
-                    <div class="form-group">
-                        <label for="name" class="form-label">Your Name *</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name"
-                            required>
-                    </div>
+        <!-- Get In Touch Section -->
+        <section class="contact-content-section">
+            <div class="container contact-grid">
+                <div class="contact-text-col">
+                    <h1 class="contact-heading">GET IN TOUCH</h1>
+                    <p class="contact-paragraph">
+                        Whether you have a question, or would like to say hello, we're happy to hear from you. Please
+                        use the form to send us a message and we'll get back to you as soon as we can.
+                        <br><br>
+                        Whether you have a question, or would like to say hello, we're happy to hear from you. Please
+                        use the form to send us a message and we'll get back to you as soon as we can.
+                    </p>
+                </div>
 
-                    <div class="form-group">
-                        <label for="email" class="form-label">Your Email Address *</label>
-                        <input type="email" id="email" name="email" class="form-input"
-                            placeholder="Enter your email address" required>
-                    </div>
+                <div class="contact-form-col">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name" class="form-label"><span class="required-star">*</span> Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input"
+                                placeholder="First and last name" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Subject *</label>
-                        <input type="text" id="subject" name="subject" class="form-input"
-                            placeholder="Enter message subject" required>
-                    </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label"><span class="required-star">*</span> Your Email
+                                Address</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="Enter your email" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message *</label>
-                        <textarea id="message" name="message" class="form-input form-textarea"
-                            placeholder="Write your message here..." rows="6" required></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label"><span class="required-star">*</span> Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input"
+                                placeholder="Enter the subject" required>
+                        </div>
 
-                    <button type="submit" class="btn-primary btn-submit">
-                        Send message
-                        <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
-                    </button>
-                </form>
+                        <div class="form-group">
+                            <label for="message" class="form-label"><span class="required-star">*</span> Message</label>
+                            <textarea id="message" name="message" class="form-input form-textarea"
+                                placeholder="Enter your message" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-submit">
+                            SEND MESSAGE
+                            <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
+                        </button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
@@ -90,42 +112,44 @@
             <div class="footer-content">
                 <div class="footer-top">
                     <div class="footer-logos">
-                        <img src="../../assets/icons/logo-white.svg" alt="Online Zoo" class="footer-logo" width="96"
-                            height="50">
+                        <a href="../landing/index.html" class="logo">
+                            <img src="../../assets/icons/white-logo-for-footer.svg" alt="Online Zoo Logo"
+                                class="footer-logo">
+                        </a>
                         <div class="footer-partner-logos">
-                            <img src="../../assets/icons/yem-digital.svg" alt="Yem Digital" class="partner-logo"
-                                width="50" height="50">
-                            <img src="../../assets/icons/rsschool.svg" alt="RS School" class="rs-logo" width="138"
-                                height="51">
+                            <img src="../../assets/icons/yem-logo.svg" alt="Yem Digital" class="partner-logo">
+                            <img src="../../assets/icons/rs-school-logo.svg" alt="RS School" class="rs-logo">
                         </div>
                     </div>
                     <nav class="footer-nav">
-                        <a href="../landing/index.html" class="footer-nav-link">About</a>
+                        <a href="../landing/index.html#about" class="footer-nav-link">About</a>
                         <a href="../map/index.html" class="footer-nav-link">Map</a>
                         <a href="../zoos/index.html" class="footer-nav-link">Zoos</a>
                         <a href="#" class="footer-nav-link">Contact us</a>
                     </nav>
                     <a href="#" class="footer-donate-btn">
-                        Donate for volunteers
-                        <img src="../../assets/icons/arrow-right.svg" alt="" class="btn-icon" width="24" height="22">
+                        donate for volunteers
+                        <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
                     </a>
                 </div>
+
                 <div class="footer-divider"></div>
+
                 <div class="footer-bottom">
                     <div class="footer-copyright">
-                        <span class="copyright-text">&copy; 2021 DinaK</span>
-                        <span class="copyright-text">&copy; Yem Digital</span>
-                        <span class="copyright-text">&copy; RSSchool</span>
+                        <span class="copyright-text">© 2021 DinaK</span>
+                        <span class="copyright-text">© Yem Digital</span>
+                        <span class="copyright-text">© RSSchool</span>
                     </div>
                     <div class="footer-social">
-                        <a href="#" class="footer-social-link" aria-label="YouTube">
-                            <img src="../../assets/icons/youtube.svg" alt="YouTube" width="40" height="40">
+                        <a href="#" class="footer-social-link">
+                            <img src="../../assets/icons/youtube-logo.svg" alt="YouTube">
                         </a>
-                        <a href="#" class="footer-social-link" aria-label="Instagram">
-                            <img src="../../assets/icons/instagram.svg" alt="Instagram" width="40" height="40">
+                        <a href="#" class="footer-social-link">
+                            <img src="../../assets/icons/Instagram-logo.svg" alt="Instagram">
                         </a>
-                        <a href="#" class="footer-social-link" aria-label="Facebook">
-                            <img src="../../assets/icons/facebook.svg" alt="Facebook" width="40" height="40">
+                        <a href="#" class="footer-social-link">
+                            <img src="../../assets/icons/facebook-logo.svg" alt="Facebook">
                         </a>
                     </div>
                 </div>
