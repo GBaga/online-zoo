@@ -1,4 +1,7 @@
-/* Footer Styles */
+/* =========================================
+   Footer Styles — Responsive
+   ========================================= */
+
 .footer {
   background-color: var(--bg-dark);
   color: var(--text-light);
@@ -12,6 +15,7 @@
   gap: 40px;
 }
 
+/* Top row: subscribe form + logo */
 .footer-top {
   display: flex;
   justify-content: space-between;
@@ -37,6 +41,7 @@
   border-radius: 5px;
   width: 228px;
   outline: none;
+  font-family: inherit;
 }
 
 .email-form input::placeholder {
@@ -56,6 +61,7 @@
   background-color: var(--bg-orange-hover);
 }
 
+/* Middle row: nav + logos */
 .footer-middle {
   display: flex;
   justify-content: space-between;
@@ -67,6 +73,7 @@
   gap: 58px;
 }
 
+/* Bottom row: socials + copyright */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -104,4 +111,102 @@
   font-size: 16px;
   font-weight: 100;
   color: var(--text-light);
+}
+
+/* =========================================
+   Responsive — 1200px
+   ========================================= */
+
+@media (max-width: 1200px) {
+  .footer-nav-list {
+    gap: 30px;
+  }
+
+  .subscribe-form p {
+    font-size: 20px;
+  }
+
+  .email-form input {
+    width: 180px;
+  }
+}
+
+/* =========================================
+   Responsive — 640px
+   ========================================= */
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 30px 0;
+    margin-top: 60px;
+  }
+
+  .footer-content {
+    gap: 24px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .email-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .email-form input {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .footer-middle {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-nav-list {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .copyright {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   Responsive — 320px
+   ========================================= */
+
+@media (max-width: 320px) {
+  .footer {
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+
+  .footer-content {
+    gap: 16px;
+  }
+
+  .subscribe-form p {
+    font-size: 16px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+
+  .socials {
+    gap: 12px;
+  }
 }

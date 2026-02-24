@@ -24,7 +24,9 @@ body {
 }
 
 .zoo-sidebar {
-  position: relative;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
   flex: 0 0 220px;
   width: 220px;
   height: 846px;
@@ -34,6 +36,7 @@ body {
     width 0.3s ease,
     flex-basis 0.3s ease;
   overflow: hidden;
+  z-index: 50;
 }
 
 /* Expanded sidebar */
@@ -248,78 +251,261 @@ a.sidebar-circle--orange:hover,
 }
 
 /* ---- RESPONSIVE ---- */
-@media (max-width: 1024px) {
+/* =========================================
+   RESPONSIVE — 1200px
+   ========================================= */
+@media (max-width: 1200px) {
   .zoo-title {
     font-size: clamp(24px, 3.5vw, 40px);
   }
   .zoo-sidebar {
-    flex: 0 0 180px;
-    width: 180px;
+    flex: 0 0 160px;
+    width: 160px;
   }
-  .sidebar-animal-slot {
-    left: 27px;
+  .sidebar-circle {
+    width: 80px;
+    height: 80px;
+  }
+  .sidebar-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .zoo-cam-section {
+    padding: 0 20px 40px;
+  }
+  .zoo-donation-section .donation-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .zoo-info-layout {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .zoo-info-image-wrap {
+    flex: unset;
+    width: 100%;
+    text-align: center;
+  }
+  .zoo-info-image {
+    width: 100%;
+    max-width: 300px;
   }
 }
 
-@media (max-width: 768px) {
+/* =========================================
+   RESPONSIVE — 640px (Sidebar Mobile Vertical)
+   ========================================= */
+@media (max-width: 640px) {
+  .zoo-cam-wrapper {
+    flex-direction: row;
+  }
+
+  /* Convert sidebar to a thin vertical strip */
+  .zoo-sidebar {
+    width: 60px;
+    height: auto;
+    flex: 0 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 0;
+    position: relative;
+    overflow: visible;
+  }
+
+  .zoo-sidebar.expanded {
+    flex: 0 0 60px;
+    width: 60px;
+  }
+
+  /* Hide specific desktop elements */
+  .sidebar-live-badge,
+  .sidebar-divider,
+  .sidebar-animal-text {
+    display: none !important;
+  }
+
+  /* Make arrows visible and part of flow */
+  .sidebar-arrows {
+    display: flex !important;
+    position: static;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ffffff;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-down-arrow {
+    display: flex !important;
+    position: static;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    transform: none;
+    margin-top: auto;
+  }
+
+  /* Make sidebar nav vertical */
+  .sidebar-nav {
+    position: static;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    gap: 0;
+  }
+
+  .animal-nav-item {
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    border-top: none;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .animal-nav-item:last-child {
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .zoo-sidebar.expanded .animal-nav-item {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  /* Remove circle backgrounds, maintain icon size */
+  .sidebar-circle,
+  .sidebar-circle--active,
+  .sidebar-circle--orange {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    background: transparent !important;
+    outline: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidebar-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    /* Default to orange for inactive items */
+    filter: brightness(0) saturate(100%) invert(58%) sepia(82%) saturate(1487%)
+      hue-rotate(346deg) brightness(101%) contrast(95%);
+  }
+
+  .animal-nav-item.active .sidebar-icon {
+    /* White for active item */
+    filter: brightness(0) invert(1);
+  }
+
+  /* Hero */
   .zoo-hero {
     flex-direction: column;
     align-items: flex-start;
     padding: 24px 0 20px;
     gap: 16px;
   }
+
   .zoo-title {
     font-size: clamp(22px, 6vw, 36px);
   }
+
   .zoo-donate-btn {
     width: 100%;
     justify-content: center;
     padding: 16px 24px;
   }
-  .zoo-cam-wrapper {
-    flex-direction: column;
-  }
+
   .zoo-cam-section {
-    padding: 0 20px 40px;
+    padding: 0 10px 30px;
   }
-  .zoo-sidebar {
+
+  /* Carousel */
+  .zoo-cam-strip-wrapper {
+    overflow-x: auto;
+  }
+
+  /* Donation */
+  .zoo-donation-section {
+    padding: 40px 0;
+  }
+
+  .zoo-donation-section .donation-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .zoo-donation-section .donate-input {
     width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding: 16px 0;
-    position: static;
   }
-  .sidebar-live-badge,
-  .sidebar-arrows,
-  .sidebar-divider,
-  .sidebar-down-arrow {
-    display: none;
+
+  /* Did You Know */
+  .zoo-fact-card {
+    padding: 30px 20px;
   }
-  .sidebar-animal-slot {
-    position: static;
-    width: auto;
+
+  .zoo-fact-title {
+    font-size: 22px;
+  }
+
+  .zoo-fact-text {
+    font-size: 14px;
+  }
+
+  /* Animal Info */
+  .zoo-info-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .zoo-info-image-wrap {
+    flex: unset;
+    width: 100%;
+  }
+
+  .zoo-info-image {
+    width: 100%;
+    max-width: 100%;
     height: auto;
   }
 }
 
-@media (max-width: 480px) {
+/* =========================================
+   RESPONSIVE — 320px
+   ========================================= */
+@media (max-width: 320px) {
   .zoo-title {
-    font-size: clamp(20px, 7vw, 28px);
+    font-size: 20px;
   }
+
   .zoo-donate-btn {
-    font-size: 14px;
-    padding: 14px 20px;
+    font-size: 12px;
+    padding: 12px 16px;
   }
-  .sidebar-circle {
-    width: 72px;
-    height: 72px;
-  }
+
   .sidebar-icon {
-    width: 54px;
-    height: 54px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .zoo-cam-section {
+    padding: 0 5px 20px;
+  }
+
+  .zoo-fact-card {
+    padding: 20px 15px;
+  }
+
+  .zoo-fact-title {
+    font-size: 18px;
   }
 }
 
@@ -358,6 +544,7 @@ a.sidebar-circle--orange:hover,
   padding: 6px 12px;
   border-radius: 3px;
   z-index: 2;
+  display: none; /* Hidden visually because placeholder images already have baked-in label text */
 }
 
 .zoo-video-link {
@@ -367,7 +554,8 @@ a.sidebar-circle--orange:hover,
 
 .zoo-video-img {
   width: 100%;
-  height: 500px;
+  height: auto;
+  max-height: 500px;
   object-fit: cover;
   display: block;
 }
@@ -417,6 +605,7 @@ a.sidebar-circle--orange:hover,
   padding: 3px 8px;
   border-radius: 3px;
   letter-spacing: 1px;
+  display: none; /* Hidden visually because placeholder images already have baked-in label text */
 }
 
 .zoo-logo-small {
@@ -463,10 +652,13 @@ a.sidebar-circle--orange:hover,
   display: flex;
   gap: 20px;
   flex: 1;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .zoo-cam-thumb {
-  flex: 0 0 320px;
+  flex: 0 0 280px;
+  min-width: 200px;
   position: relative;
   border-radius: 5px;
   overflow: hidden;

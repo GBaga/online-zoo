@@ -163,25 +163,54 @@ body {
     line-height: 54px;
   }
   .map-pin {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
   }
-}
-
-@media (max-width: 768px) {
-  .map-page-title {
-    font-size: 34px;
-    line-height: 44px;
+  .map-pin .pin-icon {
+    width: 24px;
   }
-  .map-pin {
-    width: 16px;
-    height: 16px;
+  .map-page-main {
+    padding-top: 100px;
   }
 }
 
 @media (max-width: 640px) {
   .map-page-title {
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .map-pin {
+    width: 24px;
+    height: 24px;
+  }
+  .map-pin .pin-icon {
+    width: 16px;
+  }
+  .map-header-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .map-section {
+    padding-bottom: 40px;
+  }
+  .map-page-main {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 320px) {
+  .map-page-title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .map-pin {
+    width: 18px;
+    height: 18px;
+  }
+  .map-pin .pin-icon {
+    width: 12px;
+  }
+  .map-page-main {
+    padding-top: 60px;
   }
 }
