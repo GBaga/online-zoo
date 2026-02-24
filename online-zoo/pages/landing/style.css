@@ -585,7 +585,10 @@ section {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.testimonials-bottom-btn {
+.testimonials-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 40px;
 }
 
@@ -1258,6 +1261,11 @@ section {
     padding: 18px 30px;
     width: 100%;
     justify-content: center;
+  }
+
+  .testimonials-bottom {
+    flex-direction: column;
+    gap: 24px;
   }
 
   /* --- Care Section --- */
