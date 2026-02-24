@@ -30,6 +30,16 @@ body {
   height: 846px;
   background: #20113d;
   flex-shrink: 0;
+  transition:
+    width 0.3s ease,
+    flex-basis 0.3s ease;
+  overflow: hidden;
+}
+
+/* Expanded sidebar */
+.zoo-sidebar.expanded {
+  flex: 0 0 300px;
+  width: 300px;
 }
 
 /* LIVE badge */
@@ -64,26 +74,78 @@ body {
   right: 17px;
   top: 22px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Flip arrows when expanded */
+.zoo-sidebar.expanded .sidebar-arrows {
+  transform: scaleX(-1);
 }
 
 /* Horizontal dividers */
 .sidebar-divider {
   position: absolute;
   left: 0;
-  width: 220px;
+  width: 100%;
   height: 0;
   border-top: 1px solid #ffffff;
 }
 
-/* Animal slots */
-.sidebar-animal-slot {
+/* --- Sidebar Navigation --- */
+.sidebar-nav {
   position: absolute;
-  left: 47px;
-  width: 126px;
-  height: 126px;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.animal-nav-item {
   display: flex;
   align-items: center;
+  gap: 16px;
+  padding: 24px 0;
   justify-content: center;
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.animal-nav-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.animal-nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.animal-nav-item.active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Text labels — hidden by default */
+.sidebar-animal-text {
+  display: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #ffffff;
+  max-width: 140px;
+}
+
+/* Show text when expanded */
+.zoo-sidebar.expanded .sidebar-animal-text {
+  display: block;
+}
+
+/* Center circle when collapsed, align left when expanded */
+.zoo-sidebar.expanded .animal-nav-item {
+  justify-content: flex-start;
+  padding-left: 30px;
 }
 
 /* Base circle */
@@ -97,6 +159,7 @@ body {
   justify-content: center;
   overflow: hidden;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 /* Active (panda) = white with white border ring */
@@ -116,7 +179,8 @@ body {
 }
 
 /* Hover on inactive circles */
-a.sidebar-circle--orange:hover {
+a.sidebar-circle--orange:hover,
+.animal-nav-item:hover .sidebar-circle--orange {
   filter: brightness(1.15);
   transform: scale(1.05);
   transition:

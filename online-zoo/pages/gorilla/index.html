@@ -15,6 +15,7 @@
     <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.png">
 
     <link rel="stylesheet" href="../landing/style.css">
+    <link rel="stylesheet" href="../../assets/css/popups.css">
     <link rel="stylesheet" href="../zoos/style.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -57,7 +58,7 @@
         <div class="zoo-cam-wrapper">
 
             <!-- LEFT SIDEBAR -->
-            <aside class="zoo-sidebar">
+            <aside class="zoo-sidebar" id="sidePanel">
 
                 <!-- LIVE badge -->
                 <div class="sidebar-live-badge">
@@ -69,52 +70,50 @@
                     </svg>
                 </div>
 
-                <!-- >> arrows -->
-                <div class="sidebar-arrows">
+                <!-- Toggle arrows -->
+                <div class="sidebar-arrows" id="panelToggle">
                     <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 13.659L8.365 15 16 7.5 8.365 0 7 1.341 13.27 7.5 7 13.659Z" fill="white" />
                         <path d="M0 13.659L1.365 15 9 7.5 1.365 0 0 1.341 6.27 7.5 0 13.659Z" fill="white" />
                     </svg>
                 </div>
 
-                <!-- Top divider -->
-                <div class="sidebar-divider" style="top:80px"></div>
+                <!-- Animal Navigation -->
+                <nav class="sidebar-nav">
 
-                <!-- Panda -->
-                <div class="sidebar-animal-slot" style="top:105px">
-                    <a href="../zoos/index.html" class="sidebar-circle sidebar-circle--orange">
-                        <img src="../../assets/icons/Panda.png" alt="Panda" class="sidebar-icon">
+                    <!-- Panda -->
+                    <a href="../zoos/index.html" class="animal-nav-item" data-animal="panda">
+                        <div class="sidebar-circle sidebar-circle--orange">
+                            <img src="../../assets/icons/Panda.png" alt="Panda" class="sidebar-icon">
+                        </div>
+                        <span class="sidebar-animal-text">Watch live from China's Panda Center</span>
                     </a>
-                </div>
 
-                <div class="sidebar-divider" style="top:251px"></div>
-
-                <!-- Eagle -->
-                <div class="sidebar-animal-slot" style="top:274px">
-                    <a href="../eagle/index.html" class="sidebar-circle sidebar-circle--orange">
-                        <img src="../../assets/icons/Eagle.png" alt="Eagle" class="sidebar-icon">
+                    <!-- Eagle -->
+                    <a href="../eagle/index.html" class="animal-nav-item" data-animal="eagle">
+                        <div class="sidebar-circle sidebar-circle--orange">
+                            <img src="../../assets/icons/Eagle.png" alt="Eagle" class="sidebar-icon">
+                        </div>
+                        <span class="sidebar-animal-text">The Bald Eagles Nest from West End cam</span>
                     </a>
-                </div>
 
-                <div class="sidebar-divider" style="top:423px"></div>
-
-                <!-- Gorilla — ACTIVE -->
-                <div class="sidebar-animal-slot" style="top:452px">
-                    <div class="sidebar-circle sidebar-circle--active">
-                        <img src="../../assets/icons/Gorilla.png" alt="Gorilla" class="sidebar-icon">
+                    <!-- Gorilla — ACTIVE -->
+                    <div class="animal-nav-item active" data-animal="gorilla">
+                        <div class="sidebar-circle sidebar-circle--active">
+                            <img src="../../assets/icons/Gorilla.png" alt="Gorilla" class="sidebar-icon">
+                        </div>
+                        <span class="sidebar-animal-text">Live from Gorilla Forest Corridor habitat cam</span>
                     </div>
-                </div>
 
-                <div class="sidebar-divider" style="top:594px"></div>
-
-                <!-- Lemur -->
-                <div class="sidebar-animal-slot" style="top:617px">
-                    <a href="../lemur/index.html" class="sidebar-circle sidebar-circle--orange">
-                        <img src="../../assets/icons/Lemur.png" alt="Lemur" class="sidebar-icon">
+                    <!-- Lemur -->
+                    <a href="../lemur/index.html" class="animal-nav-item" data-animal="lemur">
+                        <div class="sidebar-circle sidebar-circle--orange">
+                            <img src="../../assets/icons/Lemur.png" alt="Lemur" class="sidebar-icon">
+                        </div>
+                        <span class="sidebar-animal-text">Lemurs play in Madagascar, Lemuria Land</span>
                     </a>
-                </div>
 
-                <div class="sidebar-divider" style="top:766px"></div>
+                </nav>
 
                 <!-- Down arrow -->
                 <div class="sidebar-down-arrow">
@@ -131,7 +130,7 @@
                 <!-- HERO -->
                 <div class="zoo-hero">
                     <h1 class="zoo-title">Gorillas Cams</h1>
-                    <a href="#donate" class="zoo-donate-btn">
+                    <a href="#donate" class="zoo-donate-btn" data-popup="donationPopup">
                         Donate now
                         <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
                     </a>
@@ -237,7 +236,7 @@
                         <div class="donate-form">
                             <input type="text" placeholder="$ Donation Amount" class="donate-input"
                                 aria-label="Donation amount">
-                            <button class="donate-btn" type="button">
+                            <button class="donate-btn" type="button" data-popup="donationPopup">
                                 <img src="../../assets/icons/right-arrow-white.svg" alt="">
                             </button>
                         </div>
@@ -343,7 +342,7 @@
                         <a href="../zoos/index.html" class="footer-nav-link">Zoos</a>
                         <a href="../contact/index.html" class="footer-nav-link">Contact us</a>
                     </nav>
-                    <a href="#donate" class="footer-donate-btn">
+                    <a href="#donate" class="footer-donate-btn" data-popup="donationPopup">
                         donate for volunteers
                         <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
                     </a>
@@ -371,6 +370,145 @@
         </div>
     </footer>
 
+    <!-- POPUP: TOGETHER WE CARE -->
+    <div class="popup-overlay" id="feedPopup">
+        <div class="popup-modal">
+            <button class="popup-close" aria-label="Close">&times;</button>
+            <img src="../../assets/images/popup-feed-hero.png" alt="Together we care" class="popup-hero-image">
+            <div class="popup-body">
+                <h2 class="popup-title">Together we care, save and protect!</h2>
+                <p class="popup-text">Your most generous gift not only cares for countless animals, but it also offers
+                    hope and a vital lifeline to the world's most endangered wildlife relying on us to survive.</p>
+                <div class="popup-amounts">
+                    <button class="popup-amount-btn">$20</button>
+                    <button class="popup-amount-btn">$30</button>
+                    <button class="popup-amount-btn">$50</button>
+                    <button class="popup-amount-btn">$80</button>
+                    <button class="popup-amount-btn">$100</button>
+                    <button class="popup-amount-btn">OTHER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP: MAKE YOUR DONATION (3-step) -->
+    <div class="popup-overlay" id="donationPopup">
+        <div class="popup-modal">
+            <button class="popup-close" aria-label="Close">&times;</button>
+            <div class="popup-header">
+                <h2 class="popup-header-title">Make your <span
+                        style="background:#f5c542;padding:2px 8px;border-radius:3px;">donation</span></h2>
+            </div>
+            <div class="popup-step popup-step--active">
+                <h3 class="popup-section-title">Donation Information:</h3>
+                <p class="popup-label"><span class="required-star">*</span> Choose your donation amount:</p>
+                <div class="popup-amount-row popup-amounts">
+                    <button class="popup-amount-btn">$10</button>
+                    <button class="popup-amount-btn">$20</button>
+                    <button class="popup-amount-btn">$30</button>
+                    <button class="popup-amount-btn">$50</button>
+                    <button class="popup-amount-btn">$80</button>
+                    <button class="popup-amount-btn">$100</button>
+                </div>
+                <div class="popup-other-row">
+                    <button class="popup-other-btn">Other amount</button>
+                    <input type="text" class="popup-other-input" placeholder="">
+                </div>
+                <div class="popup-pet-row">
+                    <span class="popup-pet-btn">For special pet</span>
+                    <div class="popup-dropdown" id="pet-dropdown">
+                        <button type="button" class="popup-dropdown-toggle">Choose your favourite</button>
+                        <ul class="popup-dropdown-list">
+                            <li class="popup-dropdown-item">Lucas the Panda</li>
+                            <li class="popup-dropdown-item">Andy the Lemur</li>
+                            <li class="popup-dropdown-item">Glen the Gorilla</li>
+                            <li class="popup-dropdown-item">Sam the Alligator</li>
+                            <li class="popup-dropdown-item">Sam &amp; Lora the eagles family</li>
+                            <li class="popup-dropdown-item">Liz the Koala</li>
+                            <li class="popup-dropdown-item">Shake the Lion</li>
+                            <li class="popup-dropdown-item">Sara the Tiger</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="popup-checkbox-row">
+                    <input type="checkbox" class="popup-checkbox" id="monthlyGiftGorilla">
+                    <label for="monthlyGiftGorilla" class="popup-checkbox-label">Make this a monthly recurring
+                        gift</label>
+                </div>
+            </div>
+            <div class="popup-step">
+                <h3 class="popup-section-title">Billing Information:</h3>
+                <div class="popup-form-group">
+                    <label class="popup-label"><span class="required-star">*</span> Your Name</label>
+                    <input type="text" class="popup-input" placeholder="First and last name">
+                </div>
+                <div class="popup-form-group">
+                    <label class="popup-label"><span class="required-star">*</span> Your Email Address</label>
+                    <input type="email" class="popup-input" placeholder="Enter your email">
+                </div>
+                <p class="popup-hint">You will receive emails from the Online Zoo, including updates and news on the
+                    latest discoveries and translations. You can unsubscribe at any time.</p>
+            </div>
+            <div class="popup-step">
+                <h3 class="popup-section-title">Payment Information:</h3>
+                <div class="popup-payment-row">
+                    <div class="popup-form-group">
+                        <label class="popup-label"><span class="required-star">*</span> Credit Card Number</label>
+                        <input type="text" class="popup-input" placeholder="">
+                    </div>
+                    <div class="popup-form-group">
+                        <label class="popup-label"><span class="required-star">*</span> CVV Number</label>
+                        <input type="text" class="popup-input" placeholder="">
+                    </div>
+                </div>
+                <div class="popup-form-group">
+                    <label class="popup-label"><span class="required-star">*</span> Expiration Date</label>
+                    <div class="popup-expiry-row">
+                        <select class="popup-select">
+                            <option value="" disabled selected>Month</option>
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                            <option>06</option>
+                            <option>07</option>
+                            <option>08</option>
+                            <option>09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+                        <select class="popup-select">
+                            <option value="" disabled selected>Year</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                            <option>2027</option>
+                            <option>2028</option>
+                            <option>2029</option>
+                            <option>2030</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <div class="popup-dots">
+                    <span class="popup-dot popup-dot--active"></span>
+                    <span class="popup-dot"></span>
+                    <span class="popup-dot"></span>
+                </div>
+                <div style="display:flex;align-items:center;gap:20px;">
+                    <button class="popup-back-btn" style="display:none;">Back</button>
+                    <button class="popup-next-btn">
+                        NEXT
+                        <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../zoos/script.js"></script>
 </body>
 
 </html>

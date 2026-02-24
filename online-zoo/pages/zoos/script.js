@@ -165,6 +165,20 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       steps[0].classList.add("popup-step--active");
     }
+    // Reset dots
+    var dots = popup.querySelectorAll(".popup-dot");
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle("popup-dot--active", i === 0);
+    });
+    // Reset back button
+    var backBtn = popup.querySelector(".popup-back-btn");
+    if (backBtn) backBtn.style.display = "none";
+    // Reset next button text
+    var nextBtn = popup.querySelector(".popup-next-btn");
+    if (nextBtn) {
+      nextBtn.innerHTML =
+        'NEXT <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">';
+    }
   }
 
   popupTriggers.forEach(function (trigger) {
@@ -189,17 +203,64 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* Multi-step navigation */
+  function updateDots(popup, activeIndex) {
+    var dots = popup.querySelectorAll(".popup-dot");
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle("popup-dot--active", i <= activeIndex);
+    });
+  }
+
+  function getCurrentStepIndex(popup) {
+    var steps = popup.querySelectorAll(".popup-step");
+    for (var i = 0; i < steps.length; i++) {
+      if (steps[i].classList.contains("popup-step--active")) return i;
+    }
+    return 0;
+  }
+
   var nextButtons = document.querySelectorAll(".popup-next-btn");
   nextButtons.forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var currentStep = this.closest(".popup-step");
+      var popup = this.closest(".popup-overlay");
+      var currentStep = popup.querySelector(".popup-step--active");
       var nextStep = currentStep.nextElementSibling;
       if (nextStep && nextStep.classList.contains("popup-step")) {
         currentStep.classList.remove("popup-step--active");
         nextStep.classList.add("popup-step--active");
+        var newIndex = getCurrentStepIndex(popup);
+        updateDots(popup, newIndex);
+        var backBtn = popup.querySelector(".popup-back-btn");
+        if (backBtn) backBtn.style.display = "inline";
+        var allSteps = popup.querySelectorAll(".popup-step");
+        if (newIndex === allSteps.length - 1) {
+          this.innerHTML =
+            'COMPLETE DONATION <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">';
+        }
       } else {
         var overlay = this.closest(".popup-overlay");
         if (overlay) closePopup(overlay);
+      }
+    });
+  });
+
+  /* Back buttons */
+  var backButtons = document.querySelectorAll(".popup-back-btn");
+  backButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var popup = this.closest(".popup-overlay");
+      var currentStep = popup.querySelector(".popup-step--active");
+      var prevStep = currentStep.previousElementSibling;
+      if (prevStep && prevStep.classList.contains("popup-step")) {
+        currentStep.classList.remove("popup-step--active");
+        prevStep.classList.add("popup-step--active");
+        var newIndex = getCurrentStepIndex(popup);
+        updateDots(popup, newIndex);
+        if (newIndex === 0) this.style.display = "none";
+        var nextBtn = popup.querySelector(".popup-next-btn");
+        if (nextBtn) {
+          nextBtn.innerHTML =
+            'NEXT <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">';
+        }
       }
     });
   });
