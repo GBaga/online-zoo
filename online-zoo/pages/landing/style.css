@@ -585,6 +585,10 @@ section {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.testimonials-bottom-btn {
+  margin-top: 40px;
+}
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
