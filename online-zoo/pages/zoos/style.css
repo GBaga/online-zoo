@@ -544,7 +544,6 @@ a.sidebar-circle--orange:hover,
   padding: 6px 12px;
   border-radius: 3px;
   z-index: 2;
-  display: none; /* Hidden visually because placeholder images already have baked-in label text */
 }
 
 .zoo-video-link {

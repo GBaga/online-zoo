@@ -269,7 +269,7 @@ section {
 }
 
 .nav-btn {
-  border: none;
+  border: 2px solid #20113d;
   border-radius: 5px;
   padding: 0;
   background: transparent;
@@ -397,9 +397,14 @@ section {
   color: #ffffff;
 }
 
+.choose-btn:hover img {
+  filter: brightness(0) invert(1);
+}
+
 .choose-btn img {
   width: 26px;
   height: 22px;
+  transition: filter 0.3s ease;
 }
 
 /* Pay and Feed Section */
@@ -787,16 +792,14 @@ section {
 
 /* Touch Section */
 .touch-section {
-  /* Added padding here so the image doesn't touch the screen edges on mobile */
-  padding: 0 20px;
-  /* Ensures the container tries to center its children */
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1670px;
+  margin: auto;
 }
 
 .touch-image {
-  max-width: 1400px;
   width: 100%;
   height: auto;
   /* Key Fix: margin: auto needs block display to center */
@@ -1032,10 +1035,6 @@ section {
 
   .care-card-image {
     height: 280px;
-  }
-
-  .touch-image {
-    margin-bottom: 80px;
   }
 
   .footer-nav {
