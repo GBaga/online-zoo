@@ -652,6 +652,10 @@ section {
   padding: 100px 0 137px;
 }
 
+.care-section .care-container {
+  max-width: 1400px;
+}
+
 .care-header {
   text-align: center;
   margin-bottom: 50px;
@@ -795,7 +799,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1670px;
+  max-width: 1920px;
+  padding: 0 80px;
   margin: auto;
 }
 
@@ -1011,6 +1016,17 @@ section {
     gap: 30px;
   }
 
+  .step-info {
+    grid-template-areas:
+      "icon"
+      "title"
+      "desc"
+      "btn";
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
   .testimonials-left {
     flex: 0 0 340px;
   }
@@ -1043,6 +1059,10 @@ section {
 
   .footer-logos {
     gap: 16px;
+  }
+
+  .touch-section {
+    padding: 0;
   }
 }
 
@@ -1200,7 +1220,7 @@ section {
   }
 
   .step-info {
-    grid-template-columns: 40px 1fr;
+    /* Inherits 1fr and centered layout from < 1200px */
   }
 
   .step-icon {
