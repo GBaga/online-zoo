@@ -40,7 +40,7 @@ body {
 }
 
 /* Expanded sidebar */
-.zoo-sidebar.expanded {
+body:has(#sidebar-toggle:checked) .zoo-sidebar {
   flex: 0 0 300px;
   width: 300px;
 }
@@ -81,7 +81,7 @@ body {
 }
 
 /* Flip arrows when expanded */
-.zoo-sidebar.expanded .sidebar-arrows {
+body:has(#sidebar-toggle:checked) .sidebar-arrows {
   transform: scaleX(-1);
 }
 
@@ -125,8 +125,44 @@ body {
   background: rgba(255, 255, 255, 0.05);
 }
 
-.animal-nav-item.active {
+/* Base circle */
+.sidebar-circle {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: #f58021;
+}
+
+/* Hover on inactive circles */
+.animal-nav-item:hover .sidebar-circle {
+  filter: brightness(1.15);
+  transform: scale(1.05);
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+/* --- Native Radio Button Action --- */
+input[name="animal-tab"]:checked + .animal-nav-item {
   background: rgba(255, 255, 255, 0.08);
+}
+
+input[name="animal-tab"]:checked + .animal-nav-item .sidebar-circle {
+  background: #ffffff;
+  outline: 3px solid #ffffff;
+  outline-offset: 6px;
+  box-shadow:
+    0 0 0 9px #20113d,
+    0 0 0 12px #ffffff;
+  transform: none; /* Stops hover effect while active */
+  filter: none;
 }
 
 /* Text labels — hidden by default */
@@ -141,54 +177,19 @@ body {
 }
 
 /* Show text when expanded */
-.zoo-sidebar.expanded .sidebar-animal-text {
+body:has(#sidebar-toggle:checked) .sidebar-animal-text {
+  display: block;
+}
+
+/* Show text when expanded */
+body:has(#sidebar-toggle:checked) .sidebar-animal-text {
   display: block;
 }
 
 /* Center circle when collapsed, align left when expanded */
-.zoo-sidebar.expanded .animal-nav-item {
+body:has(#sidebar-toggle:checked) .animal-nav-item {
   justify-content: flex-start;
   padding-left: 30px;
-}
-
-/* Base circle */
-.sidebar-circle {
-  width: 104px;
-  height: 104px;
-  border-radius: 50%;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-/* Active (panda) = white with white border ring */
-.sidebar-circle--active {
-  background: #ffffff;
-  outline: 3px solid #ffffff;
-  outline-offset: 6px;
-  box-shadow:
-    0 0 0 9px #20113d,
-    0 0 0 12px #ffffff;
-}
-
-/* Other animals = orange */
-.sidebar-circle--orange {
-  background: #f58021;
-  text-decoration: none;
-}
-
-/* Hover on inactive circles */
-a.sidebar-circle--orange:hover,
-.animal-nav-item:hover .sidebar-circle--orange {
-  filter: brightness(1.15);
-  transform: scale(1.05);
-  transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
 }
 
 /* Animal icons */
@@ -226,6 +227,22 @@ a.sidebar-circle--orange:hover,
   line-height: 1.2;
   text-transform: uppercase;
   color: #00a092;
+}
+
+/* ====================================
+   NATIVE CSS TABS LOGIC
+   ==================================== */
+.animal-info-tab {
+  display: none;
+}
+
+/* Connect inputs to tabs by order or ID hack */
+/* body:has(#tab-panda:checked) => show .tab-panda-content */
+body:has(#tab-panda:checked) .tab-panda-content,
+body:has(#tab-eagle:checked) .tab-eagle-content,
+body:has(#tab-gorilla:checked) .tab-gorilla-content,
+body:has(#tab-lemur:checked) .tab-lemur-content {
+  display: block;
 }
 
 .zoo-donate-btn {
@@ -653,6 +670,14 @@ a.sidebar-circle--orange:hover,
   flex: 1;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.zoo-cam-track::-webkit-scrollbar {
+  display: none;
 }
 
 .zoo-cam-thumb {
@@ -664,6 +689,7 @@ a.sidebar-circle--orange:hover,
   display: block;
   text-decoration: none;
   border: 3px solid transparent;
+  scroll-snap-align: start;
 }
 
 .zoo-cam-thumb.active {

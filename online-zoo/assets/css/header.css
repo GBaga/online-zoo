@@ -109,19 +109,25 @@
   border-radius: 2px;
   transition:
     transform 0.3s ease,
-    opacity 0.3s ease;
+    opacity 0.3s ease,
+    background 0.3s ease;
 }
 
 /* Hamburger X animation */
-.hamburger-btn.open span:nth-child(1) {
+#mobile-menu-toggle:checked + .hamburger-btn span {
+  background: #ffffff;
+}
+
+/* Hamburger X animation */
+#mobile-menu-toggle:checked + .hamburger-btn span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
 
-.hamburger-btn.open span:nth-child(2) {
+#mobile-menu-toggle:checked + .hamburger-btn span:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger-btn.open span:nth-child(3) {
+#mobile-menu-toggle:checked + .hamburger-btn span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
@@ -159,6 +165,16 @@
 .mobile-nav-overlay .nav-link:hover,
 .mobile-nav-overlay .nav-link.active {
   color: #f58021;
+}
+
+/* CSS Hack: Open Overlay & Lock Scroll */
+body:has(#mobile-menu-toggle:checked) {
+  overflow: hidden;
+}
+
+/* Display the overlay when the hidden checkbox is checked */
+body:has(#mobile-menu-toggle:checked) .mobile-nav-overlay {
+  display: flex;
 }
 
 /* =========================================

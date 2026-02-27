@@ -18,8 +18,37 @@
   padding: 20px;
 }
 
-.popup-overlay.active {
+/* ====================================
+   NATIVE CSS CHECKBOX HACK FOR POPUPS
+   ==================================== */
+/* The hidden toggles sit just above their respect overlay. 
+   When checked, turn on the adjacent .popup-overlay */
+.popup-toggle:checked + .popup-overlay {
   display: flex;
+}
+
+/* Optional full-screen background closer */
+.popup-bg-closer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 1; /* Below the modal, above the overlay background */
+}
+
+/* Ensure the modal sits above the closer label */
+.popup-modal {
+  background: #fff;
+  width: 100%;
+  max-width: 560px;
+  border-radius: 0;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 /* --- Modal Container --- */
@@ -47,6 +76,7 @@
   z-index: 10;
   line-height: 1;
   transition: opacity 0.2s;
+  display: inline-block;
 }
 
 .popup-close:hover {
@@ -85,6 +115,17 @@
 }
 
 /* --- Amount Buttons --- */
+.amount-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .popup-amounts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -114,7 +155,7 @@
   background-color: #00877a;
 }
 
-.popup-amount-btn--active {
+.amount-radio:checked + .popup-amount-btn {
   background-color: #f58021;
   border-color: #f58021;
 }
@@ -145,7 +186,10 @@
   padding: 30px 40px 30px;
 }
 
-.popup-step--active {
+/* Native Show State (Using ID mapping) */
+#donate-step-1:checked ~ .step-1-content,
+#donate-step-2:checked ~ .step-2-content,
+#donate-step-3:checked ~ .step-3-content {
   display: block;
 }
 
@@ -257,84 +301,7 @@
   white-space: nowrap;
 }
 
-/* --- Custom Dropdown --- */
-.popup-dropdown {
-  position: relative;
-  flex: 1;
-}
-
-.popup-dropdown-toggle {
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 12px 40px 12px 16px;
-  font-family: inherit;
-  font-size: 14px;
-  color: #999;
-  background: #fff;
-  cursor: pointer;
-  text-align: left;
-  appearance: none;
-  position: relative;
-}
-
-.popup-dropdown-toggle::after {
-  content: "";
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 6px solid #00a092;
-  pointer-events: none;
-}
-
-.popup-dropdown.open .popup-dropdown-toggle::after {
-  border-top: none;
-  border-bottom: 6px solid #00a092;
-}
-
-.popup-dropdown-list {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-top: none;
-  border-radius: 0 0 3px 3px;
-  z-index: 20;
-  max-height: 200px;
-  overflow-y: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.popup-dropdown.open .popup-dropdown-list {
-  display: block;
-}
-
-.popup-dropdown-item {
-  padding: 10px 16px;
-  font-size: 14px;
-  color: #333;
-  cursor: pointer;
-  transition: background-color 0.15s;
-}
-
-.popup-dropdown-item:hover {
-  background-color: #f0f0f0;
-}
-
-.popup-dropdown-item.selected {
-  background-color: #00a092;
-  color: #fff;
-}
+/* --- Custom Dropdown Deleted (Replaced with native <select>) --- */
 
 /* --- Checkbox Row --- */
 .popup-checkbox-row {
@@ -488,6 +455,87 @@
 
 .popup-select:focus {
   border-color: #00a092;
+}
+
+/* =============================================
+/* --- Donation Dots Native Mapping --- */
+.popup-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+/* When Step 1 is Checked, Dot 1 is Orange */
+#donate-step-1:checked ~ .step-1-content ~ .popup-footer .popup-dots .dot-1,
+#donate-step-2:checked ~ .step-1-content ~ .popup-footer .popup-dots .dot-2,
+#donate-step-3:checked ~ .step-1-content ~ .popup-footer .popup-dots .dot-3 {
+  background-color: #f58021;
+}
+
+/* Add memory effect: Since users "progress" through steps, color earlier dots slightly orange to show completion */
+#donate-step-2:checked ~ .step-1-content ~ .popup-footer .popup-dots .dot-1,
+#donate-step-3:checked ~ .step-1-content ~ .popup-footer .popup-dots .dot-1,
+#donate-step-3:checked ~ .step-1-content ~ .popup-footer .popup-dots .dot-2 {
+  background-color: rgba(
+    245,
+    128,
+    33,
+    0.5
+  ); /* Faded orange for completed steps */
+}
+
+/* --- Controls Native Mapping --- */
+.popup-controls {
+  display: none;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Link radio checks to specific control banks */
+#donate-step-1:checked ~ .step-1-content ~ .popup-footer .controls-1,
+#donate-step-2:checked ~ .step-1-content ~ .popup-footer .controls-2,
+#donate-step-3:checked ~ .step-1-content ~ .popup-footer .controls-3 {
+  display: flex;
+}
+
+.popup-back-btn {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+}
+
+.popup-next-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 40px;
+  height: 48px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+}
+
+.popup-next-btn:hover {
+  background-color: #333;
+}
+
+.popup-next-btn .btn-icon {
+  width: 14px;
 }
 
 /* =============================================
