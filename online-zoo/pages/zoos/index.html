@@ -96,43 +96,37 @@
                 <!-- Animal Navigation -->
                 <nav class="sidebar-nav">
 
-                    <!-- Radio buttons for the tabs -->
-                    <input type="radio" name="animal-tab" id="tab-panda" style="display: none;" checked>
-                    <input type="radio" name="animal-tab" id="tab-eagle" style="display: none;">
-                    <input type="radio" name="animal-tab" id="tab-gorilla" style="display: none;">
-                    <input type="radio" name="animal-tab" id="tab-lemur" style="display: none;">
-
                     <!-- Panda -->
-                    <label for="tab-panda" class="animal-nav-item">
+                    <div class="animal-nav-item active" data-animal="panda">
                         <div class="sidebar-circle sidebar-circle--active">
                             <img src="../../assets/icons/Panda.png" alt="Panda" class="sidebar-icon">
                         </div>
                         <span class="sidebar-animal-text">Watch live from China's Panda Center</span>
-                    </label>
+                    </div>
 
                     <!-- Eagle -->
-                    <label for="tab-eagle" class="animal-nav-item">
+                    <a href="../eagle/index.html" class="animal-nav-item" data-animal="eagle">
                         <div class="sidebar-circle sidebar-circle--orange">
                             <img src="../../assets/icons/Eagle.png" alt="Eagle" class="sidebar-icon">
                         </div>
                         <span class="sidebar-animal-text">The Bald Eagles Nest from West End cam</span>
-                    </label>
+                    </a>
 
                     <!-- Gorilla -->
-                    <label for="tab-gorilla" class="animal-nav-item">
+                    <a href="../gorilla/index.html" class="animal-nav-item" data-animal="gorilla">
                         <div class="sidebar-circle sidebar-circle--orange">
                             <img src="../../assets/icons/Gorilla.png" alt="Gorilla" class="sidebar-icon">
                         </div>
                         <span class="sidebar-animal-text">Live from Gorilla Forest Corridor habitat cam</span>
-                    </label>
+                    </a>
 
                     <!-- Lemur -->
-                    <label for="tab-lemur" class="animal-nav-item">
+                    <a href="../lemur/index.html" class="animal-nav-item" data-animal="lemur">
                         <div class="sidebar-circle sidebar-circle--orange">
                             <img src="../../assets/icons/Lemur.png" alt="Lemur" class="sidebar-icon">
                         </div>
                         <span class="sidebar-animal-text">Lemurs play in Madagascar, Lemuria Land</span>
-                    </label>
+                    </a>
 
                 </nav>
 
@@ -266,236 +260,78 @@
             </div>
         </section>
 
-        <!-- ANIMAL INFO TABS -->
-        <div class="animal-tabs-container">
-
-            <!-- PANDA TAB -->
-            <div class="animal-info-tab tab-panda-content">
-                <section class="zoo-fact-section">
-                    <div class="container">
-                        <div class="zoo-fact-card">
-                            <h2 class="zoo-fact-title">Did you know?</h2>
-                            <p class="zoo-fact-text" id="didYouKnowText">Giant pandas have an insatiable appetite for
-                                bamboo. A typical animal eats half the day — a full 12 out of every 24 hours — and
-                                relieves itself dozens of times a day. It takes 28 pounds of bamboo to satisfy a giant
-                                panda's daily dietary needs.</p>
-                        </div>
-                    </div>
-                </section>
-                <section class="zoo-info-section">
-                    <div class="container">
-                        <div class="zoo-info-layout">
-                            <div class="zoo-info-details">
-                                <dl class="zoo-info-list">
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Common name:</dt>
-                                        <dd class="zoo-info-value" id="animalName">Giant Panda — Lucas</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Scientific name:</dt>
-                                        <dd class="zoo-info-value zoo-info-italic" id="didYouKnowAnimal">Giant Panda
-                                        </dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Type:</dt>
-                                        <dd class="zoo-info-value">Mammal</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Size:</dt>
-                                        <dd class="zoo-info-value">4 to 6 feet</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Diet:</dt>
-                                        <dd class="zoo-info-value">Omnivore</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Habitat:</dt>
-                                        <dd class="zoo-info-value">Forest</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Range:</dt>
-                                        <dd class="zoo-info-value">
-                                            East/Central China
-                                            <a href="../map/index.html" class="zoo-map-link">
-                                                VIEW MAP
-                                                <img src="../../assets/icons/right-arrow-dark.svg" alt=""
-                                                    class="zoo-map-arrow">
-                                            </a>
-                                        </dd>
-                                    </div>
-                                </dl>
-                                <p class="zoo-info-description">Giant pandas are very unusual animals that eat almost
-                                    exclusively bamboo, which is very low in nutrients. Because of this they have a very
-                                    specialized diet and far too energy-heavy. Giant pandas spend much of their time
-                                    eating.
-                                    They have a specially adapted set of characteristics that make bamboo eating
-                                    possible —
-                                    their paws are built for gripping bamboo stalks. Estimated fewer than 2,000 giant
-                                    pandas
-                                    remain in the wild, though conservation programs have helped their numbers slowly
-                                    recover.
-                                </p>
-                            </div>
-                            <div class="zoo-info-image-wrap">
-                                <img src="../../assets/images/panda-eats-bamboo.png" alt="Giant Panda eating bamboo"
-                                    class="zoo-info-image">
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <!-- PANDA INFO TABS (formerly nested, now default page content) -->
+        <section class="zoo-fact-section">
+            <div class="container">
+                <div class="zoo-fact-card">
+                    <h2 class="zoo-fact-title">Did you know?</h2>
+                    <p class="zoo-fact-text" id="didYouKnowText">Giant pandas have an insatiable appetite for
+                        bamboo. A typical animal eats half the day — a full 12 out of every 24 hours — and
+                        relieves itself dozens of times a day. It takes 28 pounds of bamboo to satisfy a giant
+                        panda's daily dietary needs.</p>
+                </div>
             </div>
-
-            <!-- EAGLE TAB -->
-            <div class="animal-info-tab tab-eagle-content">
-                <section class="zoo-fact-section">
-                    <div class="container">
-                        <div class="zoo-fact-card">
-                            <h2 class="zoo-fact-title">Did you know?</h2>
-                            <p class="zoo-fact-text">Bald eagles can fly at speeds of 35-43 mph, and can reach diving
-                                speeds up to 100 mph. Their nests, called aeries, can weigh up to 2 tons — the largest
-                                nests of any North American bird.</p>
-                        </div>
-                    </div>
-                </section>
-                <section class="zoo-info-section">
-                    <div class="container">
-                        <div class="zoo-info-layout">
-                            <div class="zoo-info-details">
-                                <dl class="zoo-info-list">
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Common name:</dt>
-                                        <dd class="zoo-info-value">West End Bald Eagles — Sam & Lora</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Scientific name:</dt>
-                                        <dd class="zoo-info-value zoo-info-italic">West End Bald Eagles</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Type:</dt>
-                                        <dd class="zoo-info-value">Bird</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Size:</dt>
-                                        <dd class="zoo-info-value">2.5 to 3 feet</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Diet:</dt>
-                                        <dd class="zoo-info-value">Carnivore</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Habitat:</dt>
-                                        <dd class="zoo-info-value">Forests and coastlines</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Range:</dt>
-                                        <dd class="zoo-info-value">
-                                            North America
-                                            <a href="../map/index.html" class="zoo-map-link">
-                                                VIEW MAP
-                                                <img src="../../assets/icons/right-arrow-dark.svg" alt=""
-                                                    class="zoo-map-arrow">
-                                            </a>
-                                        </dd>
-                                    </div>
-                                </dl>
-                                <p class="zoo-info-description">The bald eagle is a bird of prey found in North America.
-                                    It builds the largest nest of any North American bird and the largest tree nests
-                                    ever recorded for any animal species.</p>
+        </section>
+        <section class="zoo-info-section">
+            <div class="container">
+                <div class="zoo-info-layout">
+                    <div class="zoo-info-details">
+                        <dl class="zoo-info-list">
+                            <div class="zoo-info-row">
+                                <dt class="zoo-info-label">Common name:</dt>
+                                <dd class="zoo-info-value" id="animalName">Giant Panda — Lucas</dd>
                             </div>
-                            <div class="zoo-info-image-wrap">
-                                <img src="../../assets/images/eagles-couple.png" alt="West End Bald Eagles"
-                                    class="zoo-info-image">
+                            <div class="zoo-info-row">
+                                <dt class="zoo-info-label">Scientific name:</dt>
+                                <dd class="zoo-info-value zoo-info-italic" id="didYouKnowAnimal">Giant Panda
+                                </dd>
                             </div>
-                        </div>
+                            <div class="zoo-info-row">
+                                <dt class="zoo-info-label">Type:</dt>
+                                <dd class="zoo-info-value">Mammal</dd>
+                            </div>
+                            <div class="zoo-info-row">
+                                <dt class="zoo-info-label">Size:</dt>
+                                <dd class="zoo-info-value">4 to 6 feet</dd>
+                            </div>
+                            <div class="zoo-info-row">
+                                <dt class="zoo-info-label">Diet:</dt>
+                                <dd class="zoo-info-value">Omnivore</dd>
+                            </div>
+                            <div class="zoo-info-row">
+                                <dt class="zoo-info-label">Habitat:</dt>
+                                <dd class="zoo-info-value">Forest</dd>
+                            </div>
+                            <div class="zoo-info-row">
+                                <dt class="zoo-info-label">Range:</dt>
+                                <dd class="zoo-info-value">
+                                    East/Central China
+                                    <a href="../map/index.html" class="zoo-map-link">
+                                        VIEW MAP
+                                        <img src="../../assets/icons/right-arrow-dark.svg" alt="" class="zoo-map-arrow">
+                                    </a>
+                                </dd>
+                            </div>
+                        </dl>
+                        <p class="zoo-info-description">Giant pandas are very unusual animals that eat almost
+                            exclusively bamboo, which is very low in nutrients. Because of this they have a very
+                            specialized diet and far too energy-heavy. Giant pandas spend much of their time
+                            eating.
+                            They have a specially adapted set of characteristics that make bamboo eating
+                            possible —
+                            their paws are built for gripping bamboo stalks. Estimated fewer than 2,000 giant
+                            pandas
+                            remain in the wild, though conservation programs have helped their numbers slowly
+                            recover.
+                        </p>
                     </div>
-                </section>
+                    <div class="zoo-info-image-wrap">
+                        <img src="../../assets/images/panda-eats-bamboo.png" alt="Giant Panda eating bamboo"
+                            class="zoo-info-image">
+                    </div>
+                </div>
             </div>
-
-            <!-- GORILLA TAB -->
-            <div class="animal-info-tab tab-gorilla-content">
-                <section class="zoo-fact-section">
-                    <div class="container">
-                        <div class="zoo-fact-card">
-                            <h2 class="zoo-fact-title">Did you know?</h2>
-                            <p class="zoo-fact-text">Gorillas are the largest living primates, reaching heights between
-                                1.25 and 1.8 meters. They share 98.3% of their genetic code with humans, making them our
-                                closest cousins after chimpanzees and bonobos.</p>
-                        </div>
-                    </div>
-                </section>
-                <section class="zoo-info-section">
-                    <div class="container">
-                        <div class="zoo-info-layout">
-                            <div class="zoo-info-details">
-                                <dl class="zoo-info-list">
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Common name:</dt>
-                                        <dd class="zoo-info-value">Gorilla in Congo — Glen</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Scientific name:</dt>
-                                        <dd class="zoo-info-value zoo-info-italic">Gorilla in Congo</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Type:</dt>
-                                        <dd class="zoo-info-value">Mammal</dd>
-                                    </div>
-                                </dl>
-                                <p class="zoo-info-description">Variety of snacks very important for the healthy life of
-                                    gorillas and his plenty of babies.</p>
-                            </div>
-                            <div class="zoo-info-image-wrap">
-                                <img src="../../assets/images/monkeys-baby-on-back.png" alt="Gorilla in Congo Glen"
-                                    class="zoo-info-image">
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- LEMUR TAB -->
-            <div class="animal-info-tab tab-lemur-content">
-                <section class="zoo-fact-section">
-                    <div class="container">
-                        <div class="zoo-fact-card">
-                            <h2 class="zoo-fact-title">Did you know?</h2>
-                            <p class="zoo-fact-text">Ring-tailed lemurs spend a lot of time on the ground, which is
-                                unusual among lemur species. They can be found in large social groups of up to 30
-                                individuals, called troops, which are led by dominant females.</p>
-                        </div>
-                    </div>
-                </section>
-                <section class="zoo-info-section">
-                    <div class="container">
-                        <div class="zoo-info-layout">
-                            <div class="zoo-info-details">
-                                <dl class="zoo-info-list">
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Common name:</dt>
-                                        <dd class="zoo-info-value">Madagascarian Lemur — Andy</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Scientific name:</dt>
-                                        <dd class="zoo-info-value zoo-info-italic">Madagascarian Lemur</dd>
-                                    </div>
-                                    <div class="zoo-info-row">
-                                        <dt class="zoo-info-label">Type:</dt>
-                                        <dd class="zoo-info-value">Mammal</dd>
-                                    </div>
-                                </dl>
-                                <p class="zoo-info-description">Lemurs are considered the world's most endangered group
-                                    of mammals.</p>
-                            </div>
-                            <div class="zoo-info-image-wrap">
-                                <img src="../../assets/images/lemur.png" alt="Madagascarian Lemur Andy"
-                                    class="zoo-info-image">
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-        </div>
+        </section>
 
     </main>
 

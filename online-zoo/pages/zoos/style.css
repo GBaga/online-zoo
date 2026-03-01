@@ -140,6 +140,19 @@ body:has(#sidebar-toggle:checked) .sidebar-arrows {
   background: #f58021;
 }
 
+.sidebar-circle--orange {
+  background: #f58021;
+}
+
+.sidebar-circle--active {
+  background: #ffffff;
+  border: none;
+  outline: none;
+  box-shadow:
+    0 0 0 6px #20113d,
+    0 0 0 9px #ffffff;
+}
+
 /* Hover on inactive circles */
 .animal-nav-item:hover .sidebar-circle {
   filter: brightness(1.15);
@@ -149,18 +162,11 @@ body:has(#sidebar-toggle:checked) .sidebar-arrows {
     filter 0.2s ease;
 }
 
-/* --- Native Radio Button Action --- */
-input[name="animal-tab"]:checked + .animal-nav-item {
+.animal-nav-item.active {
   background: rgba(255, 255, 255, 0.08);
 }
 
-input[name="animal-tab"]:checked + .animal-nav-item .sidebar-circle {
-  background: #ffffff;
-  outline: 3px solid #ffffff;
-  outline-offset: 6px;
-  box-shadow:
-    0 0 0 9px #20113d,
-    0 0 0 12px #ffffff;
+.animal-nav-item.active .sidebar-circle--active {
   transform: none; /* Stops hover effect while active */
   filter: none;
 }

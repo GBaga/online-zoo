@@ -181,6 +181,10 @@
 }
 
 /* --- Step Container --- */
+.donate-step-radio {
+  display: none;
+}
+
 .popup-step {
   display: none;
   padding: 30px 40px 30px;
