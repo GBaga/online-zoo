@@ -29,7 +29,7 @@ body {
   align-self: flex-start;
   flex: 0 0 220px;
   width: 220px;
-  height: 846px;
+  height: auto;
   background: #20113d;
   flex-shrink: 0;
   transition:
@@ -49,7 +49,7 @@ body:has(#sidebar-toggle:checked) .zoo-sidebar {
 .sidebar-live-badge {
   position: absolute;
   left: 0;
-  top: calc(50% - 38px / 2 - 404px); /* = ~19px */
+  top: 19px;
   width: 120px;
   height: 38px;
   background: #f58021;
@@ -96,13 +96,10 @@ body:has(#sidebar-toggle:checked) .sidebar-arrows {
 
 /* --- Sidebar Navigation --- */
 .sidebar-nav {
-  position: absolute;
-  top: 80px;
-  left: 0;
-  right: 0;
-  bottom: 60px;
   display: flex;
   flex-direction: column;
+  padding-top: 80px;
+  padding-bottom: 60px;
 }
 
 .animal-nav-item {
@@ -321,6 +318,8 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
 @media (max-width: 640px) {
   .zoo-cam-wrapper {
     flex-direction: row;
+    min-height: auto;
+    position: relative;
   }
 
   /* Convert sidebar to a thin vertical strip */
@@ -342,14 +341,49 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
     width: 60px;
   }
 
-  /* Hide specific desktop elements */
+  /* Hide specific desktop elements by default on mobile */
   .sidebar-live-badge,
   .sidebar-divider,
   .sidebar-animal-text {
-    display: none !important;
+    display: none;
   }
 
-  /* Make arrows visible and part of flow */
+  body:has(#sidebar-toggle:checked) .sidebar-live-badge {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 60px;
+    padding: 0 15px;
+    border-radius: 0;
+    z-index: 110;
+    margin: 0;
+    transform: none;
+  }
+
+  body:has(#sidebar-toggle:checked) .sidebar-live-text {
+    display: block;
+    margin-right: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    align-self: center;
+  }
+
+  body:has(#sidebar-toggle:checked) .sidebar-animal-text {
+    display: block;
+    padding-left: 12px;
+    max-width: 155px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  body:has(#sidebar-toggle:checked) .sidebar-divider {
+    display: none;
+  }
+
+  /* Collapsed state arrows */
   .sidebar-arrows {
     display: flex !important;
     position: static;
@@ -360,6 +394,21 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
     border-bottom: 1px solid #ffffff;
     padding: 0;
     margin: 0;
+    transition: none !important; /* Remove rotation animation on mobile */
+  }
+
+  /* Push arrows right when expanded, reset desktop flip */
+  body:has(#sidebar-toggle:checked) .sidebar-arrows {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    border-bottom: none;
+    z-index: 110;
+    padding: 0;
+    transform: rotate(180deg); /* Force << arrows when expanded */
   }
 
   .sidebar-down-arrow {
@@ -380,6 +429,12 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
     width: 100%;
     display: flex;
     gap: 0;
+    padding: 0;
+  }
+
+  /* Add padding to nav when expanded so items fall below the absolute top row */
+  body:has(#sidebar-toggle:checked) .sidebar-nav {
+    padding-top: 60px;
   }
 
   .animal-nav-item {
@@ -396,8 +451,27 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
   }
 
   .zoo-sidebar.expanded .animal-nav-item {
-    justify-content: center;
-    padding-left: 0;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  body:has(#sidebar-toggle:checked) .animal-nav-item {
+    justify-content: flex-start;
+    padding-left: 15px;
+  }
+
+  body:has(#sidebar-toggle:checked) .zoo-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 300px;
+    z-index: 100;
+    flex: none;
+    overflow: hidden; /* Keep content flush inside the 230px box */
+    margin: 0;
+    padding: 0;
+    align-items: flex-start; /* Override the center alignment from the 60px strip */
   }
 
   /* Remove circle backgrounds, maintain icon size */
@@ -413,6 +487,14 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  /* When expanded, restrict the icon wrapper size so text can fit next to it */
+  body:has(#sidebar-toggle:checked) .sidebar-circle,
+  body:has(#sidebar-toggle:checked) .sidebar-circle--active,
+  body:has(#sidebar-toggle:checked) .sidebar-circle--orange {
+    width: 32px !important;
+    height: 32px !important;
   }
 
   .sidebar-icon {
@@ -556,19 +638,6 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
   background: #000;
 }
 
-.zoo-cam-label {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 3px;
-  z-index: 2;
-}
-
 .zoo-video-link {
   display: block;
   position: relative;
@@ -577,7 +646,7 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
 .zoo-video-img {
   width: 100%;
   height: auto;
-  max-height: 500px;
+
   object-fit: cover;
   display: block;
 }
@@ -594,17 +663,6 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.zoo-video-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 10px 16px;
-  color: #fff;
-  font-size: 18px;
-  gap: 12px;
 }
 
 .zoo-video-controls {
@@ -653,6 +711,7 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
 .zoo-cam-carousel {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -672,6 +731,7 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
 
 .zoo-cam-track {
   display: flex;
+  justify-content: center;
   gap: 20px;
   flex: 1;
   overflow-x: auto;
@@ -707,26 +767,6 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
   height: 209px;
   object-fit: cover;
   display: block;
-}
-
-/* LIVE badge overlay on cam thumbs */
-.zoo-cam-label-small {
-  position: absolute;
-  top: calc(50% - 44px / 2 - 38px);
-  left: calc(50% - 189px / 2 - 65px);
-  width: 189px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border: 1px solid #ffffff;
-  border-radius: 5px 0px;
-  color: #fff;
-  font-size: 26px;
-  font-weight: 500;
-  line-height: 32px;
-  background: transparent;
 }
 
 /* Play button overlay on cam thumbs */
@@ -943,4 +983,29 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
   height: 300px;
   object-fit: cover;
   border-radius: 5px;
+}
+
+/* ---- RESPONSIVE CAROUSEL THUMBNAILS ---- */
+@media (max-width: 980px) {
+  .zoo-cam-thumb {
+    flex: 0 0 200px;
+    min-width: 150px;
+  }
+  .zoo-cam-thumb-img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .zoo-cam-thumb {
+    flex: 0 0 150px;
+    min-width: 120px;
+  }
+  .zoo-cam-thumb-img {
+    height: 110px;
+  }
+  .zoo-cam-arrow img {
+    width: 40px;
+    height: 40px;
+  }
 }
