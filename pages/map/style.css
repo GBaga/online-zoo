@@ -60,97 +60,95 @@ body {
 /* --- Map Pins --- */
 .map-pin {
   position: absolute;
-  width: 65px;
-  height: 65px;
-  background-color: #f58021;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
+  width: 141px;
+  height: 181px;
+  background: url("../../assets/icons/map-pin.svg") no-repeat center;
+  background-size: contain;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 4px 30px rgba(245, 128, 33, 0.7);
+  transform: translate(
+    -49.8%,
+    -81.02%
+  ); /* Align pin tip with left/top coordinate */
   box-sizing: border-box;
 }
 
 .map-pin .pin-icon {
-  transform: rotate(45deg);
-  width: 38px;
-  height: auto;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   z-index: 2;
+  margin-top: -30px; /* Offset to center icon in the round part of the pin */
 }
 
 .map-pin.active,
 .map-pin:hover {
-  background-color: transparent;
-  border: 3px solid #ffffff;
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+  width: 146px;
+  height: 185px;
+  background: url("../../assets/icons/map-pin-active.svg") no-repeat center;
+  background-size: contain;
+  transform: translate(-49.7%, -74.5%) scale(1.05);
+  z-index: 20;
 }
 
-.map-pin.active::after,
-.map-pin:hover::after {
-  content: "";
-  position: absolute;
-  top: 4.5px;
-  left: 4.5px;
-  right: 4.5px;
-  bottom: 4.5px;
-  background-color: #ffffff;
-  border-radius: 50% 50% 50% 0;
-  z-index: -1;
+.map-pin.active .pin-icon,
+.map-pin:hover .pin-icon {
+  filter: brightness(0) saturate(100%) invert(8%) sepia(34%) saturate(2360%)
+    hue-rotate(226deg) brightness(91%) contrast(98%); /* Silhouette color #20113D */
 }
 
 /* --- Pin Positions --- */
 
 /* Eagle */
 .pin-eagle {
-  left: 21.77%;
-  top: 42.88%;
+  left: 15%;
+  top: 56%;
 }
 
 /* Alligator */
 .pin-alligator {
-  left: 28.28%;
-  top: 43.63%;
+  left: 24%;
+  top: 59%;
 }
 
 /* Gorilla */
 .pin-gorilla {
-  left: 43.12%;
-  top: 46.33%;
+  left: 50%;
+  top: 65%;
 }
 
 /* Lion */
 .pin-lion {
-  left: 49.17%;
-  top: 47.65%;
+  left: 44%;
+  top: 62%;
 }
 
 /* Lemur */
 .pin-lemur {
-  left: 54.53%;
-  top: 54.54%;
+  left: 60%;
+  top: 80%;
 }
 
 /* Panda */
 .pin-panda {
-  left: 62.71%;
-  top: 40.36%;
+  left: 76%;
+  top: 48%;
 }
 
 /* Tiger */
 .pin-tiger {
-  left: 65.99%;
-  top: 49.43%;
+  left: 75%;
+  top: 70%;
 }
 
 /* Koala */
 .pin-koala {
-  left: 72.81%;
-  top: 55.97%;
+  left: 85%;
+  top: 82%;
 }
 
 /* =========================================
@@ -163,11 +161,19 @@ body {
     line-height: 54px;
   }
   .map-pin {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 103px;
+  }
+  .map-pin.active,
+  .map-pin:hover {
+    width: 83px;
+    height: 105px;
+    transform: translate(-49.7%, -74.5%) scale(1.05);
   }
   .map-pin .pin-icon {
     width: 24px;
+    height: 24px;
+    margin-top: -15px;
   }
   .map-page-main {
     padding-top: 100px;
@@ -180,11 +186,19 @@ body {
     line-height: 36px;
   }
   .map-pin {
-    width: 24px;
-    height: 24px;
+    width: 50px;
+    height: 64px;
+  }
+  .map-pin.active,
+  .map-pin:hover {
+    width: 52px;
+    height: 66px;
+    transform: translate(-49.7%, -74.5%) scale(1.05);
   }
   .map-pin .pin-icon {
-    width: 16px;
+    width: 18px;
+    height: 18px;
+    margin-top: -10px;
   }
   .map-header-container {
     margin-top: 20px;
@@ -204,11 +218,19 @@ body {
     line-height: 28px;
   }
   .map-pin {
-    width: 18px;
-    height: 18px;
+    width: 36px;
+    height: 46px;
+  }
+  .map-pin.active,
+  .map-pin:hover {
+    width: 37px;
+    height: 47px;
+    transform: translate(-49.7%, -74.5%) scale(1.05);
   }
   .map-pin .pin-icon {
-    width: 12px;
+    width: 14px;
+    height: 14px;
+    margin-top: -8px;
   }
   .map-page-main {
     padding-top: 60px;
