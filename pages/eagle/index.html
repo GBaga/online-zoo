@@ -143,10 +143,11 @@
                 <!-- HERO -->
                 <div class="zoo-hero">
                     <h1 class="zoo-title">Bald Eagle Cams</h1>
-                    <a href="#donate" class="zoo-donate-btn" data-popup="donationPopup">
+                    <label for="donate-popup-toggle" class="zoo-donate-btn"
+                        style="cursor: pointer; display: inline-flex;">
                         Donate now
                         <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
-                    </a>
+                    </label>
                 </div>
 
                 <!-- Main Video Player -->
@@ -210,9 +211,9 @@
                         <div class="donate-form">
                             <input type="text" placeholder="$ Donation Amount" class="donate-input"
                                 aria-label="Donation amount">
-                            <button class="donate-btn" type="button" data-popup="donationPopup">
+                            <label for="donate-popup-toggle" class="donate-btn" style="cursor: pointer; display: flex;">
                                 <img src="../../assets/icons/right-arrow-white.svg" alt="">
-                            </button>
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -317,10 +318,11 @@
                         <a href="../zoos/index.html" class="footer-nav-link">Zoos</a>
                         <a href="../contact/index.html" class="footer-nav-link">Contact us</a>
                     </nav>
-                    <a href="#donate" class="footer-donate-btn" data-popup="donationPopup">
+                    <label for="donate-popup-toggle" class="footer-donate-btn"
+                        style="cursor: pointer; display: inline-flex;">
                         donate for volunteers
                         <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
-                    </a>
+                    </label>
                 </div>
                 <div class="footer-divider"></div>
                 <div class="footer-bottom">
@@ -345,45 +347,75 @@
         </div>
     </footer>
 
-    <!-- POPUP: TOGETHER WE CARE -->
+    <!-- =============================================
+       POPUP: TOGETHER WE CARE, SAVE AND PROTECT!
+       ============================================= -->
+    <input type="checkbox" id="feed-popup-toggle" class="popup-toggle" style="display: none;">
     <div class="popup-overlay" id="feedPopup">
+        <label for="feed-popup-toggle" class="popup-bg-closer"></label>
         <div class="popup-modal">
-            <button class="popup-close" aria-label="Close">&times;</button>
+            <label for="feed-popup-toggle" class="popup-close" aria-label="Close">&times;</label>
             <img src="../../assets/images/popup-feed-hero.png" alt="Together we care" class="popup-hero-image">
             <div class="popup-body">
                 <h2 class="popup-title">Together we care, save and protect!</h2>
                 <p class="popup-text">Your most generous gift not only cares for countless animals, but it also offers
-                    hope and a vital lifeline to the world's most endangered wildlife relying on us to survive.</p>
+                    hope and
+                    a vital lifeline to the world's most endangered wildlife relying on us to survive.</p>
                 <div class="popup-amounts">
-                    <button class="popup-amount-btn">$20</button>
-                    <button class="popup-amount-btn">$30</button>
-                    <button class="popup-amount-btn">$50</button>
-                    <button class="popup-amount-btn">$80</button>
-                    <button class="popup-amount-btn">$100</button>
-                    <button class="popup-amount-btn">OTHER</button>
+                    <input type="radio" name="feed_amount1" id="feed1_20" class="amount-radio" checked>
+                    <label for="feed1_20" class="popup-amount-btn">$20</label>
+                    <input type="radio" name="feed_amount1" id="feed1_30" class="amount-radio">
+                    <label for="feed1_30" class="popup-amount-btn">$30</label>
+                    <input type="radio" name="feed_amount1" id="feed1_50" class="amount-radio">
+                    <label for="feed1_50" class="popup-amount-btn">$50</label>
+                    <input type="radio" name="feed_amount1" id="feed1_80" class="amount-radio">
+                    <label for="feed1_80" class="popup-amount-btn">$80</label>
+                    <input type="radio" name="feed_amount1" id="feed1_100" class="amount-radio">
+                    <label for="feed1_100" class="popup-amount-btn">$100</label>
+                    <input type="radio" name="feed_amount1" id="feed1_other" class="amount-radio">
+                    <label for="feed1_other" class="popup-amount-btn">OTHER</label>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- POPUP: MAKE YOUR DONATION (3-step) -->
+    <!-- =============================================
+       POPUP: MAKE YOUR DONATION (3-step)
+       ============================================= -->
+    <input type="checkbox" id="donate-popup-toggle" class="popup-toggle" style="display: none;">
     <div class="popup-overlay" id="donationPopup">
+        <label for="donate-popup-toggle" class="popup-bg-closer"></label>
         <div class="popup-modal">
-            <button class="popup-close" aria-label="Close">&times;</button>
+            <label for="donate-popup-toggle" class="popup-close" aria-label="Close">&times;</label>
+
+            <!-- HEADER -->
             <div class="popup-header">
                 <h2 class="popup-header-title">Make your <span
                         style="background:#f5c542;padding:2px 8px;border-radius:3px;">donation</span></h2>
             </div>
-            <div class="popup-step popup-step--active">
+
+            <!-- MULTISTEP RADIO LOGIC -->
+            <input type="radio" name="donate-step" id="donate-step-1" class="donate-step-radio" checked>
+            <input type="radio" name="donate-step" id="donate-step-2" class="donate-step-radio">
+            <input type="radio" name="donate-step" id="donate-step-3" class="donate-step-radio">
+
+            <!-- STEP 1: Donation Information -->
+            <div class="popup-step step-1-content">
                 <h3 class="popup-section-title">Donation Information:</h3>
                 <p class="popup-label"><span class="required-star">*</span> Choose your donation amount:</p>
                 <div class="popup-amount-row popup-amounts">
-                    <button class="popup-amount-btn">$10</button>
-                    <button class="popup-amount-btn">$20</button>
-                    <button class="popup-amount-btn">$30</button>
-                    <button class="popup-amount-btn">$50</button>
-                    <button class="popup-amount-btn">$80</button>
-                    <button class="popup-amount-btn">$100</button>
+                    <input type="radio" name="donate_amount1" id="donate1_10" class="amount-radio" checked>
+                    <label for="donate1_10" class="popup-amount-btn">$10</label>
+                    <input type="radio" name="donate_amount1" id="donate1_20" class="amount-radio">
+                    <label for="donate1_20" class="popup-amount-btn">$20</label>
+                    <input type="radio" name="donate_amount1" id="donate1_30" class="amount-radio">
+                    <label for="donate1_30" class="popup-amount-btn">$30</label>
+                    <input type="radio" name="donate_amount1" id="donate1_50" class="amount-radio">
+                    <label for="donate1_50" class="popup-amount-btn">$50</label>
+                    <input type="radio" name="donate_amount1" id="donate1_80" class="amount-radio">
+                    <label for="donate1_80" class="popup-amount-btn">$80</label>
+                    <input type="radio" name="donate_amount1" id="donate1_100" class="amount-radio">
+                    <label for="donate1_100" class="popup-amount-btn">$100</label>
                 </div>
                 <div class="popup-other-row">
                     <button class="popup-other-btn">Other amount</button>
@@ -391,27 +423,26 @@
                 </div>
                 <div class="popup-pet-row">
                     <span class="popup-pet-btn">For special pet</span>
-                    <div class="popup-dropdown" id="pet-dropdown">
-                        <button type="button" class="popup-dropdown-toggle">Choose your favourite</button>
-                        <ul class="popup-dropdown-list">
-                            <li class="popup-dropdown-item">Lucas the Panda</li>
-                            <li class="popup-dropdown-item">Andy the Lemur</li>
-                            <li class="popup-dropdown-item">Glen the Gorilla</li>
-                            <li class="popup-dropdown-item">Sam the Alligator</li>
-                            <li class="popup-dropdown-item">Sam &amp; Lora the eagles family</li>
-                            <li class="popup-dropdown-item">Liz the Koala</li>
-                            <li class="popup-dropdown-item">Shake the Lion</li>
-                            <li class="popup-dropdown-item">Sara the Tiger</li>
-                        </ul>
-                    </div>
+                    <select class="popup-select" style="flex: 1;" aria-label="Choose your favourite pet">
+                        <option value="" disabled selected>Choose your favourite</option>
+                        <option value="Lucas the Panda">Lucas the Panda</option>
+                        <option value="Andy the Lemur">Andy the Lemur</option>
+                        <option value="Glen the Gorilla">Glen the Gorilla</option>
+                        <option value="Sam the Alligator">Sam the Alligator</option>
+                        <option value="Sam & Lora the eagles family">Sam &amp; Lora the eagles family</option>
+                        <option value="Liz the Koala">Liz the Koala</option>
+                        <option value="Shake the Lion">Shake the Lion</option>
+                        <option value="Sara the Tiger">Sara the Tiger</option>
+                    </select>
                 </div>
                 <div class="popup-checkbox-row">
-                    <input type="checkbox" class="popup-checkbox" id="monthlyGiftEagle">
-                    <label for="monthlyGiftEagle" class="popup-checkbox-label">Make this a monthly recurring
-                        gift</label>
+                    <input type="checkbox" class="popup-checkbox" id="monthlyGift">
+                    <label for="monthlyGift" class="popup-checkbox-label">Make this a monthly recurring gift</label>
                 </div>
             </div>
-            <div class="popup-step">
+
+            <!-- STEP 2: Billing Information -->
+            <div class="popup-step step-2-content">
                 <h3 class="popup-section-title">Billing Information:</h3>
                 <div class="popup-form-group">
                     <label class="popup-label"><span class="required-star">*</span> Your Name</label>
@@ -422,9 +453,12 @@
                     <input type="email" class="popup-input" placeholder="Enter your email">
                 </div>
                 <p class="popup-hint">You will receive emails from the Online Zoo, including updates and news on the
-                    latest discoveries and translations. You can unsubscribe at any time.</p>
+                    latest
+                    discoveries and translations. You can unsubscribe at any time.</p>
             </div>
-            <div class="popup-step">
+
+            <!-- STEP 3: Payment Information -->
+            <div class="popup-step step-3-content">
                 <h3 class="popup-section-title">Payment Information:</h3>
                 <div class="popup-payment-row">
                     <div class="popup-form-group">
@@ -466,20 +500,42 @@
                     </div>
                 </div>
             </div>
+
+            <!-- FOOTER (pagination + buttons) -->
             <div class="popup-footer">
                 <div class="popup-dots">
-                    <span class="popup-dot popup-dot--active"></span>
-                    <span class="popup-dot"></span>
-                    <span class="popup-dot"></span>
+                    <label for="donate-step-1" class="popup-dot dot-1"></label>
+                    <label for="donate-step-2" class="popup-dot dot-2"></label>
+                    <label for="donate-step-3" class="popup-dot dot-3"></label>
                 </div>
-                <div style="display:flex;align-items:center;gap:20px;">
-                    <button class="popup-back-btn" style="display:none;">Back</button>
-                    <button class="popup-next-btn">
+
+                <!-- Step 1 Controls -->
+                <div class="popup-controls controls-1">
+                    <label for="donate-step-2" class="popup-next-btn">
                         NEXT
                         <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
-                    </button>
+                    </label>
+                </div>
+
+                <!-- Step 2 Controls -->
+                <div class="popup-controls controls-2">
+                    <label for="donate-step-1" class="popup-back-btn">Back</label>
+                    <label for="donate-step-3" class="popup-next-btn">
+                        NEXT
+                        <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
+                    </label>
+                </div>
+
+                <!-- Step 3 Controls -->
+                <div class="popup-controls controls-3">
+                    <label for="donate-step-2" class="popup-back-btn">Back</label>
+                    <label for="donate-popup-toggle" class="popup-next-btn">
+                        COMPLETE DONATION
+                        <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
+                    </label>
                 </div>
             </div>
+
         </div>
     </div>
 
