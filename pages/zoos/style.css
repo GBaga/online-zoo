@@ -795,6 +795,9 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
 .zoo-cam-track::-webkit-scrollbar {
   display: none;
 }
+.cam-radio {
+  display: none;
+}
 
 .zoo-cam-thumb {
   flex: 0 0 280px;
@@ -806,9 +809,11 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
   text-decoration: none;
   border: 3px solid transparent;
   scroll-snap-align: start;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
 }
 
-.zoo-cam-thumb.active {
+.cam-radio:checked + .zoo-cam-thumb {
   border-color: #f58021;
 }
 

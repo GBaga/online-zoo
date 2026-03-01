@@ -49,11 +49,12 @@
                         <img src="../../assets/icons/facebook-logo.svg" alt="Facebook">
                     </a>
                 </div>
-                <button class="hamburger-btn" aria-label="Toggle menu">
+                <input type="checkbox" id="mobile-menu-toggle" style="display: none;">
+                <label for="mobile-menu-toggle" class="hamburger-btn" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
-                </button>
+                </label>
             </div>
         </div>
         <!-- Mobile Navigation Overlay -->
@@ -84,12 +85,13 @@
                 </div>
 
                 <!-- Toggle arrows -->
-                <div class="sidebar-arrows" id="panelToggle">
+                <input type="checkbox" id="sidebar-toggle" style="display: none;">
+                <label for="sidebar-toggle" class="sidebar-arrows" aria-label="Toggle sidebar">
                     <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 13.659L8.365 15 16 7.5 8.365 0 7 1.341 13.27 7.5 7 13.659Z" fill="white" />
                         <path d="M0 13.659L1.365 15 9 7.5 1.365 0 0 1.341 6.27 7.5 0 13.659Z" fill="white" />
                     </svg>
-                </div>
+                </label>
 
                 <!-- Animal Navigation -->
                 <nav class="sidebar-nav">
@@ -173,18 +175,23 @@
                             <img src="../../assets/icons/left-arrow-dark.svg" alt="Previous">
                         </button>
                         <div class="zoo-cam-track">
-                            <a href="#" class="zoo-cam-thumb active">
+                            <input type="radio" name="cam-view" id="cam-1" class="cam-radio" checked>
+                            <label for="cam-1" class="zoo-cam-thumb">
                                 <img src="../../assets/images/eagle-cam1.png" alt="Eagle Cam 1"
                                     class="zoo-cam-thumb-img">
-                            </a>
-                            <a href="#" class="zoo-cam-thumb">
+                            </label>
+
+                            <input type="radio" name="cam-view" id="cam-2" class="cam-radio">
+                            <label for="cam-2" class="zoo-cam-thumb">
                                 <img src="../../assets/images/eagle-cam2.png" alt="Eagle Cam 2"
                                     class="zoo-cam-thumb-img">
-                            </a>
-                            <a href="#" class="zoo-cam-thumb">
+                            </label>
+
+                            <input type="radio" name="cam-view" id="cam-3" class="cam-radio">
+                            <label for="cam-3" class="zoo-cam-thumb">
                                 <img src="../../assets/images/eagle-cam3.png" alt="Eagle Cam 3"
                                     class="zoo-cam-thumb-img">
-                            </a>
+                            </label>
                         </div>
                         <button class="zoo-cam-arrow zoo-cam-next" aria-label="Next">
                             <img src="../../assets/icons/right-arrow-dark.svg" alt="Next">
@@ -538,7 +545,6 @@
         </div>
     </div>
 
-    <script src="../zoos/script.js"></script>
 </body>
 
 </html>

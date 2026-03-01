@@ -174,19 +174,21 @@
                         <button class="zoo-cam-arrow zoo-cam-prev" aria-label="Previous">
                             <img src="../../assets/icons/left-arrow-dark.svg" alt="Previous">
                         </button>
-                        <div class="zoo-cam-track" style="overflow: scroll;">
-                            <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank" rel="noopener"
-                                class="zoo-cam-thumb active">
+                        <div class="zoo-cam-track">
+                            <input type="radio" name="cam-view" id="cam-1" class="cam-radio" checked>
+                            <label for="cam-1" class="zoo-cam-thumb">
                                 <img src="../../assets/images/panda-cam1.png" alt="Cam 1" class="zoo-cam-thumb-img">
-                            </a>
-                            <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank" rel="noopener"
-                                class="zoo-cam-thumb">
+                            </label>
+
+                            <input type="radio" name="cam-view" id="cam-2" class="cam-radio">
+                            <label for="cam-2" class="zoo-cam-thumb">
                                 <img src="../../assets/images/panda-cam2.png" alt="Cam 2" class="zoo-cam-thumb-img">
-                            </a>
-                            <a href="https://www.youtube.com/watch?v=1SG3Gns3L_8" target="_blank" rel="noopener"
-                                class="zoo-cam-thumb">
+                            </label>
+
+                            <input type="radio" name="cam-view" id="cam-3" class="cam-radio">
+                            <label for="cam-3" class="zoo-cam-thumb">
                                 <img src="../../assets/images/panda-cam3.png" alt="Cam 3" class="zoo-cam-thumb-img">
-                            </a>
+                            </label>
                         </div>
                         <button class="zoo-cam-arrow zoo-cam-next" aria-label="Next">
                             <img src="../../assets/icons/right-arrow-dark.svg" alt="Next">
@@ -538,7 +540,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
 </body>
 
 </html>

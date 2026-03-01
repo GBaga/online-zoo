@@ -45,11 +45,12 @@
                         <img src="../../assets/icons/facebook-logo.svg" alt="Facebook" class="social-link">
                     </a>
                 </div>
-                <button class="hamburger-btn" aria-label="Toggle menu">
+                <input type="checkbox" id="mobile-menu-toggle" style="display: none;">
+                <label for="mobile-menu-toggle" class="hamburger-btn" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
-                </button>
+                </label>
             </div>
         </div>
         <!-- Mobile Navigation Overlay -->
@@ -111,10 +112,15 @@
                                 placeholder="Enter your message" rows="6" required></textarea>
                         </div>
 
-                        <button type="submit" class="btn-primary btn-submit">
-                            SEND MESSAGE
-                            <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
-                        </button>
+                        <input type="checkbox" id="message-sent-toggle" style="display: none;">
+                        <div class="submit-wrapper">
+                            <button type="submit" class="btn-primary btn-submit">
+                                <label for="message-sent-toggle" class="btn-label-cover"></label>
+                                <span class="btn-text-default">SEND MESSAGE</span>
+                                <span class="btn-text-success">MESSAGE SENT! ✓</span>
+                                <img src="../../assets/icons/right-arrow-white.svg" alt="" class="btn-icon">
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -333,7 +339,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
 </body>
 
 </html>
