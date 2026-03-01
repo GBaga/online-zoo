@@ -1141,6 +1141,7 @@ section {
   /* --- Donation Section --- */
   .donation-section {
     padding: 40px 0;
+    text-align: center;
   }
 
   .donation-content {
@@ -1152,16 +1153,19 @@ section {
   .donation-title {
     font-size: 22px;
     line-height: 28px;
+    text-align: center;
   }
 
   .donation-text {
     font-size: 14px;
+    text-align: center;
   }
 
   .donate-input {
     max-width: 100%;
     height: 56px;
     font-size: 14px;
+    text-align: center;
   }
 
   .donate-form {
