@@ -26,17 +26,33 @@ body {
 .zoo-sidebar {
   position: sticky;
   top: 0;
-  align-self: flex-start;
+  align-self: stretch; /* Change from flex-start to stretch to fill height */
   flex: 0 0 220px;
   width: 220px;
-  height: auto;
+  min-height: calc(
+    100vh - 84px
+  ); /* Fallback to fill typical screen minus header */
   background: #20113d;
   flex-shrink: 0;
   transition:
     width 0.3s ease,
     flex-basis 0.3s ease;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   z-index: 50;
+  max-height: 100vh;
+}
+
+/* Custom scrollbar for sidebar */
+.zoo-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.zoo-sidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+.zoo-sidebar::-webkit-scrollbar-thumb {
+  background: #f58021;
+  border-radius: 3px;
 }
 
 /* Expanded sidebar */
