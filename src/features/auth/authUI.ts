@@ -1,3 +1,4 @@
+import { ApiError } from "../../api/apiClient";
 import { AuthService } from "./authService";
 
 function validateEmail(email: string): boolean {
@@ -128,7 +129,15 @@ export function initAuthUI() {
         // Success -> redirect to Menu page or index
         window.location.href = "/pages/landing/index.html";
       } catch (err: unknown) {
-        serverError.textContent = "Incorrect login or password";
+        if (err instanceof ApiError) {
+          if (err.status === 401) {
+            serverError.textContent = "Incorrect login or password";
+          } else {
+            serverError.textContent = `Server Error: ${err.message}`;
+          }
+        } else {
+          serverError.textContent = "An unexpected error occurred.";
+        }
         submitBtn.disabled = false;
         submitBtn.textContent = "Sign In";
       }
@@ -228,8 +237,17 @@ export function initAuthUI() {
         // Auto-login or redirect to login
         window.location.href = "/pages/login/index.html";
       } catch (err: unknown) {
-        serverError.textContent =
-          "Registration failed. User may already exist.";
+        if (err instanceof ApiError) {
+          if (err.status === 409) {
+            serverError.textContent = "User already exists";
+          } else if (err.status === 400) {
+            serverError.textContent = "Validation error from server";
+          } else {
+            serverError.textContent = `Server Error: ${err.message}`;
+          }
+        } else {
+          serverError.textContent = "An unexpected error occurred.";
+        }
         submitBtn.disabled = false;
         submitBtn.textContent = "Register";
       }

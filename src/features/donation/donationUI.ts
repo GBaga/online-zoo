@@ -1,5 +1,5 @@
 import { AuthService } from "../auth/authService";
-import { ApiClient } from "../../api/apiClient";
+import { ApiClient, ApiError } from "../../api/apiClient";
 
 interface SavedCard {
   number: string; // just last 4 in reality, but task says store it.
@@ -300,8 +300,21 @@ export function initDonationUI() {
         `Thank you for your donation of $${selectedAmount} to ${petSelect.value}!`,
         false,
       );
-    } catch (err) {
-      showNotification("Something went wrong. Please, try again later.", true);
+    } catch (err: unknown) {
+      if (err instanceof ApiError) {
+        if (err.status === 400) {
+          showNotification("Validation error: Invalid donation data.", true);
+        } else if (err.status === 500) {
+          showNotification("Server error. Please, try again later.", true);
+        } else {
+          showNotification(`Error: ${err.message}`, true);
+        }
+      } else {
+        showNotification(
+          "Something went wrong. Please, try again later.",
+          true,
+        );
+      }
     } finally {
       step3Next.innerHTML =
         'COMPLETE DONATION <img src="../../assets/icons/right-arrow-white.svg" class="btn-icon">';

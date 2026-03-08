@@ -19,6 +19,15 @@ export enum HttpMethod {
 const API_BASE_URL =
   "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod";
 
+export class ApiError extends Error {
+  public status: number;
+  constructor(status: number, message: string) {
+    super(message);
+    this.status = status;
+    this.name = "ApiError";
+  }
+}
+
 export class ApiClient {
   private static async request<T>(
     endpoint: string,
@@ -41,7 +50,10 @@ export class ApiClient {
     try {
       const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
       if (!response.ok) {
-        throw new Error(`API Error: ${response.status} ${response.statusText}`);
+        throw new ApiError(
+          response.status,
+          `API Error: ${response.status} ${response.statusText}`,
+        );
       }
 
       const text = await response.text();

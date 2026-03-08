@@ -1041,8 +1041,15 @@ section {
     line-height: 48px;
   }
 
+  .care-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .care-hero-image {
-    height: 500px;
+    grid-column: span 2;
+    width: 930px;
+    height: 470px;
+    margin: 0 auto;
   }
 
   .care-card-image {
@@ -1060,6 +1067,26 @@ section {
   .touch-section {
     padding: 0;
   }
+}
+
+/* =========================================
+   RESPONSIVE — 980px
+   ========================================= */
+
+@media (max-width: 980px) {
+  .testimonials-layout {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .testimonials-left {
+    flex: unset;
+    width: 100%;
+    gap: 24px;
+  }
+
+  /* We can keep the 2-column grid for the cards down to 640px, 
+     but now they have the full width of the screen. */
 }
 
 /* =========================================
