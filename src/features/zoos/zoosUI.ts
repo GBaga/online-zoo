@@ -26,6 +26,12 @@ async function initSidebarAndPets() {
       return;
     }
 
+    // Expansion State
+    let isSidebarExpanded = false;
+    const downArrow = document.querySelector(
+      ".sidebar-down-arrow",
+    ) as HTMLElement;
+
     // Determine active camera (default to first one)
     let activeCameraId = cameras[0].id;
 
@@ -44,8 +50,9 @@ async function initSidebarAndPets() {
     const renderSidebar = () => {
       sidebarNav.innerHTML = "";
 
-      // Limit to 8 items to prevent sidebar overflow
-      const displayCameras = cameras.slice(0, 8);
+      // Limit based on expansion state (4 -> All)
+      const displayLimit = isSidebarExpanded ? cameras.length : 4;
+      const displayCameras = cameras.slice(0, displayLimit);
 
       displayCameras.forEach((cam) => {
         const isActive = cam.id === activeCameraId;
@@ -77,6 +84,21 @@ async function initSidebarAndPets() {
     };
 
     renderSidebar();
+
+    // Configure Down Arrow logic
+    if (downArrow) {
+      if (cameras.length <= 4) {
+        downArrow.style.display = "none";
+      } else {
+        downArrow.addEventListener("click", () => {
+          isSidebarExpanded = !isSidebarExpanded;
+          renderSidebar();
+          downArrow.style.transform = isSidebarExpanded
+            ? "rotate(180deg)"
+            : "rotate(0deg)";
+        });
+      }
+    }
 
     // 2. Initial Pet Data Fetch
     await updateDidYouKnow(activeCameraId);

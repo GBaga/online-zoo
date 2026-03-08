@@ -9,6 +9,13 @@ import {
   AuthResponse,
 } from "./models";
 
+export enum HttpMethod {
+  GET = "GET",
+  POST = "POST",
+  PUT = "PUT",
+  DELETE = "DELETE",
+}
+
 const API_BASE_URL =
   "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod";
 
@@ -71,14 +78,14 @@ export class ApiClient {
 
   static register(data: RegisterPayload): Promise<void> {
     return this.request<void>("/auth/register", {
-      method: "POST",
+      method: HttpMethod.POST,
       body: JSON.stringify(data),
     });
   }
 
   static login(data: LoginPayload): Promise<AuthResponse> {
     return this.request<AuthResponse>("/auth/login", {
-      method: "POST",
+      method: HttpMethod.POST,
       body: JSON.stringify(data),
     });
   }
@@ -89,7 +96,7 @@ export class ApiClient {
 
   static submitDonation(data: DonationPayload): Promise<void> {
     return this.request<void>("/donations", {
-      method: "POST",
+      method: HttpMethod.POST,
       body: JSON.stringify(data),
     });
   }

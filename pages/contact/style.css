@@ -37,14 +37,6 @@ button {
   font-family: inherit;
 }
 
-/* --- Container --- */
-.container {
-  width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
 /* --- Buttons --- */
 .btn-primary {
   display: inline-flex;
