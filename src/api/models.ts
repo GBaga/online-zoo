@@ -52,3 +52,22 @@ export interface UserProfile {
   email: string;
   [key: string]: unknown;
 }
+
+// Enums for Donation Flow
+export enum DonationStep {
+  DONATION_INFO = 1,
+  BILLING_INFO = 2,
+  PAYMENT_INFO = 3,
+}
+
+export enum ValidationState {
+  PRISTINE = "pristine",
+  VALID = "valid",
+  INVALID = "invalid",
+}
+
+// Utility Types
+export type ReadonlyPet = Readonly<Pet>;
+export type PetSummary = Pick<Pet, "id" | "name" | "description">;
+export type PartialDonation = Partial<DonationPayload>;
+export type LoginCredentials = Omit<RegisterPayload, "name" | "email">;
