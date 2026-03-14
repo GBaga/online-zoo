@@ -34,6 +34,7 @@ async function initSidebarAndPets() {
 
     // Determine active camera (default to first one)
     let activeCameraId = cameras[0].id;
+    let activePetId = cameras[0].petId;
 
     // Map camera's petId to local icons
     const cameraIconMap: Record<number, string> = {
@@ -75,8 +76,9 @@ async function initSidebarAndPets() {
 
         item.addEventListener("click", () => {
           activeCameraId = cam.id;
+          activePetId = cam.petId;
           renderSidebar();
-          updateDidYouKnow(activeCameraId);
+          updateDidYouKnow(activePetId);
         });
 
         sidebarNav.appendChild(item);
@@ -101,7 +103,7 @@ async function initSidebarAndPets() {
     }
 
     // 2. Initial Pet Data Fetch
-    await updateDidYouKnow(activeCameraId);
+    await updateDidYouKnow(activePetId);
   } catch (err) {
     sidebarNav.innerHTML = "";
     sidebarNav.appendChild(createErrorMessage());
@@ -156,7 +158,7 @@ async function updateDidYouKnow(petId: number) {
       1: "/assets/images/panda-eats-bamboo.png",
       2: "/assets/images/lemur.png",
       3: "/assets/images/gorilla-looking-sad.png",
-      4: "/assets/images/monkey-eats-banana.png",
+      4: "/assets/images/alligator.png",
       5: "/assets/images/eagles-couple.png",
       6: "/assets/images/koala.png",
       7: "/assets/images/lion.png",
