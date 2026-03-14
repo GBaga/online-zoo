@@ -37,14 +37,14 @@ async function initSidebarAndPets() {
 
     // Map camera's petId to local icons
     const cameraIconMap: Record<number, string> = {
-      1: new URL("../../assets/icons/Panda.png", import.meta.url).href,
-      5: new URL("../../assets/icons/Eagle.png", import.meta.url).href,
-      3: new URL("../../assets/icons/Gorilla.png", import.meta.url).href,
-      2: new URL("../../assets/icons/Lemur.png", import.meta.url).href,
-      4: new URL("../../assets/icons/map-alligator.png", import.meta.url).href,
-      6: new URL("../../assets/icons/map-Coala.png", import.meta.url).href,
-      7: new URL("../../assets/icons/map-lion.png", import.meta.url).href,
-      8: new URL("../../assets/icons/map-tiger.png", import.meta.url).href,
+      1: "/assets/icons/Panda.png",
+      5: "/assets/icons/Eagle.png",
+      3: "/assets/icons/Gorilla.png",
+      2: "/assets/icons/Lemur.png",
+      4: "/assets/icons/map-alligator.png",
+      6: "/assets/icons/map-Coala.png",
+      7: "/assets/icons/map-lion.png",
+      8: "/assets/icons/map-tiger.png",
     };
 
     const renderSidebar = () => {
@@ -59,7 +59,7 @@ async function initSidebarAndPets() {
         const iconSrc =
           cam.image ||
           cameraIconMap[cam.petId] ||
-          new URL("../../assets/icons/Panda.png", import.meta.url).href; // fallback
+          "/assets/icons/Panda.png"; // fallback
 
         const item = document.createElement("div");
         item.className = "animal-nav-item " + (isActive ? "active" : "");
@@ -153,17 +153,17 @@ async function updateDidYouKnow(petId: number) {
 
     // Map pet image
     const petImageMap: Record<number, string> = {
-      1: new URL("../../assets/images/panda-eats-bamboo.png", import.meta.url).href,
-      2: new URL("../../assets/images/lemur.png", import.meta.url).href,
-      3: new URL("../../assets/images/gorilla-looking-sad.png", import.meta.url).href,
-      4: new URL("../../assets/images/monkey-eats-banana.png", import.meta.url).href,
-      5: new URL("../../assets/images/eagles-couple.png", import.meta.url).href,
-      6: new URL("../../assets/images/koala.png", import.meta.url).href,
-      7: new URL("../../assets/images/lion.png", import.meta.url).href,
-      8: new URL("../../assets/images/tiger-senja.png", import.meta.url).href,
+      1: "/assets/images/panda-eats-bamboo.png",
+      2: "/assets/images/lemur.png",
+      3: "/assets/images/gorilla-looking-sad.png",
+      4: "/assets/images/monkey-eats-banana.png",
+      5: "/assets/images/eagles-couple.png",
+      6: "/assets/images/koala.png",
+      7: "/assets/images/lion.png",
+      8: "/assets/images/tiger-senja.png",
     };
     const imageUrl =
-      pet.image || petImageMap[pet.id] || new URL("../../assets/images/welcome-zoo.png", import.meta.url).href;
+      pet.image || petImageMap[pet.id] || "/assets/images/welcome-zoo.png";
 
     // Fully programmatically generate the Info Section
     infoSection.innerHTML = `
@@ -199,7 +199,7 @@ async function updateDidYouKnow(petId: number) {
                       ${pet.range || "Unknown Location"}
                       <a href="#" class="zoo-map-link" style="cursor: pointer;">
                           VIEW MAP
-                          <img src="${new URL("../../assets/icons/right-arrow-dark.svg", import.meta.url).href}" alt="" class="zoo-map-arrow">
+                          <img src="/assets/icons/right-arrow-dark.svg" alt="" class="zoo-map-arrow">
                       </a>
                   </dd>
               </div>

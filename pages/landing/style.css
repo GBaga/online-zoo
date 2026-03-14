@@ -20,7 +20,7 @@ section {
       rgba(255, 255, 255, 0.5) 0%,
       rgba(255, 255, 255, 0) 100%
     ),
-    url("../../assets/images/panda-bg.png");
+    url("/assets/images/panda-bg.png");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -512,7 +512,7 @@ section {
   background-image:
     linear-gradient(177.34deg, #20113d 7.26%, rgba(32, 17, 61, 0) 14.89%),
     linear-gradient(144.77deg, #20113d 18.53%, rgba(32, 17, 61, 0) 46.43%),
-    url("../../assets/images/panda-behind-bamboo.png");
+    url("/assets/images/panda-behind-bamboo.png");
   background-size: cover;
   background-position: center;
   padding: 100px 0;

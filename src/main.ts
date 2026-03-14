@@ -1,19 +1,24 @@
 // Base Entrypoint
 import { initHeader } from "./features/header/header";
-import { initAuthUI } from "./features/auth/authUI";
-import { initLandingUI } from "./features/landing/landingUI";
-import { initZoosUI } from "./features/zoos/zoosUI";
 import { initDonationUI } from "./features/donation/donationUI";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Zoo UI Framework initialized");
 
+  const page = document.body.dataset.page;
+  const loaders: Record<string, () => Promise<void>> = {
+    landing: () =>
+      import("./features/landing/landingUI").then((m) => m.initLandingUI()),
+    zoos: () => import("./features/zoos/zoosUI").then((m) => m.initZoosUI()),
+    login: () => import("./features/auth/authUI").then((m) => m.initAuthUI()),
+    register: () => import("./features/auth/authUI").then((m) => m.initAuthUI()),
+  };
+
   // Initialize Global Features
   initHeader();
-
-  // Initialize Page-Specific Features based on DOM nodes
-  initAuthUI();
-  initLandingUI();
-  initZoosUI();
   initDonationUI();
+
+  // Initialize Page-Specific Features
+  loaders[page ?? ""]?.();
 });
+

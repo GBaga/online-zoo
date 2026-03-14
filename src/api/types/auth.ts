@@ -1,0 +1,28 @@
+export interface LoginPayload {
+  login: string;
+  password?: string;
+}
+
+export interface RegisterPayload extends LoginPayload {
+  name: string;
+  email: string;
+}
+
+export interface AuthResponse {
+  token?: string;
+  [key: string]: unknown;
+}
+
+export interface UserProfile {
+  name: string;
+  email: string;
+  [key: string]: unknown;
+}
+
+export enum ValidationState {
+  PRISTINE = "pristine",
+  VALID = "valid",
+  INVALID = "invalid",
+}
+
+export type LoginCredentials = Omit<RegisterPayload, "name" | "email">;

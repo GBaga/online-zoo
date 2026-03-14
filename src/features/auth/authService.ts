@@ -1,5 +1,5 @@
 import { ApiClient } from "../../api/apiClient";
-import { UserProfile, LoginPayload, RegisterPayload } from "../../api/models";
+import { UserProfile, LoginPayload, RegisterPayload } from "../../api/types";
 
 export class AuthService {
   private static readonly TOKEN_KEY = "zoo_auth_token";

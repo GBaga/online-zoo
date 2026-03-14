@@ -62,7 +62,7 @@ body {
   position: absolute;
   width: 141px;
   height: 181px;
-  background: url("../../assets/icons/map-pin.svg") no-repeat center;
+  background: url("/assets/icons/map-pin.svg") no-repeat center;
   background-size: contain;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -89,7 +89,7 @@ body {
 .map-pin:hover {
   width: 146px;
   height: 185px;
-  background: url("../../assets/icons/map-pin-active.svg") no-repeat center;
+  background: url("/assets/icons/map-pin-active.svg") no-repeat center;
   background-size: contain;
   transform: translate(-49.7%, -74.5%) scale(1.05);
   z-index: 20;

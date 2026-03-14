@@ -7,7 +7,7 @@ import {
   DonationPayload,
   UserProfile,
   AuthResponse,
-} from "./models";
+} from "./types";
 
 export enum HttpMethod {
   GET = "GET",
