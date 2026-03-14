@@ -1,96 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register - Online Zoo</title>
-    <link rel="icon" type="image/x-icon" href="/assets/favicon-C14x0mMS.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-  <script type="module" crossorigin src="/assets/main-ds0Xn0Oz.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/header-_6X-gHzM.css">
-  <link rel="stylesheet" crossorigin href="/assets/style-BwBUjyo8.css">
-</head>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/favicon-C14x0mMS.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/main-y7hjCOPL.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/register-ByxMoakJ.css">
+    <link rel="stylesheet" crossorigin href="/assets/header-BU1L90qr.css">
+    <link rel="stylesheet" crossorigin href="/assets/style-BwBUjyo8.css">
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="../landing/index.html" class="logo">
-                    <img src="/assets/logo-DoiYRSfr.svg" alt="Online Zoo Logo">
-                </a>
-                <nav class="nav-menu">
-                    <a href="../landing/index.html" class="nav-link">About</a>
-                    <a href="../map/index.html" class="nav-link">Map</a>
-                    <a href="../zoos/index.html" class="nav-link">Zoos</a>
-                    <a href="../contact/index.html" class="nav-link">Contact us</a>
-                </nav>
-                <div class="social-links">
-                    <a href="#" class="social-link"><img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_39702_4365)'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='%23FF0000'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M31.3005%2012.3781C31.6996%2012.7772%2031.9872%2013.2739%2032.1346%2013.8187C32.9835%2017.2357%2032.7873%2022.6324%2032.1511%2026.1813C32.0037%2026.7261%2031.7161%2027.2228%2031.317%2027.6219C30.9179%2028.021%2030.4212%2028.3086%2029.8764%2028.456C27.8819%2029%2019.8544%2029%2019.8544%2029C19.8544%2029%2011.8269%2029%209.8324%2028.456C9.28759%2028.3086%208.79089%2028.021%208.39179%2027.6219C7.99269%2027.2228%207.70511%2026.7261%207.55768%2026.1813C6.70383%2022.7791%206.9379%2017.3791%207.5412%2013.8352C7.68862%2013.2903%207.97621%2012.7936%208.37531%2012.3945C8.77441%2011.9954%209.2711%2011.7079%209.81592%2011.5604C11.8104%2011.0165%2019.8379%2011%2019.8379%2011C19.8379%2011%2027.8654%2011%2029.8599%2011.544C30.4047%2011.6914%2030.9014%2011.979%2031.3005%2012.3781ZM23.9423%2020L17.283%2023.8571V16.1428L23.9423%2020Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_39702_4365'%3e%3crect%20width='40'%20height='40'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="YouTube"></a>
-                    <a href="#" class="social-link"><img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_39702_4356)'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='%23C13584'/%3e%3cpath%20d='M20%2010.1622C23.2041%2010.1622%2023.5837%2010.1744%2024.849%2010.2321C26.019%2010.2855%2026.6544%2010.481%2027.0773%2010.6453C27.6374%2010.863%2028.0371%2011.123%2028.457%2011.5429C28.877%2011.9629%2029.137%2012.3626%2029.3547%2012.9227C29.519%2013.3456%2029.7145%2013.981%2029.7679%2015.1509C29.8256%2016.4163%2029.8378%2016.7958%2029.8378%2019.9999C29.8378%2023.2041%2029.8256%2023.5836%2029.7679%2024.849C29.7145%2026.019%2029.519%2026.6543%2029.3547%2027.0772C29.137%2027.6373%2028.877%2028.0371%2028.4571%2028.457C28.0371%2028.8769%2027.6374%2029.1369%2027.0773%2029.3546C26.6544%2029.519%2026.019%2029.7144%2024.849%2029.7678C23.5839%2029.8255%2023.2044%2029.8378%2020%2029.8378C16.7956%2029.8378%2016.4162%2029.8255%2015.151%2029.7678C13.981%2029.7144%2013.3456%2029.519%2012.9227%2029.3546C12.3626%2029.1369%2011.9629%2028.8769%2011.543%2028.457C11.1231%2028.0371%2010.863%2027.6373%2010.6453%2027.0772C10.481%2026.6543%2010.2855%2026.019%2010.2321%2024.849C10.1744%2023.5836%2010.1622%2023.2041%2010.1622%2019.9999C10.1622%2016.7958%2010.1744%2016.4163%2010.2321%2015.1509C10.2855%2013.981%2010.481%2013.3456%2010.6453%2012.9227C10.863%2012.3626%2011.123%2011.9629%2011.543%2011.543C11.9629%2011.123%2012.3626%2010.863%2012.9227%2010.6453C13.3456%2010.481%2013.981%2010.2855%2015.151%2010.2321C16.4163%2010.1744%2016.7959%2010.1622%2020%2010.1622ZM20%208C16.741%208%2016.3323%208.01381%2015.0524%208.07221C13.7752%208.13047%2012.9028%208.33334%2012.1395%208.62996C11.3504%208.93663%2010.6812%209.34694%2010.0141%2010.0141C9.34695%2010.6812%208.93663%2011.3504%208.63001%2012.1395C8.33334%2012.9028%208.13047%2013.7751%208.07221%2015.0524C8.01381%2016.3323%208%2016.741%208%2019.9999C8%2023.259%208.01381%2023.6676%208.07221%2024.9475C8.13047%2026.2248%208.33334%2027.0971%208.63001%2027.8604C8.93663%2028.6495%209.34695%2029.3187%2010.0141%2029.9859C10.6812%2030.653%2011.3504%2031.0633%2012.1395%2031.3699C12.9028%2031.6666%2013.7752%2031.8694%2015.0524%2031.9277C16.3323%2031.9861%2016.741%2031.9999%2020%2031.9999C23.259%2031.9999%2023.6677%2031.9861%2024.9476%2031.9277C26.2248%2031.8694%2027.0972%2031.6666%2027.8605%2031.3699C28.6496%2031.0633%2029.3188%2030.653%2029.9859%2029.9859C30.653%2029.3187%2031.0634%2028.6495%2031.37%2027.8604C31.6667%2027.0971%2031.8695%2026.2248%2031.9278%2024.9475C31.9862%2023.6676%2032%2023.259%2032%2019.9999C32%2016.741%2031.9862%2016.3323%2031.9278%2015.0524C31.8695%2013.7751%2031.6667%2012.9028%2031.37%2012.1395C31.0634%2011.3504%2030.653%2010.6812%2029.9859%2010.0141C29.3188%209.34694%2028.6496%208.93663%2027.8605%208.62996C27.0972%208.33334%2026.2248%208.13047%2024.9476%208.07221C23.6677%208.01381%2023.259%208%2020%208Z'%20fill='white'/%3e%3cpath%20d='M20.0054%2013.8433C16.6021%2013.8433%2013.8433%2016.6021%2013.8433%2020.0054C13.8433%2023.4087%2016.6021%2026.1675%2020.0054%2026.1675C23.4087%2026.1675%2026.1676%2023.4087%2026.1676%2020.0054C26.1676%2016.6021%2023.4087%2013.8433%2020.0054%2013.8433ZM20.0054%2024.0054C17.7963%2024.0054%2016.0054%2022.2145%2016.0054%2020.0054C16.0054%2017.7963%2017.7963%2016.0054%2020.0054%2016.0054C22.2146%2016.0054%2024.0054%2017.7963%2024.0054%2020.0054C24.0054%2022.2145%2022.2146%2024.0054%2020.0054%2024.0054Z'%20fill='white'/%3e%3cpath%20d='M27.8507%2013.5963C27.8507%2014.3915%2027.206%2015.0363%2026.4107%2015.0363C25.6154%2015.0363%2024.9707%2014.3915%2024.9707%2013.5963C24.9707%2012.801%2025.6154%2012.1562%2026.4107%2012.1562C27.206%2012.1562%2027.8507%2012.801%2027.8507%2013.5963Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_39702_4356'%3e%3crect%20width='40'%20height='40'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
-                            alt="Instagram"></a>
-                    <a href="#" class="social-link"><img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_39702_4352)'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='%233B5998'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M25.315%2012.9578C24.6917%2012.8331%2023.8498%2012.74%2023.3204%2012.74C21.8867%2012.74%2021.7936%2013.3633%2021.7936%2014.3607V16.1361H25.3774L25.065%2019.8137H21.7936V31H17.3063V19.8137H15V16.1361H17.3063V13.8613C17.3063%2010.7453%2018.7708%209%2022.4477%209C23.7252%209%2024.6602%209.187%2025.8753%209.43633L25.315%2012.9578Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_39702_4352'%3e%3crect%20width='40'%20height='40'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="Facebook"></a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="header-content">
+          <a href="../landing/index.html" class="logo">
+            <img src="/assets/logo-DoiYRSfr.svg" alt="Online Zoo Logo" />
+          </a>
+          <nav class="nav-menu">
+            <a href="../landing/index.html" class="nav-link">About</a>
+            <a href="../map/index.html" class="nav-link">Map</a>
+            <a href="../zoos/index.html" class="nav-link">Zoos</a>
+            <a href="../contact/index.html" class="nav-link">Contact us</a>
+          </nav>
+          <div class="social-links">
+            <a href="#" class="social-link"
+              ><img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_39702_4365)'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='%23FF0000'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M31.3005%2012.3781C31.6996%2012.7772%2031.9872%2013.2739%2032.1346%2013.8187C32.9835%2017.2357%2032.7873%2022.6324%2032.1511%2026.1813C32.0037%2026.7261%2031.7161%2027.2228%2031.317%2027.6219C30.9179%2028.021%2030.4212%2028.3086%2029.8764%2028.456C27.8819%2029%2019.8544%2029%2019.8544%2029C19.8544%2029%2011.8269%2029%209.8324%2028.456C9.28759%2028.3086%208.79089%2028.021%208.39179%2027.6219C7.99269%2027.2228%207.70511%2026.7261%207.55768%2026.1813C6.70383%2022.7791%206.9379%2017.3791%207.5412%2013.8352C7.68862%2013.2903%207.97621%2012.7936%208.37531%2012.3945C8.77441%2011.9954%209.2711%2011.7079%209.81592%2011.5604C11.8104%2011.0165%2019.8379%2011%2019.8379%2011C19.8379%2011%2027.8654%2011%2029.8599%2011.544C30.4047%2011.6914%2030.9014%2011.979%2031.3005%2012.3781ZM23.9423%2020L17.283%2023.8571V16.1428L23.9423%2020Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_39702_4365'%3e%3crect%20width='40'%20height='40'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="YouTube"
+            /></a>
+            <a href="#" class="social-link"
+              ><img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_39702_4356)'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='%23C13584'/%3e%3cpath%20d='M20%2010.1622C23.2041%2010.1622%2023.5837%2010.1744%2024.849%2010.2321C26.019%2010.2855%2026.6544%2010.481%2027.0773%2010.6453C27.6374%2010.863%2028.0371%2011.123%2028.457%2011.5429C28.877%2011.9629%2029.137%2012.3626%2029.3547%2012.9227C29.519%2013.3456%2029.7145%2013.981%2029.7679%2015.1509C29.8256%2016.4163%2029.8378%2016.7958%2029.8378%2019.9999C29.8378%2023.2041%2029.8256%2023.5836%2029.7679%2024.849C29.7145%2026.019%2029.519%2026.6543%2029.3547%2027.0772C29.137%2027.6373%2028.877%2028.0371%2028.4571%2028.457C28.0371%2028.8769%2027.6374%2029.1369%2027.0773%2029.3546C26.6544%2029.519%2026.019%2029.7144%2024.849%2029.7678C23.5839%2029.8255%2023.2044%2029.8378%2020%2029.8378C16.7956%2029.8378%2016.4162%2029.8255%2015.151%2029.7678C13.981%2029.7144%2013.3456%2029.519%2012.9227%2029.3546C12.3626%2029.1369%2011.9629%2028.8769%2011.543%2028.457C11.1231%2028.0371%2010.863%2027.6373%2010.6453%2027.0772C10.481%2026.6543%2010.2855%2026.019%2010.2321%2024.849C10.1744%2023.5836%2010.1622%2023.2041%2010.1622%2019.9999C10.1622%2016.7958%2010.1744%2016.4163%2010.2321%2015.1509C10.2855%2013.981%2010.481%2013.3456%2010.6453%2012.9227C10.863%2012.3626%2011.123%2011.9629%2011.543%2011.543C11.9629%2011.123%2012.3626%2010.863%2012.9227%2010.6453C13.3456%2010.481%2013.981%2010.2855%2015.151%2010.2321C16.4163%2010.1744%2016.7959%2010.1622%2020%2010.1622ZM20%208C16.741%208%2016.3323%208.01381%2015.0524%208.07221C13.7752%208.13047%2012.9028%208.33334%2012.1395%208.62996C11.3504%208.93663%2010.6812%209.34694%2010.0141%2010.0141C9.34695%2010.6812%208.93663%2011.3504%208.63001%2012.1395C8.33334%2012.9028%208.13047%2013.7751%208.07221%2015.0524C8.01381%2016.3323%208%2016.741%208%2019.9999C8%2023.259%208.01381%2023.6676%208.07221%2024.9475C8.13047%2026.2248%208.33334%2027.0971%208.63001%2027.8604C8.93663%2028.6495%209.34695%2029.3187%2010.0141%2029.9859C10.6812%2030.653%2011.3504%2031.0633%2012.1395%2031.3699C12.9028%2031.6666%2013.7752%2031.8694%2015.0524%2031.9277C16.3323%2031.9861%2016.741%2031.9999%2020%2031.9999C23.259%2031.9999%2023.6677%2031.9861%2024.9476%2031.9277C26.2248%2031.8694%2027.0972%2031.6666%2027.8605%2031.3699C28.6496%2031.0633%2029.3188%2030.653%2029.9859%2029.9859C30.653%2029.3187%2031.0634%2028.6495%2031.37%2027.8604C31.6667%2027.0971%2031.8695%2026.2248%2031.9278%2024.9475C31.9862%2023.6676%2032%2023.259%2032%2019.9999C32%2016.741%2031.9862%2016.3323%2031.9278%2015.0524C31.8695%2013.7751%2031.6667%2012.9028%2031.37%2012.1395C31.0634%2011.3504%2030.653%2010.6812%2029.9859%2010.0141C29.3188%209.34694%2028.6496%208.93663%2027.8605%208.62996C27.0972%208.33334%2026.2248%208.13047%2024.9476%208.07221C23.6677%208.01381%2023.259%208%2020%208Z'%20fill='white'/%3e%3cpath%20d='M20.0054%2013.8433C16.6021%2013.8433%2013.8433%2016.6021%2013.8433%2020.0054C13.8433%2023.4087%2016.6021%2026.1675%2020.0054%2026.1675C23.4087%2026.1675%2026.1676%2023.4087%2026.1676%2020.0054C26.1676%2016.6021%2023.4087%2013.8433%2020.0054%2013.8433ZM20.0054%2024.0054C17.7963%2024.0054%2016.0054%2022.2145%2016.0054%2020.0054C16.0054%2017.7963%2017.7963%2016.0054%2020.0054%2016.0054C22.2146%2016.0054%2024.0054%2017.7963%2024.0054%2020.0054C24.0054%2022.2145%2022.2146%2024.0054%2020.0054%2024.0054Z'%20fill='white'/%3e%3cpath%20d='M27.8507%2013.5963C27.8507%2014.3915%2027.206%2015.0363%2026.4107%2015.0363C25.6154%2015.0363%2024.9707%2014.3915%2024.9707%2013.5963C24.9707%2012.801%2025.6154%2012.1562%2026.4107%2012.1562C27.206%2012.1562%2027.8507%2012.801%2027.8507%2013.5963Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_39702_4356'%3e%3crect%20width='40'%20height='40'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="Instagram"
+            /></a>
+            <a href="#" class="social-link"
+              ><img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_39702_4352)'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='%233B5998'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M25.315%2012.9578C24.6917%2012.8331%2023.8498%2012.74%2023.3204%2012.74C21.8867%2012.74%2021.7936%2013.3633%2021.7936%2014.3607V16.1361H25.3774L25.065%2019.8137H21.7936V31H17.3063V19.8137H15V16.1361H17.3063V13.8613C17.3063%2010.7453%2018.7708%209%2022.4477%209C23.7252%209%2024.6602%209.187%2025.8753%209.43633L25.315%2012.9578Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_39702_4352'%3e%3crect%20width='40'%20height='40'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="Facebook"
+            /></a>
+          </div>
         </div>
+      </div>
     </header>
 
     <main class="auth-main">
-        <div class="auth-container">
-            <h2>Register</h2>
-            <form id="registerForm" class="auth-form" novalidate>
-                <div class="form-group">
-                    <label>Name*</label>
-                    <div class="input-wrapper">
-                        <input type="text" id="regNameInput" required placeholder="Enter name">
-                    </div>
-                    <span class="error-msg" id="regNameError"></span>
-                </div>
-                <div class="form-group">
-                    <label>Email*</label>
-                    <div class="input-wrapper">
-                        <input type="email" id="regEmailInput" required placeholder="Enter email">
-                    </div>
-                    <span class="error-msg" id="regEmailError"></span>
-                </div>
-                <div class="form-group">
-                    <label>Login*</label>
-                    <div class="input-wrapper">
-                        <input type="text" id="regLoginInput" required placeholder="Enter login">
-                    </div>
-                    <span class="error-msg" id="regLoginError"></span>
-                </div>
-                <div class="form-group">
-                    <label>Password*</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="regPasswordInput" required placeholder="Enter password">
-                    </div>
-                    <span class="error-msg" id="regPasswordError"></span>
-                </div>
-                <div class="form-group">
-                    <label>Confirm Password*</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="regConfirmPasswordInput" required placeholder="Confirm password">
-                    </div>
-                    <span class="error-msg" id="regConfirmPasswordError"></span>
-                </div>
-                <button type="submit" id="registerSubmitBtn" class="btn-primary" disabled>Register</button>
-                <div class="server-error" id="registerServerError"></div>
-                <p class="auth-switch">Already registered? <a href="../login/index.html">Sign In</a></p>
-            </form>
-        </div>
+      <div class="auth-container">
+        <h2>Register</h2>
+        <form id="registerForm" class="auth-form" novalidate>
+          <div class="form-group">
+            <label>Name*</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="regNameInput"
+                required
+                placeholder="Enter name"
+              />
+            </div>
+            <span class="error-msg" id="regNameError"></span>
+          </div>
+          <div class="form-group">
+            <label>Email*</label>
+            <div class="input-wrapper">
+              <input
+                type="email"
+                id="regEmailInput"
+                required
+                placeholder="Enter email"
+              />
+            </div>
+            <span class="error-msg" id="regEmailError"></span>
+          </div>
+          <div class="form-group">
+            <label>Login*</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="regLoginInput"
+                required
+                placeholder="Enter login"
+              />
+            </div>
+            <span class="error-msg" id="regLoginError"></span>
+          </div>
+          <div class="form-group">
+            <label>Password*</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="regPasswordInput"
+                required
+                placeholder="Enter password"
+              />
+            </div>
+            <span class="error-msg" id="regPasswordError"></span>
+          </div>
+          <div class="form-group">
+            <label>Confirm Password*</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="regConfirmPasswordInput"
+                required
+                placeholder="Confirm password"
+              />
+            </div>
+            <span class="error-msg" id="regConfirmPasswordError"></span>
+          </div>
+          <button
+            type="submit"
+            id="registerSubmitBtn"
+            class="btn-primary"
+            disabled
+          >
+            Register
+          </button>
+          <div class="server-error" id="registerServerError"></div>
+          <p class="auth-switch">
+            Already registered? <a href="../login/index.html">Sign In</a>
+          </p>
+        </form>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255, 0.4); padding-top: 20px;">
-                <div class="footer-copyright">
-                    <span class="copyright-text">© Online Zoo</span>
-                </div>
-            </div>
+      <div class="container">
+        <div
+          class="footer-bottom"
+          style="
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            padding-top: 20px;
+          "
+        >
+          <div class="footer-copyright">
+            <span class="copyright-text">© Online Zoo</span>
+          </div>
         </div>
-    </footer>
-</body>
-
+      </div>
+    </footer>
+  </body>
 </html>
