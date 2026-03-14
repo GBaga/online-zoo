@@ -139,7 +139,7 @@ export function initDonationUI() {
             cardInput.value = selected.number;
             monthSelect.value = selected.month;
             yearSelect.value = selected.year;
-            cvvInput.value = "***"; // Dummy CVV for saved
+            cvvInput.value = ""; // User must re-enter CVV for security
             validateStep3();
           }
         });
@@ -216,6 +216,29 @@ export function initDonationUI() {
 
   nameInput.addEventListener("input", validateStep2);
   emailInput.addEventListener("input", validateStep2);
+
+  // Blur/Focus validation effects for Step 2
+  nameInput.addEventListener("blur", () => {
+    const val = nameInput.value.trim();
+    if (val && !/^[a-zA-Z\s]+$/.test(val)) {
+      nameInput.style.borderColor = "red";
+    }
+    validateStep2();
+  });
+  nameInput.addEventListener("focus", () => {
+    nameInput.style.borderColor = "";
+  });
+  emailInput.addEventListener("blur", () => {
+    const val = emailInput.value.trim();
+    if (val && !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(val)) {
+      emailInput.style.borderColor = "red";
+    }
+    validateStep2();
+  });
+  emailInput.addEventListener("focus", () => {
+    emailInput.style.borderColor = "";
+  });
+
   validateStep2();
 
   // Prefill step 2 if logged in
@@ -240,7 +263,7 @@ export function initDonationUI() {
     const year = yearSelect.value;
 
     const isCardValid = /^\d{16}$/.test(cardVal);
-    const isCvvValid = /^\d{3}$/.test(cvvVal) || cvvVal === "***"; // Allow mocked saved cvv
+    const isCvvValid = /^\d{3}$/.test(cvvVal);
 
     let isDateValid = false;
     if (month && year) {
@@ -262,6 +285,29 @@ export function initDonationUI() {
   cvvInput.addEventListener("input", validateStep3);
   monthSelect.addEventListener("change", validateStep3);
   yearSelect.addEventListener("change", validateStep3);
+
+  // Blur/Focus validation effects for Step 3
+  cardInput.addEventListener("blur", () => {
+    const val = cardInput.value.trim().replace(/\s/g, "");
+    if (val && !/^\d{16}$/.test(val)) {
+      cardInput.style.borderColor = "red";
+    }
+    validateStep3();
+  });
+  cardInput.addEventListener("focus", () => {
+    cardInput.style.borderColor = "";
+  });
+  cvvInput.addEventListener("blur", () => {
+    const val = cvvInput.value.trim();
+    if (val && !/^\d{3}$/.test(val)) {
+      cvvInput.style.borderColor = "red";
+    }
+    validateStep3();
+  });
+  cvvInput.addEventListener("focus", () => {
+    cvvInput.style.borderColor = "";
+  });
+
   validateStep3();
 
   // SUBMIT HANDLER
@@ -317,7 +363,7 @@ export function initDonationUI() {
       }
     } finally {
       step3Next.innerHTML =
-        'COMPLETE DONATION <img src="../../assets/icons/right-arrow-white.svg" class="btn-icon">';
+        'COMPLETE DONATION <img src="/assets/icons/right-arrow-white.svg" class="btn-icon">';
     }
   });
 }

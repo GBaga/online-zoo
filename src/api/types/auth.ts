@@ -1,6 +1,6 @@
 export interface LoginPayload {
   login: string;
-  password?: string;
+  password: string;
 }
 
 export interface RegisterPayload extends LoginPayload {
@@ -10,13 +10,11 @@ export interface RegisterPayload extends LoginPayload {
 
 export interface AuthResponse {
   token?: string;
-  [key: string]: unknown;
 }
 
 export interface UserProfile {
   name: string;
   email: string;
-  [key: string]: unknown;
 }
 
 export enum ValidationState {

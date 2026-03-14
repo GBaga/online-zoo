@@ -10,5 +10,5 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-explicit-any": "error",
   },
-  ignorePatterns: ["node_modules/", "dist/", "vite.config.js"],
+  ignorePatterns: ["node_modules/", "dist/"],
 };

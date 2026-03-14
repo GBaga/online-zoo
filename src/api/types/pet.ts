@@ -1,11 +1,18 @@
 export interface Pet {
   id: number;
   name: string;
+  commonName?: string;
+  scientificName?: string;
+  type?: string;
+  size?: string;
+  diet?: string;
+  habitat?: string;
+  range?: string;
   location?: string;
   breed?: string;
   image?: string;
   description?: string;
-  [key: string]: unknown;
+  detailedDescription?: string;
 }
 
 export interface FeedbackItem {
@@ -14,7 +21,6 @@ export interface FeedbackItem {
   location?: string;
   text: string;
   avatar?: string;
-  [key: string]: unknown;
 }
 
 export interface Camera {
@@ -22,7 +28,6 @@ export interface Camera {
   petId: number;
   text: string;
   image?: string;
-  [key: string]: unknown;
 }
 
 export type ReadonlyPet = Readonly<Pet>;

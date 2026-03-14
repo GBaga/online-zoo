@@ -29,10 +29,9 @@ async function initPetsSlider() {
     }
 
     let currentIndex = 0;
-    const itemsPerPage = window.innerWidth <= 640 ? 4 : 6;
-    // Usually 6 per page on desktop for this layout.
 
     const renderSlider = () => {
+      const itemsPerPage = window.innerWidth <= 640 ? 4 : 6;
       container.innerHTML = "";
 
       // Get a slice (or wrap around if needed)
@@ -44,21 +43,19 @@ async function initPetsSlider() {
 
       // Map known API IDs to local image assets
       const petImageMap: Record<number, string> = {
-        1: "../../assets/images/panda-eats-bamboo.png",
-        2: "../../assets/images/lemur.png",
-        3: "../../assets/images/gorilla-looking-sad.png",
-        4: "../../assets/images/monkey-eats-banana.png", // no alligator pic, using monkey
-        5: "../../assets/images/eagles-couple.png",
-        6: "../../assets/images/koala.png",
-        7: "../../assets/images/lion.png",
-        8: "../../assets/images/tiger-senja.png",
+        1: "/assets/images/panda-eats-bamboo.png",
+        2: "/assets/images/lemur.png",
+        3: "/assets/images/gorilla-looking-sad.png",
+        4: "/assets/images/alligator.png",
+        5: "/assets/images/eagles-couple.png",
+        6: "/assets/images/koala.png",
+        7: "/assets/images/lion.png",
+        8: "/assets/images/tiger-senja.png",
       };
 
       currentItems.forEach((pet) => {
         const petImage =
-          pet.image ||
-          petImageMap[pet.id] ||
-          "../../assets/images/welcome-zoo.png";
+          pet.image || petImageMap[pet.id] || "/assets/images/welcome-zoo.png";
 
         const card = document.createElement("a");
         card.href = "/pages/zoos/index.html";
@@ -73,7 +70,7 @@ async function initPetsSlider() {
             <p class="pet-description">${pet.description || pet.location || ""}</p>
             <span class="view-cam-btn">
               VIEW LIVE CAM
-              <img src="../../assets/icons/right-arrow-blue.svg" alt="" class="cam-icon">
+              <img src="/assets/icons/right-arrow-blue.svg" alt="" class="cam-icon">
             </span>
           </div>
         `;
@@ -142,7 +139,7 @@ async function initFeedbackSlider() {
         const card = document.createElement("div");
         card.className = "testimonial-card";
         card.innerHTML = `
-          <img src="../../assets/icons/quote-mark.svg" alt="Quote" class="testimonial-quote-icon">
+          <img src="/assets/icons/quote-mark.svg" alt="Quote" class="testimonial-quote-icon">
           <h3 class="testimonial-location">${item.location || "Unknown Location"}</h3>
           <p class="testimonial-text">${item.text}</p>
           <p class="testimonial-author">${item.name}</p>
