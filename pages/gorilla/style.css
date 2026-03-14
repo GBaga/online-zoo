@@ -1,0 +1,12 @@
+/* ===========================
+   Gorilla Page — Overrides
+   =========================== */
+
+/* Gorilla info image — portrait crop */
+.zoo-info-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}

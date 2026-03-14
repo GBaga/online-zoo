@@ -1,0 +1,1070 @@
+/* ===========================
+   Zoo / Panda Page Styles
+   =========================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+  color: #000000;
+}
+
+/* ---- SIDEBAR + CAM WRAPPER ---- */
+.zoo-cam-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.zoo-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  flex: 0 0 220px;
+  width: 220px;
+
+  background: #20113d;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  transition:
+    width 0.3s ease,
+    flex-basis 0.3s ease;
+  z-index: 50;
+}
+
+/* Expanded sidebar */
+body:has(#sidebar-toggle:checked) .zoo-sidebar {
+  flex: 0 0 300px;
+  width: 300px;
+}
+
+/* LIVE badge */
+.sidebar-live-badge {
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 120px;
+  height: 38px;
+  background: #f58021;
+  border-radius: 0 0 5px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 12px;
+}
+
+.sidebar-live-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* >> arrows */
+.sidebar-arrows {
+  position: absolute;
+  right: 17px;
+  top: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Flip arrows when expanded */
+body:has(#sidebar-toggle:checked) .sidebar-arrows {
+  transform: scaleX(-1);
+}
+
+/* Horizontal dividers */
+.sidebar-divider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-top: 1px solid #ffffff;
+}
+
+/* --- Sidebar Navigation --- */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.animal-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+  justify-content: center;
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.animal-nav-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.animal-nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Base circle */
+.sidebar-circle {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: #f58021;
+}
+
+.sidebar-circle--orange {
+  background: #f58021;
+}
+
+.sidebar-circle--active {
+  background: #ffffff;
+  border: none;
+  outline: none;
+  box-shadow:
+    0 0 0 6px #20113d,
+    0 0 0 9px #ffffff;
+}
+
+/* Hover on inactive circles — mimic active style */
+.animal-nav-item:not(.active):hover .sidebar-circle {
+  background: #ffffff;
+  box-shadow:
+    0 0 0 6px #20113d,
+    0 0 0 9px #ffffff;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.animal-nav-item.active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.animal-nav-item.active .sidebar-circle--active {
+  transform: none; /* Stops hover effect while active */
+  filter: none;
+}
+
+/* Text labels — hidden by default */
+.sidebar-animal-text {
+  display: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #ffffff;
+  max-width: 140px;
+}
+
+/* Show text when expanded */
+body:has(#sidebar-toggle:checked) .sidebar-animal-text {
+  display: block;
+}
+
+/* Show text when expanded */
+body:has(#sidebar-toggle:checked) .sidebar-animal-text {
+  display: block;
+}
+
+/* Center circle when collapsed, align left when expanded */
+body:has(#sidebar-toggle:checked) .animal-nav-item {
+  justify-content: flex-start;
+  padding-left: 30px;
+}
+
+/* Animal icons */
+.sidebar-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Down arrow at bottom */
+.sidebar-down-arrow {
+  position: relative;
+  align-self: center;
+  margin-bottom: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* ---- HERO ---- */
+.zoo-hero {
+  padding: 50px 0 40px;
+}
+
+.zoo-hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.zoo-title {
+  font-size: clamp(28px, 4vw, 54px);
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #00a092;
+}
+
+/* ====================================
+   NATIVE CSS TABS LOGIC
+   ==================================== */
+.animal-info-tab {
+  display: none;
+}
+
+/* Connect inputs to tabs by order or ID hack */
+/* body:has(#tab-panda:checked) => show .tab-panda-content */
+body:has(#tab-panda:checked) .tab-panda-content,
+body:has(#tab-eagle:checked) .tab-eagle-content,
+body:has(#tab-gorilla:checked) .tab-gorilla-content,
+body:has(#tab-lemur:checked) .tab-lemur-content {
+  display: block;
+}
+
+.zoo-donate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 32px;
+  background: #f58021;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 600;
+  line-height: 22px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.zoo-donate-btn img {
+  width: 24px;
+  height: 22px;
+}
+
+/* ---- RESPONSIVE ---- */
+/* =========================================
+   RESPONSIVE — 1200px
+   ========================================= */
+@media (max-width: 1200px) {
+  .zoo-title {
+    font-size: clamp(24px, 3.5vw, 40px);
+  }
+  .zoo-sidebar {
+    flex: 0 0 160px;
+    width: 160px;
+  }
+  .sidebar-circle {
+    width: 80px;
+    height: 80px;
+  }
+  .sidebar-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .zoo-cam-section {
+    padding: 0 20px 40px;
+  }
+  .zoo-donation-section .donation-content {
+    padding: 0 20px;
+  }
+  .zoo-donation-section .donation-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .zoo-info-layout {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .zoo-info-image-wrap {
+    flex: unset;
+    width: 100%;
+    text-align: center;
+  }
+  .zoo-info-image {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — 640px (Sidebar Mobile Vertical)
+   ========================================= */
+@media (max-width: 640px) {
+  .zoo-cam-wrapper {
+    flex-direction: row;
+    min-height: auto;
+    position: relative;
+  }
+
+  /* Convert sidebar to a thin vertical strip */
+  .zoo-sidebar {
+    width: 60px;
+    height: auto;
+    flex: 0 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 0;
+    position: relative;
+    overflow: visible;
+  }
+
+  .zoo-sidebar.expanded {
+    flex: 0 0 60px;
+    width: 60px;
+  }
+
+  /* Hide specific desktop elements by default on mobile */
+  .sidebar-live-badge,
+  .sidebar-divider,
+  .sidebar-animal-text {
+    display: none;
+  }
+
+  body:has(#sidebar-toggle:checked) .sidebar-live-badge {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 60px;
+    padding: 0 15px;
+    border-radius: 0;
+    z-index: 110;
+    margin: 0;
+    transform: none;
+  }
+
+  body:has(#sidebar-toggle:checked) .sidebar-live-text {
+    display: block;
+    margin-right: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    align-self: center;
+  }
+
+  body:has(#sidebar-toggle:checked) .sidebar-animal-text {
+    display: block;
+    padding-left: 12px;
+    max-width: 155px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  body:has(#sidebar-toggle:checked) .sidebar-divider {
+    display: none;
+  }
+
+  /* Collapsed state arrows */
+  .sidebar-arrows {
+    display: flex !important;
+    position: static;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ffffff;
+    padding: 0;
+    margin: 0;
+    transition: none !important; /* Remove rotation animation on mobile */
+  }
+
+  /* Push arrows right when expanded, reset desktop flip */
+  body:has(#sidebar-toggle:checked) .sidebar-arrows {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    border-bottom: none;
+    z-index: 110;
+    padding: 0;
+    transform: rotate(180deg); /* Force << arrows when expanded */
+  }
+
+  .sidebar-down-arrow {
+    display: flex !important;
+    position: static;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    transform: none;
+    margin-top: auto;
+  }
+
+  /* Make sidebar nav vertical */
+  .sidebar-nav {
+    position: static;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    gap: 0;
+    padding: 0;
+  }
+
+  /* Add padding to nav when expanded so items fall below the absolute top row */
+  body:has(#sidebar-toggle:checked) .sidebar-nav {
+    padding-top: 60px;
+  }
+
+  .animal-nav-item {
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    border-top: none;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .animal-nav-item:last-child {
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .zoo-sidebar.expanded .animal-nav-item {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  body:has(#sidebar-toggle:checked) .animal-nav-item {
+    justify-content: flex-start;
+    padding-left: 15px;
+  }
+
+  body:has(#sidebar-toggle:checked) .zoo-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 300px;
+    z-index: 100;
+    flex: none;
+    overflow: hidden; /* Keep content flush inside the 230px box */
+    margin: 0;
+    padding: 0;
+    align-items: flex-start; /* Override the center alignment from the 60px strip */
+  }
+
+  /* Remove circle backgrounds, maintain icon size */
+  .sidebar-circle,
+  .sidebar-circle--active,
+  .sidebar-circle--orange {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    background: transparent !important;
+    outline: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* When expanded, restrict the icon wrapper size so text can fit next to it */
+  body:has(#sidebar-toggle:checked) .sidebar-circle,
+  body:has(#sidebar-toggle:checked) .sidebar-circle--active,
+  body:has(#sidebar-toggle:checked) .sidebar-circle--orange {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .sidebar-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    /* Default to orange for inactive items */
+    filter: brightness(0) saturate(100%) invert(58%) sepia(82%) saturate(1487%)
+      hue-rotate(346deg) brightness(101%) contrast(95%);
+  }
+
+  .animal-nav-item.active .sidebar-icon {
+    /* White for active item */
+    filter: brightness(0) invert(1);
+  }
+
+  /* Hero */
+  .zoo-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 0 20px;
+    gap: 16px;
+  }
+
+  .zoo-title {
+    font-size: clamp(22px, 6vw, 36px);
+  }
+
+  .zoo-donate-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 24px;
+  }
+
+  .zoo-cam-section {
+    padding: 0 10px 30px;
+  }
+
+  /* Carousel */
+  .zoo-cam-strip-wrapper {
+    overflow-x: auto;
+  }
+
+  /* Donation */
+  .zoo-donation-section {
+    padding: 40px 0;
+  }
+
+  /* Donation */
+  .zoo-donation-section {
+    padding: 40px 0;
+  }
+
+  .zoo-donation-section .donation-content {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .zoo-donation-section .donation-title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .zoo-donation-section .donation-text {
+    font-size: 14px;
+  }
+
+  .zoo-donation-section .donate-form {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .zoo-donation-section .donate-input {
+    max-width: 100%;
+    width: 100%;
+    height: 56px;
+    font-size: 14px;
+    border-radius: 5px;
+    border-right: 1px solid #ffffff;
+    padding: 0 14px;
+    text-align: left;
+  }
+
+  .zoo-donation-section .donate-btn {
+    height: 56px;
+    width: 60px;
+    border-radius: 5px;
+  }
+
+  /* Did You Know */
+  .zoo-fact-card {
+    padding: 30px 20px;
+  }
+
+  .zoo-fact-title {
+    font-size: 22px;
+  }
+
+  .zoo-fact-text {
+    font-size: 14px;
+  }
+
+  /* Animal Info */
+  .zoo-info-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .zoo-info-image-wrap {
+    flex: unset;
+    width: 100%;
+  }
+
+  .zoo-info-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — 320px
+   ========================================= */
+@media (max-width: 320px) {
+  .zoo-title {
+    font-size: 20px;
+  }
+
+  .zoo-donate-btn {
+    font-size: 12px;
+    padding: 12px 16px;
+  }
+
+  .zoo-donation-section .donation-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .zoo-donation-section .donation-text {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .zoo-donation-section .quick-donate-title {
+    font-size: 16px;
+  }
+
+  .sidebar-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .zoo-cam-section {
+    padding: 0 5px 20px;
+  }
+
+  .zoo-fact-card {
+    padding: 20px 15px;
+  }
+
+  .zoo-fact-title {
+    font-size: 18px;
+  }
+}
+
+/* ---- MAIN VIDEO ---- */
+.zoo-cam-section {
+  flex: 1;
+  padding: 0 40px 60px;
+}
+
+/* ---- HERO (inside right column) ---- */
+.zoo-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 50px 0 40px;
+}
+
+.zoo-main-video {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 60px;
+  background: #000;
+}
+
+.zoo-video-link {
+  display: block;
+  position: relative;
+}
+
+.zoo-video-img {
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+  display: block;
+}
+
+.zoo-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoo-video-controls {
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.zoo-video-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.zoo-live-badge {
+  background: #ff0000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  display: none; /* Hidden visually because placeholder images already have baked-in label text */
+}
+
+.zoo-logo-small {
+  font-size: 12px;
+  color: #fff;
+}
+
+/* ---- MORE LIVE VIEWS ---- */
+.zoo-more-views {
+  margin-bottom: 60px;
+}
+
+.zoo-more-title {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 51px;
+  text-transform: uppercase;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.zoo-cam-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.zoo-cam-arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.zoo-cam-arrow img {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+.zoo-cam-track {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.zoo-cam-track::-webkit-scrollbar {
+  display: none;
+}
+.cam-radio {
+  display: none;
+}
+
+.zoo-cam-thumb {
+  flex: 0 0 280px;
+  min-width: 200px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  border: 3px solid transparent;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.cam-radio:checked + .zoo-cam-thumb {
+  border-color: #f58021;
+}
+
+.zoo-cam-thumb-img {
+  width: 100%;
+  height: 209px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Play button overlay on cam thumbs */
+.zoo-cam-thumb::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.7);
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+}
+
+/* ---- DONATION ---- */
+.zoo-donation-section {
+  background-color: #20113d;
+  padding: 50px 0;
+}
+
+.zoo-donation-section .donation-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  padding: 0 40px;
+}
+
+.zoo-donation-section .donation-title {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 51px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+.zoo-donation-section .donation-text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #ffffff;
+}
+
+.zoo-donation-section .quick-donate {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.zoo-donation-section .quick-donate-title {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 130%;
+  color: #ffffff;
+}
+
+.zoo-donation-section .donate-form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.zoo-donation-section .donate-input {
+  background: transparent;
+  max-width: 320px;
+  width: 100%;
+  height: 74px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 0 14px;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.zoo-donation-section .donate-input::placeholder {
+  color: #ffffff;
+}
+
+.zoo-donation-section .donate-btn {
+  background-color: #f58021;
+  border-radius: 5px;
+  width: 80px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.zoo-donation-section .donate-btn img {
+  width: 24px;
+  height: 22px;
+}
+
+/* ---- DID YOU KNOW ---- */
+.zoo-fact-section {
+  padding: 80px 0;
+}
+
+.zoo-fact-card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 50px rgba(0, 0, 0, 0.15);
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 50px 60px;
+  text-align: center;
+}
+
+.zoo-fact-title {
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 33px;
+  text-transform: uppercase;
+  color: #00a092;
+  margin-bottom: 24px;
+}
+
+.zoo-fact-text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #000;
+}
+
+/* ---- ANIMAL INFO ---- */
+.zoo-info-section {
+  padding: 0 0 80px;
+}
+
+.zoo-info-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.zoo-info-details {
+  flex: 1;
+}
+
+.zoo-info-list {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.zoo-info-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+  align-items: baseline;
+}
+
+.zoo-info-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  min-width: 150px;
+  flex-shrink: 0;
+}
+
+.zoo-info-value {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.zoo-info-italic {
+  font-style: italic;
+  color: #f58021;
+}
+
+.zoo-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #f58021;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.zoo-map-arrow {
+  width: 20px;
+  height: 18px;
+}
+
+.zoo-info-description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #000;
+}
+
+.zoo-info-image-wrap {
+  flex: 0 0 300px;
+}
+
+.zoo-info-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* ---- RESPONSIVE CAROUSEL THUMBNAILS ---- */
+@media (max-width: 980px) {
+  .zoo-cam-thumb {
+    flex: 0 0 200px;
+    min-width: 150px;
+  }
+  .zoo-cam-thumb-img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .zoo-cam-thumb {
+    flex: 0 0 150px;
+    min-width: 120px;
+  }
+  .zoo-cam-thumb-img {
+    height: 110px;
+  }
+  .zoo-cam-arrow img {
+    width: 40px;
+    height: 40px;
+  }
+}
