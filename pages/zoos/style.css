@@ -1068,3 +1068,63 @@ body:has(#tab-lemur:checked) .tab-lemur-content {
     height: 40px;
   }
 }
+
+/* =========================================
+   DARK MODE — Zoo Page Overrides
+   ========================================= */
+
+[data-theme="dark"] body[data-page="zoos"],
+[data-theme="dark"] body[data-page="eagle"],
+[data-theme="dark"] body[data-page="gorilla"],
+[data-theme="dark"] body[data-page="lemur"] {
+  background-color: var(--bg-page);
+  color: var(--text-body);
+}
+
+[data-theme="dark"] .zoo-sidebar {
+  background: var(--bg-card-dark);
+}
+
+[data-theme="dark"] .zoo-cam-section {
+  background: transparent;
+}
+
+[data-theme="dark"] .zoo-more-title {
+  color: var(--text-heading);
+}
+
+[data-theme="dark"] .zoo-fact-section {
+  background-color: var(--bg-section);
+}
+
+[data-theme="dark"] .zoo-fact-card {
+  background-color: var(--bg-card-dark);
+}
+
+[data-theme="dark"] .zoo-fact-title {
+  color: #00e6d3;
+}
+
+[data-theme="dark"] .zoo-fact-text {
+  color: var(--text-body);
+}
+
+[data-theme="dark"] .zoo-info-section {
+  background-color: var(--bg-section);
+}
+
+[data-theme="dark"] .zoo-info-label {
+  color: var(--text-grey);
+}
+
+[data-theme="dark"] .zoo-info-value {
+  color: var(--text-body);
+}
+
+[data-theme="dark"] .zoo-info-description {
+  color: var(--text-body);
+}
+
+[data-theme="dark"] .zoo-cam-thumb {
+  border-color: var(--border-color);
+}

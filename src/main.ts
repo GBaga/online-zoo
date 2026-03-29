@@ -1,9 +1,13 @@
 // Base Entrypoint
 import { initHeader } from "./features/header/header";
 import { initDonationUI } from "./features/donation/donationUI";
+import { ThemeService } from "./features/ui/themeService";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Zoo UI Framework initialized");
+
+  // Apply theme immediately to prevent FOUC
+  ThemeService.init();
 
   const page = document.body.dataset.page;
   const loaders: Record<string, () => Promise<void>> = {

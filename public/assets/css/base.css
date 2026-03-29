@@ -11,11 +11,55 @@
   --text-orange-hover: #e47209;
   --text-grey: #4f555a;
 
+  /* Theme-specific */
+  --bg-page: #ffffff;
+  --bg-section: #ffffff;
+  --bg-card-dark: #20113d;
+  --text-body: #000000;
+  --text-heading: #333b41;
+  --header-bg: #f58021;
+  --border-color: #e0e0e0;
+
   /* Fonts */
   --font-main: "Montserrat", sans-serif;
   --font-sizes-h2: 48px;
   --font-sizes-h3: 36px;
   --font-sizes-h4: 24px;
+}
+
+/* =========================================
+   Dark Theme Variables
+   ========================================= */
+[data-theme="dark"] {
+  --bg-color: #0f0f1a;
+  --bg-dark: #1a1a2e;
+  --bg-white: #121225;
+  --bg-page: #0f0f1a;
+  --bg-section: #151528;
+  --bg-card-dark: #1e1440;
+  --text-dark: #e0e0e0;
+  --text-body: #d0d0d0;
+  --text-heading: #f0f0f0;
+  --text-grey: #a0a0b0;
+  --header-bg: #1a0e35;
+  --border-color: #2a2a4a;
+}
+
+/* Smooth theme transitions */
+body,
+.header,
+.footer,
+main,
+section,
+.pet-card,
+.care-card,
+.testimonial-card,
+.popup-modal,
+.zoo-sidebar,
+.zoo-cam-section,
+.zoo-fact-card,
+.zoo-info-section {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Reset basics */
@@ -27,7 +71,7 @@
 
 body {
   font-family: var(--font-main);
-  background-color: var(--bg-white);
+  background-color: var(--bg-page);
   color: var(--text-dark);
   font-size: 16px;
   line-height: 1.4;

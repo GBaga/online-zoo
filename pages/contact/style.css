@@ -290,3 +290,38 @@ button {
     padding: 14px 20px;
   }
 }
+
+/* =========================================
+   DARK MODE — Contact Page Overrides
+   ========================================= */
+
+[data-theme="dark"] body[data-page="contact"] {
+  background-color: var(--bg-page);
+  color: var(--text-body);
+}
+
+[data-theme="dark"] .contact-heading {
+  color: #00e6d3;
+}
+
+[data-theme="dark"] .contact-paragraph {
+  color: var(--text-body);
+}
+
+[data-theme="dark"] .form-label {
+  color: var(--text-body);
+}
+
+[data-theme="dark"] .form-input {
+  background-color: #1a1a2e;
+  border-color: #3a3a5a;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .form-input::placeholder {
+  color: #666680;
+}
+
+[data-theme="dark"] .form-input:focus {
+  border-color: #00e6d3;
+}

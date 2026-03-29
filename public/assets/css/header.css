@@ -4,7 +4,7 @@
    ========================================= */
 
 .header {
-  background-color: #f58021;
+  background-color: var(--header-bg);
   width: 100%;
   z-index: 100;
   padding: 0;
@@ -282,5 +282,71 @@ body:has(#mobile-menu-toggle:checked) .mobile-nav-overlay {
 
   .social-links {
     gap: 4px;
+  }
+}
+
+/* =========================================
+   Theme Toggle Button
+   ========================================= */
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  color: #ffffff;
+  margin-left: 12px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: rotate(15deg);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.9);
+}
+
+/* Dark mode: make nav links white */
+[data-theme="dark"] .nav-link {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: #00e6d3;
+}
+
+[data-theme="dark"] .hamburger-btn span {
+  background: #ffffff;
+}
+
+/* Make logo visible on dark header */
+[data-theme="dark"] .header .logo img {
+  filter: brightness(0) invert(1);
+}
+
+/* Make dark arrow icons visible */
+[data-theme="dark"] .nav-btn img {
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 980px) {
+  .theme-toggle-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-toggle-btn {
+    margin-left: 8px;
   }
 }
