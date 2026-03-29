@@ -18,9 +18,8 @@ function validateLogin(login: string): boolean {
 }
 
 function validatePassword(password: string): boolean {
-  // At least 6 chars, at least 1 special char
-  const re = /^(?=.*[!@#$%^&*()_\-+=<>?{}~[\]]).{6,}$/;
-  return re.test(password);
+  // Simple validation: at least 5 characters
+  return password.trim().length >= 5;
 }
 
 function applyValidationState(

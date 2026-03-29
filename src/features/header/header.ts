@@ -15,10 +15,6 @@ export async function initHeader() {
 
   const userContainer = document.createElement("div");
   userContainer.className = "header-user-menu";
-  userContainer.style.display = "flex";
-  userContainer.style.alignItems = "center";
-  userContainer.style.marginLeft = "20px";
-  userContainer.style.position = "relative";
 
   const renderState = async () => {
     userContainer.innerHTML = "";
@@ -28,9 +24,7 @@ export async function initHeader() {
     const favLink = document.createElement("a");
     favLink.href = "/pages/favorites/index.html";
     favLink.className = "header-favorites-link";
-    favLink.style.marginRight = "15px";
-    favLink.style.display = "flex";
-    favLink.style.color = "white";
+    favLink.title = "Your Favorites";
     favLink.innerHTML = `
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: currentColor; stroke-width: 2;">
         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -38,46 +32,57 @@ export async function initHeader() {
     `;
     userContainer.appendChild(favLink);
 
-    // Add dropdown toggle logic wrapper
-    const wrapper = document.createElement("div");
-    wrapper.style.position = "relative";
-    wrapper.style.display = "flex";
-    wrapper.style.alignItems = "center";
+    const userView = document.createElement("div");
+    userView.className = "user-view";
 
     if (user) {
-      wrapper.innerHTML = `
-        <div class="user-icon" style="cursor: pointer; display: flex; align-items: center; gap: 8px; color: white;">
-           ${USER_ICON_SVG}
-           <span style="font-weight: 500;">${user.name}</span>
+      const initial = user.name.charAt(0).toUpperCase();
+      userView.innerHTML = `
+        <div class="user-trigger logged-in">
+          <div class="user-avatar">${initial}</div>
+          <span class="user-name-label">${user.name}</span>
         </div>
-        <div class="user-dropdown" style="display: none; position: absolute; top: 120%; right: 0; background: white; padding: 15px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 180px; z-index: 999; text-align: left;">
-           <div style="font-weight: 600; color: #333; margin-bottom: 5px;">${user.name}</div>
-           <div style="font-size: 12px; color: #666; margin-bottom: 15px;">${user.email}</div>
-           <button id="logoutBtn" style="width: 100%; padding: 8px; background: #c4c4c4; border: none; border-radius: 4px; cursor: pointer; color: white;">Sign Out</button>
+        <div class="user-dropdown">
+           <div class="dropdown-header">
+             <div class="dropdown-user-name">${user.name}</div>
+             <div class="dropdown-user-email">${user.email}</div>
+           </div>
+           <div class="dropdown-links">
+             <a href="/pages/favorites/index.html" class="dropdown-link">My Favorites</a>
+             <a href="#" class="dropdown-link">Settings</a>
+           </div>
+           <button class="logout-btn" id="logoutBtn">Sign Out</button>
         </div>
       `;
     } else {
-      wrapper.innerHTML = `
-        <div class="user-icon" style="cursor: pointer; display: flex; align-items: center; color: white;">
-           ${USER_ICON_SVG}
+      userView.innerHTML = `
+        <div class="user-trigger logged-out">
+          <div class="user-avatar">${USER_ICON_SVG}</div>
+          <span class="user-name-label">SIGN IN</span>
         </div>
-        <div class="user-dropdown" style="display: none; position: absolute; top: 120%; right: 0; background: white; padding: 10px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 150px; z-index: 999;">
-           <a href="/pages/login/index.html" style="display: block; padding: 8px; color: #333; text-decoration: none; margin-bottom: 5px;">Sign In</a>
-           <a href="/pages/register/index.html" style="display: block; padding: 8px; color: #333; text-decoration: none;">Registration</a>
+        <div class="user-dropdown">
+           <div class="dropdown-header">
+             <div class="dropdown-user-name">Welcome!</div>
+             <div class="dropdown-user-email">Sign in to sync your favorites</div>
+           </div>
+           <div class="dropdown-links">
+             <a href="/pages/login/index.html" class="dropdown-link">Sign In</a>
+             <a href="/pages/register/index.html" class="dropdown-link">Registration</a>
+           </div>
         </div>
       `;
     }
 
-    userContainer.appendChild(wrapper);
+    userContainer.appendChild(userView);
 
-    const icon = wrapper.querySelector(".user-icon") as HTMLElement;
-    const dropdown = wrapper.querySelector(".user-dropdown") as HTMLElement;
+    const trigger = userView.querySelector(".user-trigger") as HTMLElement;
+    const dropdown = userView.querySelector(".user-dropdown") as HTMLElement;
 
     // Toggle dropdown
-    icon.addEventListener("click", (e) => {
+    trigger.addEventListener("click", (e) => {
       e.stopPropagation();
-      dropdown.style.display =
-        dropdown.style.display === "none" ? "block" : "none";
+      const isOpen = dropdown.style.display === "block";
+      dropdown.style.display = isOpen ? "none" : "block";
     });
 
     // Close on click outside
@@ -86,12 +91,10 @@ export async function initHeader() {
     });
     dropdown.addEventListener("click", (e) => e.stopPropagation());
 
-    const logoutBtn = wrapper.querySelector("#logoutBtn");
+    const logoutBtn = userView.querySelector("#logoutBtn");
     if (logoutBtn) {
       logoutBtn.addEventListener("click", () => {
         AuthService.logout();
-        renderState();
-        // Redirect to landing if we just logged out from a protected action scope? For now just reload.
         window.location.reload();
       });
     }

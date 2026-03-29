@@ -24,3 +24,12 @@ export enum ValidationState {
 }
 
 export type LoginCredentials = Omit<RegisterPayload, "name" | "email">;
+
+export interface LocalUser {
+  id: number | string;
+  username: string;
+  password?: string;
+  role?: string;
+  name?: string;
+  email?: string;
+}
