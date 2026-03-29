@@ -14,6 +14,7 @@ export default defineConfig({
         landing: resolve(__dirname, "pages/landing/index.html"),
         contact: resolve(__dirname, "pages/contact/index.html"),
         eagle: resolve(__dirname, "pages/eagle/index.html"),
+        favorites: resolve(__dirname, "pages/favorites/index.html"),
         gorilla: resolve(__dirname, "pages/gorilla/index.html"),
         lemur: resolve(__dirname, "pages/lemur/index.html"),
         map: resolve(__dirname, "pages/map/index.html"),
