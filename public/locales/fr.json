@@ -51,5 +51,17 @@
   "pet.species.tiger": "Tigre de Sumatra",
   "pet.desc.tiger": "Les tigres de Sumatra sont les plus petits de tous les tigres et ne se trouvent que sur l'île indonésienne de Sumatra.",
   "footer.donate_volunteers": "donnez pour les bénévoles",
-  "footer.copyright": "© 2021 DinaK | © Yem Digital | © RSSchool"
+  "footer.copyright": "© 2021 DinaK | © Yem Digital | © RSSchool",
+  "contact.heading": "CONTACTEZ-NOUS",
+  "contact.paragraph": "Que vous ayez une question, ou que vous souhaitiez simplement dire bonjour, nous serons heureux de vous entendre. Veuillez utiliser le formulaire pour nous envoyer un message et nous vous répondrons dans les plus brefs délais.\n\nQue vous ayez une question, ou que vous souhaitiez simplement dire bonjour, nous serons heureuses de vous entendre. Veuillez utiliser le formulaire pour nous envoyer un message et nous vous répondrons dans les plus brefs délais.",
+  "contact.form.name_label": "Votre Nom",
+  "contact.form.name_placeholder": "Prénom et nom",
+  "contact.form.email_label": "Votre Adresse E-mail",
+  "contact.form.email_placeholder": "Entrez votre e-mail",
+  "contact.form.subject_label": "Sujet",
+  "contact.form.subject_placeholder": "Entrez le sujet",
+  "contact.form.message_label": "Message",
+  "contact.form.message_placeholder": "Entrez votre message",
+  "contact.form.send_btn": "ENVOYER LE MESSAGE",
+  "contact.form.success_msg": "MESSAGE ENVOYÉ ! ✓"
 }

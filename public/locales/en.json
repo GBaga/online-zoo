@@ -51,5 +51,17 @@
   "pet.species.tiger": "Sumatran Tiger",
   "pet.desc.tiger": "Sumatran tigers are the smallest of all tigers and are found only on the Indonesian island of Sumatra.",
   "footer.donate_volunteers": "donate for volunteers",
-  "footer.copyright": "© 2021 DinaK | © Yem Digital | © RSSchool"
+  "footer.copyright": "© 2021 DinaK | © Yem Digital | © RSSchool",
+  "contact.heading": "GET IN TOUCH",
+  "contact.paragraph": "Whether you have a question, or would like to say hello, we're happy to hear from you. Please use the form to send us a message and we'll get back to you as soon as we can.\n\nWhether you have a question, or would like to say hello, we're happy to hear from you. Please use the form to send us a message and we'll get back to you as soon as we can.",
+  "contact.form.name_label": "Your Name",
+  "contact.form.name_placeholder": "First and last name",
+  "contact.form.email_label": "Your Email Address",
+  "contact.form.email_placeholder": "Enter your email",
+  "contact.form.subject_label": "Subject",
+  "contact.form.subject_placeholder": "Enter the subject",
+  "contact.form.message_label": "Message",
+  "contact.form.message_placeholder": "Enter your message",
+  "contact.form.send_btn": "SEND MESSAGE",
+  "contact.form.success_msg": "MESSAGE SENT! ✓"
 }

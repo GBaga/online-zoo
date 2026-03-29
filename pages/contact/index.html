@@ -35,10 +35,22 @@
             />
           </a>
           <nav class="nav-menu">
-            <a href="../landing/index.html#about" class="nav-link">About</a>
-            <a href="../map/index.html" class="nav-link">Map</a>
-            <a href="../zoos/index.html" class="nav-link">Zoos</a>
-            <a href="../contact/index.html" class="nav-link active"
+            <a
+              href="../landing/index.html#about"
+              class="nav-link"
+              data-i18n="nav.about"
+              >About</a
+            >
+            <a href="../map/index.html" class="nav-link" data-i18n="nav.map"
+              >Map</a
+            >
+            <a href="../zoos/index.html" class="nav-link" data-i18n="nav.zoos"
+              >Zoos</a
+            >
+            <a
+              href="../contact/index.html"
+              class="nav-link"
+              data-i18n="nav.contact"
               >Contact us</a
             >
             <a
@@ -46,6 +58,7 @@
               class="nav-link"
               target="_blank"
               rel="noopener"
+              data-i18n="nav.design"
               >Design</a
             >
           </nav>
@@ -90,10 +103,19 @@
       </div>
       <!-- Mobile Navigation Overlay -->
       <div class="mobile-nav-overlay">
-        <a href="../landing/index.html#about" class="nav-link">About</a>
-        <a href="../map/index.html" class="nav-link">Map</a>
-        <a href="../zoos/index.html" class="nav-link">Zoos</a>
-        <a href="#" class="nav-link active">Contact us</a>
+        <a
+          href="../landing/index.html#about"
+          class="nav-link"
+          data-i18n="nav.about"
+          >About</a
+        >
+        <a href="../map/index.html" class="nav-link" data-i18n="nav.map">Map</a>
+        <a href="../zoos/index.html" class="nav-link" data-i18n="nav.zoos"
+          >Zoos</a
+        >
+        <a href="../contact/index.html" class="nav-link" data-i18n="nav.contact"
+          >Contact us</a
+        >
       </div>
     </header>
 
@@ -113,8 +135,10 @@
       <section class="contact-content-section">
         <div class="container contact-grid">
           <div class="contact-text-col">
-            <h1 class="contact-heading">GET IN TOUCH</h1>
-            <p class="contact-paragraph">
+            <h1 class="contact-heading" data-i18n="contact.heading">
+              GET IN TOUCH
+            </h1>
+            <p class="contact-paragraph" data-i18n="contact.paragraph">
               Whether you have a question, or would like to say hello, we're
               happy to hear from you. Please use the form to send us a message
               and we'll get back to you as soon as we can.
@@ -129,7 +153,10 @@
             <form class="contact-form" id="contactForm" novalidate>
               <div class="form-group">
                 <label for="name" class="form-label"
-                  ><span class="required-star">*</span> Your Name</label
+                  ><span class="required-star">*</span>
+                  <span data-i18n="contact.form.name_label"
+                    >Your Name</span
+                  ></label
                 >
                 <input
                   type="text"
@@ -137,14 +164,17 @@
                   name="name"
                   class="form-input"
                   placeholder="First and last name"
+                  data-i18n-placeholder="contact.form.name_placeholder"
                   required
                 />
               </div>
 
               <div class="form-group">
                 <label for="email" class="form-label"
-                  ><span class="required-star">*</span> Your Email
-                  Address</label
+                  ><span class="required-star">*</span>
+                  <span data-i18n="contact.form.email_label"
+                    >Your Email Address</span
+                  ></label
                 >
                 <input
                   type="email"
@@ -152,13 +182,17 @@
                   name="email"
                   class="form-input"
                   placeholder="Enter your email"
+                  data-i18n-placeholder="contact.form.email_placeholder"
                   required
                 />
               </div>
 
               <div class="form-group">
                 <label for="subject" class="form-label"
-                  ><span class="required-star">*</span> Subject</label
+                  ><span class="required-star">*</span>
+                  <span data-i18n="contact.form.subject_label"
+                    >Subject</span
+                  ></label
                 >
                 <input
                   type="text"
@@ -166,19 +200,24 @@
                   name="subject"
                   class="form-input"
                   placeholder="Enter the subject"
+                  data-i18n-placeholder="contact.form.subject_placeholder"
                   required
                 />
               </div>
 
               <div class="form-group">
                 <label for="message" class="form-label"
-                  ><span class="required-star">*</span> Message</label
+                  ><span class="required-star">*</span>
+                  <span data-i18n="contact.form.message_label"
+                    >Message</span
+                  ></label
                 >
                 <textarea
                   id="message"
                   name="message"
                   class="form-input form-textarea"
                   placeholder="Enter your message"
+                  data-i18n-placeholder="contact.form.message_placeholder"
                   rows="6"
                   required
                 ></textarea>
@@ -195,8 +234,16 @@
                     for="message-sent-toggle"
                     class="btn-label-cover"
                   ></label>
-                  <span class="btn-text-default">SEND MESSAGE</span>
-                  <span class="btn-text-success">MESSAGE SENT! ✓</span>
+                  <span
+                    class="btn-text-default"
+                    data-i18n="contact.form.send_btn"
+                    >SEND MESSAGE</span
+                  >
+                  <span
+                    class="btn-text-success"
+                    data-i18n="contact.form.success_msg"
+                    >MESSAGE SENT! ✓</span
+                  >
                   <img
                     src="/assets/icons/right-arrow-white.svg"
                     alt=""
@@ -237,19 +284,39 @@
               </div>
             </div>
             <nav class="footer-nav">
-              <a href="../landing/index.html#about" class="footer-nav-link"
+              <a
+                href="../landing/index.html#about"
+                class="footer-nav-link"
+                data-i18n="nav.about"
                 >About</a
               >
-              <a href="../map/index.html" class="footer-nav-link">Map</a>
-              <a href="../zoos/index.html" class="footer-nav-link">Zoos</a>
-              <a href="#" class="footer-nav-link">Contact us</a>
+              <a
+                href="../map/index.html"
+                class="footer-nav-link"
+                data-i18n="nav.map"
+                >Map</a
+              >
+              <a
+                href="../zoos/index.html"
+                class="footer-nav-link"
+                data-i18n="nav.zoos"
+                >Zoos</a
+              >
+              <a
+                href="../contact/index.html"
+                class="footer-nav-link"
+                data-i18n="nav.contact"
+                >Contact us</a
+              >
             </nav>
             <label
               for="donate-popup-toggle"
               class="footer-donate-btn"
-              style="cursor: pointer; display: inline-flex"
+              style="display: inline-flex; cursor: pointer"
             >
-              donate for volunteers
+              <span data-i18n="footer.donate_volunteers"
+                >donate for volunteers</span
+              >
               <img
                 src="/assets/icons/right-arrow-white.svg"
                 alt=""

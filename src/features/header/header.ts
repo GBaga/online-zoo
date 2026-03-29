@@ -10,6 +10,24 @@ const USER_ICON_SVG = `
 export async function initHeader() {
   const container = document.querySelector(".header-content");
   if (!container) return;
+
+  // Auto-highlight active navigation link based on body data-page
+  const pageMap: Record<string, string> = {
+    landing: "nav.about",
+    zoos: "nav.zoos",
+    map: "nav.map",
+    contact: "nav.contact",
+    favorites: "nav.favorites",
+  };
+  const currentPageKey = pageMap[document.body.dataset.page || ""];
+
+  document.querySelectorAll(".nav-link, .footer-nav-link").forEach((link) => {
+    link.classList.remove("active");
+    if (currentPageKey && link.getAttribute("data-i18n") === currentPageKey) {
+      link.classList.add("active");
+    }
+  });
+
   const socialLinks = container.querySelector(".social-links");
   if (!socialLinks) return;
 
