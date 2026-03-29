@@ -58,9 +58,7 @@ async function initSidebarAndPets() {
       displayCameras.forEach((cam) => {
         const isActive = cam.id === activeCameraId;
         const iconSrc =
-          cam.image ||
-          cameraIconMap[cam.petId] ||
-          "/assets/icons/Panda.png"; // fallback
+          cam.image || cameraIconMap[cam.petId] || "/assets/icons/Panda.png"; // fallback
 
         const item = document.createElement("div");
         item.className = "animal-nav-item " + (isActive ? "active" : "");

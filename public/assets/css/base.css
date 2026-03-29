@@ -59,7 +59,10 @@ section,
 .zoo-cam-section,
 .zoo-fact-card,
 .zoo-info-section {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 /* Reset basics */
@@ -147,5 +150,82 @@ img {
 @media (max-width: 320px) {
   .container {
     padding: 0 10px;
+  }
+}
+
+/* =========================================
+   Favorite Heart UI
+   ========================================= */
+
+.favorite-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  cursor: pointer;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+  background: #ffffff;
+}
+
+[data-theme="dark"] .favorite-btn {
+  background: rgba(43, 42, 78, 0.9);
+  color: #fff;
+}
+
+.favorite-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #f58021;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+.favorite-btn.active svg {
+  fill: #f58021;
+  stroke: #f58021;
+  animation: heartPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+[data-theme="dark"] .favorite-btn.active svg {
+  fill: #00e6d3;
+  stroke: #00e6d3;
+}
+
+@keyframes heartPop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .favorite-btn {
+    width: 32px;
+    height: 32px;
+    top: 10px;
+    right: 10px;
+  }
+  .favorite-btn svg {
+    width: 16px;
+    height: 16px;
   }
 }

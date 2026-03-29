@@ -34,6 +34,65 @@ async function initPetsSlider() {
       const itemsPerPage = window.innerWidth <= 640 ? 4 : 6;
       container.innerHTML = "";
 
+      interface PetI18n {
+        id: string;
+        name: string;
+        species: string;
+        desc: string;
+      }
+
+      // Map known API IDs to local i18n keys
+      const petI18nMap: Record<number, PetI18n> = {
+        1: {
+          id: "panda",
+          name: "pet.name.lucas",
+          species: "pet.species.panda",
+          desc: "pet.desc.panda",
+        },
+        2: {
+          id: "lemur",
+          name: "pet.name.andy",
+          species: "pet.species.lemur",
+          desc: "pet.desc.lemur",
+        },
+        3: {
+          id: "gorilla",
+          name: "pet.name.glen",
+          species: "pet.species.gorilla",
+          desc: "pet.desc.gorilla",
+        },
+        4: {
+          id: "alligator",
+          name: "pet.name.sam",
+          species: "pet.species.alligator",
+          desc: "pet.desc.alligator",
+        },
+        5: {
+          id: "eagle",
+          name: "pet.name.sam_lora",
+          species: "pet.species.eagle",
+          desc: "pet.desc.eagle",
+        },
+        6: {
+          id: "koala",
+          name: "pet.name.liz",
+          species: "pet.species.koala",
+          desc: "pet.desc.koala",
+        },
+        7: {
+          id: "lion",
+          name: "pet.name.shake",
+          species: "pet.species.lion",
+          desc: "pet.desc.lion",
+        },
+        8: {
+          id: "tiger",
+          name: "pet.name.sara",
+          species: "pet.species.tiger",
+          desc: "pet.desc.tiger",
+        },
+      };
+
       // Get a slice (or wrap around if needed)
       const currentItems = [];
       for (let i = 0; i < itemsPerPage; i++) {
@@ -57,25 +116,35 @@ async function initPetsSlider() {
         const petImage =
           pet.image || petImageMap[pet.id] || "/assets/images/welcome-zoo.png";
 
+        const i18n = petI18nMap[pet.id] || { name: "", species: "", desc: "" };
+
         const card = document.createElement("a");
         card.href = "/pages/zoos/index.html";
         card.className = "pet-card";
+        card.setAttribute("data-pet-id", i18n.id);
         card.innerHTML = `
           <div class="pet-image-container">
             <img src="${petImage}" alt="${pet.name}" class="pet-image">
-            <div class="pet-name-tag">${pet.name}</div>
+            <div class="pet-name-tag" data-i18n="${i18n.name}">${pet.name}</div>
           </div>
           <div class="pet-info">
-            <h3 class="pet-species">${pet.commonName || pet.name}</h3>
-            <p class="pet-description">${pet.description || pet.location || ""}</p>
+            <h3 class="pet-species" data-i18n="${i18n.species}">${pet.commonName || pet.name}</h3>
+            <p class="pet-description" data-i18n="${i18n.desc}">${pet.description || pet.location || ""}</p>
             <span class="view-cam-btn">
-              VIEW LIVE CAM
+              <span data-i18n="pet.view_cam">VIEW LIVE CAM</span>
               <img src="/assets/icons/right-arrow-blue.svg" alt="" class="cam-icon">
             </span>
           </div>
         `;
         container.appendChild(card);
       });
+
+      // Inject favorites hearts
+      import("../favorites/favoriteUI").then((m) =>
+        m.FavoriteUI.injectHearts(),
+      );
+      // Re-apply translations
+      window.dispatchEvent(new Event("i18nUpdate"));
     };
 
     renderSlider();

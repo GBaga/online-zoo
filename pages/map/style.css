@@ -236,3 +236,32 @@ body {
     padding-top: 60px;
   }
 }
+
+/* =========================================
+   DARK MODE — Map Page Overrides
+   ========================================= */
+
+[data-theme="dark"] body {
+  background-color: var(--bg-page);
+  color: var(--text-body);
+}
+
+[data-theme="dark"] .map-page-title {
+  color: #00e6d3;
+}
+
+/* Make the map background white/light in dark mode as requested */
+[data-theme="dark"] .map-bg {
+  filter: brightness(0) invert(1) opacity(0.8);
+}
+
+/* Ensure map pins remain visible and correctly colored */
+[data-theme="dark"] .map-pin {
+  filter: drop-shadow(0 0 10px rgba(0, 160, 146, 0.4));
+}
+
+[data-theme="dark"] .map-pin .pin-icon {
+  filter: brightness(
+    1
+  ); /* Ensure icons inside pins don't invert with the map */
+}

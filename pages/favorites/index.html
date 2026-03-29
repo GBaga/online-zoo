@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="fav.title">My Favorite Animals | Online Zoo</title>
+
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="../landing/style.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+    <style>
+      .favorites-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        gap: 30px;
+        padding: 50px 0 100px;
+      }
+      .empty-favs {
+        text-align: center;
+        padding: 100px 0;
+        display: none;
+      }
+      .empty-favs.visible {
+        display: block;
+      }
+      @media (max-width: 640px) {
+        .favorites-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body data-page="favorites">
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="../landing/index.html" class="logo">
+            <img src="/assets/icons/logo.svg" alt="Online Zoo Logo" />
+          </a>
+          <nav class="nav-menu">
+            <a
+              href="../landing/index.html#about"
+              class="nav-link"
+              data-i18n="nav.about"
+              >About</a
+            >
+            <a href="../map/index.html" class="nav-link" data-i18n="nav.map"
+              >Map</a
+            >
+            <a href="../zoos/index.html" class="nav-link" data-i18n="nav.zoos"
+              >Zoos</a
+            >
+            <a
+              href="../contact/index.html"
+              class="nav-link"
+              data-i18n="nav.contact"
+              >Contact us</a
+            >
+            <a href="#" class="nav-link active" data-i18n="nav.favorites"
+              >Favorites</a
+            >
+          </nav>
+          <div class="social-links">
+            <a href="#" class="social-link"
+              ><img src="/assets/icons/youtube-logo.svg" alt="YouTube"
+            /></a>
+            <a href="#" class="social-link"
+              ><img src="/assets/icons/Instagram-logo.svg" alt="Instagram"
+            /></a>
+            <a href="#" class="social-link"
+              ><img src="/assets/icons/facebook-logo.svg" alt="Facebook"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section">
+        <div class="container">
+          <h1 class="pets-title" data-i18n="fav.heading">
+            My Favorite Animals
+          </h1>
+          <div id="favorites-container" class="favorites-grid">
+            <!-- Cards will be injected here -->
+          </div>
+          <div id="empty-favorites" class="empty-favs">
+            <h2 data-i18n="fav.empty">No favorites yet!</h2>
+            <p data-i18n="fav.empty_text">
+              Go explore the zoo and heart your favorite pets.
+            </p>
+            <br />
+            <a
+              href="../landing/index.html"
+              class="btn-primary"
+              data-i18n="fav.go_back"
+              >Back to Home</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-top">
+            <div class="footer-logos">
+              <a href="../landing/index.html" class="logo">
+                <img
+                  src="/assets/icons/white-logo-for-footer.svg"
+                  alt="Online Zoo Logo"
+                  class="footer-logo"
+                />
+              </a>
+              <div class="footer-partner-logos">
+                <img
+                  src="/assets/icons/yem-logo.svg"
+                  alt="Yem Digital"
+                  class="partner-logo"
+                />
+                <img
+                  src="/assets/icons/rs-school-logo.svg"
+                  alt="RS School"
+                  class="rs-logo"
+                />
+              </div>
+            </div>
+            <nav class="footer-nav">
+              <a
+                href="../landing/index.html#about"
+                class="footer-nav-link"
+                data-i18n="nav.about"
+                >About</a
+              >
+              <a
+                href="../map/index.html"
+                class="footer-nav-link"
+                data-i18n="nav.map"
+                >Map</a
+              >
+              <a
+                href="../zoos/index.html"
+                class="footer-nav-link"
+                data-i18n="nav.zoos"
+                >Zoos</a
+              >
+              <a
+                href="../contact/index.html"
+                class="footer-nav-link"
+                data-i18n="nav.contact"
+                >Contact us</a
+              >
+            </nav>
+            <label
+              for="donate-popup-toggle"
+              class="footer-donate-btn"
+              style="cursor: pointer; display: inline-flex"
+              data-i18n="footer.donate_volunteers"
+            >
+              donate for volunteers
+              <img
+                src="/assets/icons/right-arrow-white.svg"
+                alt=""
+                class="btn-icon"
+              />
+            </label>
+          </div>
+
+          <div class="footer-divider"></div>
+
+          <div class="footer-bottom">
+            <div class="footer-copyright">
+              <span class="copyright-text">© 2021 DinaK</span>
+              <span class="copyright-text">© Yem Digital</span>
+              <span class="copyright-text">© RSSchool</span>
+            </div>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link">
+                <img src="/assets/icons/youtube-logo.svg" alt="YouTube" />
+              </a>
+              <a href="#" class="footer-social-link">
+                <img src="/assets/icons/Instagram-logo.svg" alt="Instagram" />
+              </a>
+              <a href="#" class="footer-social-link">
+                <img src="/assets/icons/facebook-logo.svg" alt="Facebook" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

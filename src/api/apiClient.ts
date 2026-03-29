@@ -67,7 +67,10 @@ export class ApiClient {
 
       return parsed as T;
     } catch (error) {
-      console.error(`Request failed for ${endpoint} [URL: ${API_BASE_URL}${endpoint}]:`, error);
+      console.error(
+        `Request failed for ${endpoint} [URL: ${API_BASE_URL}${endpoint}]:`,
+        error,
+      );
       throw error;
     }
   }

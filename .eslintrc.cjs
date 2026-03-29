@@ -5,10 +5,15 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint"],
-  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  plugins: ["@typescript-eslint", "prettier"],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+  ],
   rules: {
     "@typescript-eslint/no-explicit-any": "error",
+    "prettier/prettier": "error",
   },
   ignorePatterns: ["node_modules/", "dist/"],
 };

@@ -98,9 +98,7 @@ export class ThemeService {
     btn.innerHTML = currentTheme === "dark" ? SUN_SVG : MOON_SVG;
     btn.setAttribute(
       "aria-label",
-      currentTheme === "dark"
-        ? "Switch to light mode"
-        : "Switch to dark mode",
+      currentTheme === "dark" ? "Switch to light mode" : "Switch to dark mode",
     );
 
     btn.addEventListener("click", () => {

@@ -1,76 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In - Online Zoo</title>
-    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/base.css">
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body data-page="login">
+  <body data-page="login">
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="../landing/index.html" class="logo">
-                    <img src="/assets/icons/logo.svg" alt="Online Zoo Logo">
-                </a>
-                <nav class="nav-menu">
-                    <a href="../landing/index.html" class="nav-link">About</a>
-                    <a href="../map/index.html" class="nav-link">Map</a>
-                    <a href="../zoos/index.html" class="nav-link">Zoos</a>
-                    <a href="../contact/index.html" class="nav-link">Contact us</a>
-                </nav>
-                <div class="social-links">
-                    <a href="#" class="social-link"><img src="/assets/icons/youtube-logo.svg" alt="YouTube"></a>
-                    <a href="#" class="social-link"><img src="/assets/icons/Instagram-logo.svg"
-                            alt="Instagram"></a>
-                    <a href="#" class="social-link"><img src="/assets/icons/facebook-logo.svg" alt="Facebook"></a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="header-content">
+          <a href="../landing/index.html" class="logo">
+            <img src="/assets/icons/logo.svg" alt="Online Zoo Logo" />
+          </a>
+          <nav class="nav-menu">
+            <a href="../landing/index.html" class="nav-link">About</a>
+            <a href="../map/index.html" class="nav-link">Map</a>
+            <a href="../zoos/index.html" class="nav-link">Zoos</a>
+            <a href="../contact/index.html" class="nav-link">Contact us</a>
+          </nav>
+          <div class="social-links">
+            <a href="#" class="social-link"
+              ><img src="/assets/icons/youtube-logo.svg" alt="YouTube"
+            /></a>
+            <a href="#" class="social-link"
+              ><img src="/assets/icons/Instagram-logo.svg" alt="Instagram"
+            /></a>
+            <a href="#" class="social-link"
+              ><img src="/assets/icons/facebook-logo.svg" alt="Facebook"
+            /></a>
+          </div>
         </div>
+      </div>
     </header>
 
     <main class="auth-main">
-        <div class="auth-container">
-            <h2>Sign In</h2>
-            <form id="loginForm" class="auth-form" novalidate>
-                <div class="form-group">
-                    <label>Login*</label>
-                    <div class="input-wrapper">
-                        <input type="text" id="loginInput" required placeholder="Enter login">
-                    </div>
-                    <span class="error-msg" id="loginError"></span>
-                </div>
-                <div class="form-group">
-                    <label>Password*</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="passwordInput" required placeholder="Enter password">
-                    </div>
-                    <span class="error-msg" id="passwordError"></span>
-                </div>
-                <button type="submit" id="loginSubmitBtn" class="btn-primary" disabled>Sign In</button>
-                <div class="server-error" id="loginServerError"></div>
-                <p class="auth-switch">Don't have an account? <a href="../register/index.html">Register</a></p>
-            </form>
-        </div>
+      <div class="auth-container">
+        <h2>Sign In</h2>
+        <form id="loginForm" class="auth-form" novalidate>
+          <div class="form-group">
+            <label>Login*</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="loginInput"
+                required
+                placeholder="Enter login"
+              />
+            </div>
+            <span class="error-msg" id="loginError"></span>
+          </div>
+          <div class="form-group">
+            <label>Password*</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="passwordInput"
+                required
+                placeholder="Enter password"
+              />
+            </div>
+            <span class="error-msg" id="passwordError"></span>
+          </div>
+          <button
+            type="submit"
+            id="loginSubmitBtn"
+            class="btn-primary"
+            disabled
+          >
+            Sign In
+          </button>
+          <div class="server-error" id="loginServerError"></div>
+          <p class="auth-switch">
+            Don't have an account? <a href="../register/index.html">Register</a>
+          </p>
+        </form>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255, 0.4); padding-top: 20px;">
-                <div class="footer-copyright">
-                    <span class="copyright-text">© Online Zoo</span>
-                </div>
-            </div>
+      <div class="container">
+        <div
+          class="footer-bottom"
+          style="
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            padding-top: 20px;
+          "
+        >
+          <div class="footer-copyright">
+            <span class="copyright-text">© Online Zoo</span>
+          </div>
         </div>
+      </div>
     </footer>
     <script type="module" src="/src/main.ts"></script>
-</body>
-
+  </body>
 </html>
