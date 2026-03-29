@@ -115,7 +115,9 @@
         <aside class="zoo-sidebar" id="sidePanel">
           <!-- LIVE badge -->
           <div class="sidebar-live-badge">
-            <span class="sidebar-live-text">LIVE</span>
+            <span class="sidebar-live-text" data-i18n="zoos.sidebar.live"
+              >LIVE</span
+            >
             <svg
               width="20"
               height="20"
@@ -250,13 +252,15 @@
         <section class="zoo-cam-section">
           <!-- HERO -->
           <div class="zoo-hero">
-            <h1 class="zoo-title">Live Panda Cams</h1>
+            <h1 class="zoo-title" data-i18n="zoos.hero.title">
+              Live Panda Cams
+            </h1>
             <label
               for="donate-popup-toggle"
               class="zoo-donate-btn"
               style="cursor: pointer; display: inline-flex"
             >
-              Donate now
+              <span data-i18n="zoos.hero.donate">Donate now</span>
               <img
                 src="/assets/icons/right-arrow-white.svg"
                 alt=""
@@ -294,7 +298,9 @@
 
           <!-- MORE LIVE VIEWS -->
           <div class="zoo-more-views">
-            <h2 class="zoo-more-title">More live views</h2>
+            <h2 class="zoo-more-title" data-i18n="zoos.more_views">
+              More live views
+            </h2>
             <div class="zoo-cam-carousel">
               <button class="zoo-cam-arrow zoo-cam-prev" aria-label="Previous">
                 <img src="/assets/icons/left-arrow-dark.svg" alt="Previous" />
@@ -357,8 +363,10 @@
         <div class="container">
           <div class="donation-content">
             <div>
-              <h2 class="donation-title">make the Bamboo Donation!</h2>
-              <p class="donation-text">
+              <h2 class="donation-title" data-i18n="zoos.donation.title">
+                make the Bamboo Donation!
+              </h2>
+              <p class="donation-text" data-i18n="zoos.donation.desc">
                 Our process for bamboo donations first starts with a site
                 evaluation. It is important that our team sees where the bamboo
                 is growing, then determining if the bamboo is a species that our
@@ -367,11 +375,17 @@
               </p>
             </div>
             <div class="quick-donate">
-              <h3 class="quick-donate-title">Quick Donate</h3>
+              <h3
+                class="quick-donate-title"
+                data-i18n="zoos.quick_donate.title"
+              >
+                Quick Donate
+              </h3>
               <div class="donate-form">
                 <input
                   type="text"
                   placeholder="$ Donation Amount"
+                  data-i18n-placeholder="zoos.quick_donate.placeholder"
                   class="donate-input"
                 />
                 <label

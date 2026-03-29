@@ -69,7 +69,7 @@ async function initSidebarAndPets() {
           <div class="sidebar-circle ${isActive ? "sidebar-circle--active" : "sidebar-circle--orange"}">
               <img src="${iconSrc}" alt="Camera ${cam.id}" class="sidebar-icon">
           </div>
-          <span class="sidebar-animal-text">${cam.text}</span>
+          <span class="sidebar-animal-text" data-i18n="camera.${cam.id}">${cam.text}</span>
         `;
 
         item.addEventListener("click", () => {
@@ -143,7 +143,7 @@ async function updateDidYouKnow(petId: number) {
     factSection.innerHTML = `
       <div class="container">
           <div class="zoo-fact-card">
-              <h2 class="zoo-fact-title">Did you know?</h2>
+              <h2 class="zoo-fact-title" data-i18n="zoos.info.did_you_know">Did you know?</h2>
               <p class="zoo-fact-text" id="didYouKnowText">
                 ${pet.detailedDescription || pet.description || "Information not available."}
               </p>
@@ -165,40 +165,39 @@ async function updateDidYouKnow(petId: number) {
     const imageUrl =
       pet.image || petImageMap[pet.id] || "/assets/images/welcome-zoo.png";
 
-    // Fully programmatically generate the Info Section
     infoSection.innerHTML = `
       <div class="zoo-info-details">
           <dl class="zoo-info-list">
               <div class="zoo-info-row">
-                  <dt class="zoo-info-label">Common name:</dt>
+                  <dt class="zoo-info-label" data-i18n="zoos.info.common_name">Common name:</dt>
                   <dd class="zoo-info-value" id="animalName">${pet.commonName || pet.name || "Unknown Pet"}</dd>
               </div>
               <div class="zoo-info-row">
-                  <dt class="zoo-info-label">Scientific name:</dt>
+                  <dt class="zoo-info-label" data-i18n="zoos.info.scientific_name">Scientific name:</dt>
                   <dd class="zoo-info-value zoo-info-italic" id="didYouKnowAnimal">${pet.scientificName || "Unknown Breed"}</dd>
               </div>
               <div class="zoo-info-row">
-                  <dt class="zoo-info-label">Type:</dt>
+                  <dt class="zoo-info-label" data-i18n="zoos.info.type">Type:</dt>
                   <dd class="zoo-info-value">${pet.type || "Mammal"}</dd>
               </div>
               <div class="zoo-info-row">
-                  <dt class="zoo-info-label">Size:</dt>
+                  <dt class="zoo-info-label" data-i18n="zoos.info.size">Size:</dt>
                   <dd class="zoo-info-value">${pet.size || "4 to 6 feet"}</dd>
               </div>
               <div class="zoo-info-row">
-                  <dt class="zoo-info-label">Diet:</dt>
+                  <dt class="zoo-info-label" data-i18n="zoos.info.diet">Diet:</dt>
                   <dd class="zoo-info-value">${pet.diet || "Omnivore"}</dd>
               </div>
               <div class="zoo-info-row">
-                  <dt class="zoo-info-label">Habitat:</dt>
+                  <dt class="zoo-info-label" data-i18n="zoos.info.habitat">Habitat:</dt>
                   <dd class="zoo-info-value">${pet.habitat || "Forest"}</dd>
               </div>
               <div class="zoo-info-row">
-                  <dt class="zoo-info-label">Range:</dt>
+                  <dt class="zoo-info-label" data-i18n="zoos.info.range">Range:</dt>
                   <dd class="zoo-info-value">
                       ${pet.range || "Unknown Location"}
                       <a href="#" class="zoo-map-link" style="cursor: pointer;">
-                          VIEW MAP
+                          <span data-i18n="zoos.info.view_map">VIEW MAP</span>
                           <img src="/assets/icons/right-arrow-dark.svg" alt="" class="zoo-map-arrow">
                       </a>
                   </dd>
@@ -221,6 +220,9 @@ async function updateDidYouKnow(petId: number) {
         openMapModal((pet.location || pet.range || "Africa") as string); // Fallback location
       });
     }
+
+    // Dispatch event to strictly translate new dynamic DOM insertions
+    window.dispatchEvent(new Event("i18nUpdate"));
   } catch (err) {
     loaderOverlay.innerHTML = "";
     loaderOverlay.appendChild(createErrorMessage());
